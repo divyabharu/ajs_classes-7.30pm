@@ -1,0 +1,100 @@
+
+    - Services in angularjs, used to share the common business logic to controllers.
+
+    - we have two types of services
+
+        1.predefined services.
+
+        2.custom services.
+
+predefined services:
+-
+    - the services given by the framework called as predefined services.
+
+1. $http
+
+2. $q
+
+3. $timeout
+
+4. $interval
+
+5. $location
+
+
+custom services
+-
+
+    - the services developed by us based on application requirement called as custom services.
+
+    - in angularjs , we can create the custom services by using following predefined functions.
+
+        1. factory()
+
+        2. service()
+
+        3. provider()
+
+        4. value()
+
+        5. constant()
+
+
+creating the custom service by using factory()
+-----------------------------------------------
+Ex.
+
+    function my_class(arg1){
+            this.var_one = arg1;
+            this.my_fun = function(){
+                return this.var_one;
+           }
+    }
+
+
+            *************************
+    app.factory("my_service",my_service);
+    function my_service(){
+        return new my_class("Data from MongoDB....").my_fun();
+    }
+            ***********************
+
+
+
+            ********************
+
+    app.controller("ctrl_one",ctrl_one);
+    function ctrl_one($scope,my_service){
+        $scope.var_one = my_service;
+    }
+            *********************
+
+            ************************
+    app.controller("ctrl_two",ctrl_two);
+    function ctrl_two($scope,my_service){
+        $scope.var_two = my_service;
+    }
+            ************************
+
+
+----------------------------------
+factoryExample
+
+    bower.json
+    .bowerrc
+    index.html
+    app.js
+    controllers
+        ctrl_one.js
+        ctrl_two.js
+    services
+        my_service.js
+
+    js
+        my_class.js
+
+-----------------------------------
+
+
+creating the custom service by using service()
+-
