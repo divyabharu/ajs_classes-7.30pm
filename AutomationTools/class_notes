@@ -1,0 +1,104 @@
+- In genaral we will dependent on Automation tools to build UI Applications.
+
+1. bower
+2. gulp
+3. karma with jasmine
+4. yarn
+
+
+1. bower.
+
+    - bower is automation tool, used to download the dependencies to develop web application.
+
+    - bower is based on NodeJS.
+
+bower files.
+
+     - we have two bower components / files.
+
+1. bower.json
+
+2. .bowerrc
+
+
+bower.json
+-
+        - this component used to indicate the required resources to develop web application.
+Ex.
+         {
+            "name":"nareshit",
+            "dependencies":{
+                "angular":"latest",
+                "bootstrap":"latest"
+            }
+         }
+
+
+.bowerrc
+-
+    - used to locate the "path to resources" downloading by using bower.
+
+{
+    "directory":"bower_components"
+}
+
+Executing / installing the bower.
+
+>bower install
+
+[Note. when ever we install bower, automatically "angular & bootstrap" will downloads to "bower_components" folder]
+
+
+
+Ex.
+        ************************
+    bowerdemo
+        bower.json
+        .bowerrc
+        ************************
+
+path given by the bower.
+
+angular:
+
+        bower_components --> angular ---> angular.min.js
+
+bootstrap:
+
+        bower_components --> bootstrap --> dist --> css ---> bootstrap.min.css
+
+
+jquery:
+        bower_components ---> jquery ---> dist ---> jquery.min.js
+
+[Note: bootstrap framework depends on jquery library , so jquery automatically download by bower]
+
+index.html
+-
+<!DOCTYPE html>
+<html>
+
+        //Logic Goes Here
+
+    <script src="bower_components/angular/angular.min.js"></script>
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css"></link>
+    <script src="bower_components/jquery/dist/jquery.min.js"></script>
+</html>
+
+
+list of dependencies
+-
+> bower list
+
+uninstall bower components
+-
+>bower uninstall bootstrap,angular --save
+
+
+install the bower dependencies dynamically
+-
+
+> bower install angular --save
+
+
+
