@@ -1,0 +1,102 @@
+Automation Tools.
+    - In general we will develop UI Applications by using Automation Tools.
+
+    1.bower
+    2.Gulp
+    3.Karma with Jasmine
+
+bower
+-
+
+    -  Bower is the automation tool UI application development.
+    -  Bower used to download the required dependencies.
+    -  Bower given by the NODE JS.
+
+bower files
+-
+
+1. bower.json
+
+2. .bowerrc
+
+
+bower.json
+-
+
+    - used to mention the required resources to develop web application.
+
+Ex.
+
+{
+        "name":"angular developer",
+        "dependencies":{
+            "angular":"latest",
+            "bootstrap":"latest"
+        }
+}
+
+
+.bowerrc
+-
+    - used to locate the path to the resources downloading by using bower.
+{
+    "directory":"bower_components"
+}
+
+
+> bower install
+    - used to install the required dependencies.
+
+> bower list
+    - used to show the list of softwares (dependencies) in web application.
+
+> bower install bootstrap --save
+     - used to download the required dependencies dynamically.
+
+> bower uninstall bootstrap --save
+
+
+
+
+Gulp.
+
+    Gulp is the automation tool used in production environment.
+    Gulp is based on NodeJs.
+
+Advantages of Gulp:
+    1. Delete the comments.
+    2. Disable the log.
+    3. Concat the files.
+    4. minify the files.(compress)
+    5. Reuse the network calls.
+    6. warm up the servers.
+    7. Automatic browser sync.
+
+Modules in Gulp:
+
+    1. gulp-minify-css
+        - used to minify the css files.
+
+
+    2. gulp-minify-html
+        - used to minify the html files.
+
+    3. gulp-uglify
+        - used to minify the js files.
+
+
+    4. gulp-concat
+           - used to concat the files.
+
+    5. browser-sync
+            - it will reload the browsers automatically.
+
+    6.gulp-watch
+            - it will watches the changes in front end application development.
+
+
+- in general we will download the modules by using "package.json" file.
+
+installation of gulp:
+
+            > npm install -g gulp
