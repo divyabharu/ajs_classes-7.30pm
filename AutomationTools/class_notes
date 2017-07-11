@@ -101,4 +101,166 @@ install the bower dependencies dynamically
 > bower install angular --save
 
 
+Gulp.
+-
+    Gulp is the production tool in UI Technologies.
+
+    Gulp on Node Platform.
+
+
+Installation Of Gulp:
+-
+> npm install -g gulp.
+
+
+Advantages Of Gulp:
+-
+
+1. Deletes the Duplicate Code.
+
+2. Concat the Files
+
+3. Disables the Log
+
+4. Minifies the JavaScript
+
+5. Minifies the HTML
+
+6. Minifies the CSS
+
+7. Deletes the Comments
+
+8. warmups the server
+
+8. reloading the browsers
+
+9. watches the front end changes
+
+
+Modules in Gulp:
+
+
+1. gulp-uglify
+    - this module used to minify the javascript.
+
+2. gulp-concat
+    - this module used to concat the files.
+
+3. gulp-minify-html
+    - this module used to minify the html files.
+
+4. gulp-minify-css
+     - this module used o minify the css files.
+
+5. gulp-browsersync
+        - this module used to sync the frontend changes with browser.
+
+6. gulp-open
+        - this module used to launch the browser.
+
+
+- in genaral we will download modules by using "package.json" file.
+
+package.json
+-
+{
+    "name":"nareshit",
+    "version":"1.0.0",
+    "description":"test project on gulp",
+    "devDependencies":{
+            "gulp":"latest",
+            "gulp-concat":"latest",
+            "gulp-uglify":"latest",
+            "gulp-minify-html":"latest",
+            "gulp-minify-css":"latest"
+    }
+}
+
+
+> npm install
+    when ever we install "package.json" automatically modules will be downloads the "node_modules" folder.
+
+
+Ex.
+
+Gulpfile.js
+-
+var gulp = require("gulp");
+var concat = require("gulp-concat");
+var htmlMinify = require("gulp-minify-html");
+var cssMinify = require("gulp-minify-css");
+var uglify = require("gulp-uglify");
+
+
+gulp.task("task_one" , function(){
+    gulp.src("./devEnv/html/*.html")
+        .pipe(concat("final.min.html"))
+        .pipe(htmlMinify())
+        .pipe(gulp.dest("./prodEnv/html"));
+});
+
+
+gulp.task("task_two" , function(){
+    gulp.src("./devEnv/css/*.css")
+        .pipe(concat("final.min.css"))
+        .pipe(cssMinify())
+        .pipe(gulp.dest("./prodEnv/css"));
+});
+
+
+gulp.task("task_three" , function(){
+    gulp.src("./devEnv/js/*.js")
+        .pipe(concat("final.min.js"))
+        .pipe(uglify())
+        .pipe(gulp.dest("./prodEnv/js"));
+});
+
+
+gulp.task("default",["task_one","task_two","task_three"], function(){
+    gulp.watch("./devEnv/html/*.html",function(){
+        gulp.run("task_one");
+    });
+
+     gulp.watch("./devEnv/css/*.css",function(){
+            gulp.run("task_two");
+     });
+
+
+      gulp.watch("./devEnv/js/*.js",function(){
+             gulp.run("task_three");
+      });
+});
+
+
+Executing the tasks
+-
+>gulp
+    - above command used to execute the default task
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
