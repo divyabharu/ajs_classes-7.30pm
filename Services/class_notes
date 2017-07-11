@@ -98,3 +98,95 @@ factoryExample
 
 creating the custom service by using service()
 -
+Ex.
+    app.service("my_service",my_service);
+    function my_service(){
+        this.fun_one = function(){
+            return "For Controller One...";
+        }
+        this.fun_two = function(){
+            return "For Controller Two...";
+        }
+    }
+
+    app.controller("ctrl_one",ctrl_one);
+    function ctrl_one($scope,my_service){
+        $scope.var_one = my_service.fun_one();
+    }
+
+
+    app.controller("ctrl_two",ctrl_two);
+    function ctrl_two($scope,my_service){
+        $scope.var_two = my_service.fun_two();
+    }
+
+    [Note : service() depending on "user defined functions" to provide the "services" to "controllers"]
+
+
+Creating the Custom Service by using provider()
+-----------------------------------------------
+
+app.config(config);
+function config(my_serviceProvider){
+    my_serviceProvider.db_password="root_two";
+}
+
+app.provider("my_service",my_service);
+function my_service(){
+    this.db_password="root_one";
+    this.$get = function(){
+        return this.db_password;
+    }
+}
+
+- provider depending on "$get" function to provide the services to the controllers.
+
+- "$get" have the capability to handle the config phase changes.
+
+- by using provider we can change the properties without effecting the "front end application".
+
+
+
+
+Creating the Custom Service by using value()
+--------------------------------------------
+Ex.
+    app.value("my_service","First_value");
+    app.value("my_service","Second_value");
+
+    - we can create custom service in the form of "key&value" pairs
+    - value() will take the latest value of the service (overriding will happen)
+
+
+
+Creating the Custom Service by using constant()
+-----------------------------------------------
+Ex.
+    app.constant("my_service","First_value");
+    app.constant("my_service","Second_value");
+
+    - we can create custom service in the form of "key&value" pairs
+    - constant() will take the initilization value of the service (overriding won't happen)
+
+
+
+
+Predefined Services
+-
+    - The Services Provided by the framework called as Predefined Services.
+
+
+1.$http
+2.$q
+3.$timeout
+4.$interval
+5.$location
+
+
+$http.
+
+    - this predefined services used to interact with the servers by using http protocol.
+
+
+
+
