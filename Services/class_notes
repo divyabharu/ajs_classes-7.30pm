@@ -187,6 +187,44 @@ $http.
 
     - this predefined services used to interact with the servers by using http protocol.
 
+my_service.js
+-
+app.service("my_service",my_service);
+function my_service($http){
+    this.getData = function(){
+        return $http.get("https://www.w3schools.com/angular/customers.php").then(function(posRes){
+            return posRes;
+        },function(errRes){
+            return errRes;
+        });
+    }
+}
+
+
+ctrl.js
+-
+app.controller("ctrl",ctrl);
+function ctrl($scope,my_service){
+    my_service.getData().then(function(res){
+        $scope.result = res;
+    });
+}
+
+
+index.html
+-
+<h1>{{result}}</h1>
+
+
+Ex_2.
+
+    http post example
+    URL : http://test-routes.herokuapp.com/test/uppercase
+
+
+
+
+
 
 
 
