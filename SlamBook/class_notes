@@ -1,0 +1,55 @@
+Step 1.
+    Create the SinglePageApplications with the Following Directory Structure.
+---------------
+SlamBook
+    bower.json
+    .bowerrc
+
+    templates
+        login.html
+        register.html
+        slam.html
+
+    controllers
+        loginController.js
+        registerController.js
+        slamController.js
+
+    app.js
+    config.js
+------------------------------------
+
+
+
+
+Step 2.
+    Create the Service (loginService)
+
+---------------
+services
+    loginService.js
+---------------
+function loginService($http) {
+    this.authenicate = function (login_details) {
+         return $http.post("/SlamBook/login/login",login_details)
+                     .then(function (posRes) {
+             return posRes;
+         },function (errRes) {
+           return errRes;
+       });
+    };
+}
+
+
+Step 3.
+    Design the DataBase for MiniProject(SlamBook) by using MongoDB.
+
+    > use slambook;
+        switched to db slambook
+    > db.createCollection("login_details");
+        { "ok" : 1 }
+    > db.login_details.insert({'uname':'....',
+                               'upwd':'....',
+                               'email':'......',
+                               'mobile':'.....'});
+        WriteResult({ "nInserted" : 1 })

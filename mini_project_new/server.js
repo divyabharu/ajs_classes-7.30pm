@@ -5,11 +5,14 @@ var jwt = require("jwt-simple");
 var bodyparser = require("body-parser");
 var fs = require("fs");
 var app = express();
-app.use(express.static(__dirname+"/../mini_project"));
+app.use(express.static(__dirname+"/../mini_project_new"));
 app.use(bodyparser.json());
+
+
 app.get("/",function (req,res) {
-   res.redirect("/index.html");
+    res.redirect("/index.html");
 });
+
 var mongoClient = mongodb.MongoClient;
 var l_db;
 var tokens=[];

@@ -1,0 +1,1 @@
+var app = angular.module("slam_login",["ui.router","ngStorage","socialLogin"]);
