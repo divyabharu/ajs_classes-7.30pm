@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en" ng-app>
+
+    <h1 ng-repeat="x in [10,20,30,40,50]">
+        {{x}}....{{$index}}....{{$first}}...{{$last}}...{{$middle}}...{{$even}}...{{$odd}}
+    </h1>
+
+    <!--
+        $index -  used to return the indexes of an elements from an array
+
+        $first - it will return first index as true
+
+        $last - it will return last index as true
+
+        ***$middle - it will return middle indexes of an array as true
+
+        $even - it will return even positions of an array as true
+
+        $odd - it will return odd positions of an array as true
+    -->
+
+    <script src="bower_components/angular/angular.min.js"></script>
+</html>

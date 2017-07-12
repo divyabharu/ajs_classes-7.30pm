@@ -1,0 +1,46 @@
+Directives.
+    - Directives in angularjs enhances the HTML Capabilities.
+
+    - we have two types of directives.
+
+        1.predefined directives
+        2.custom directives
+
+
+predefined directives:
+
+    - the directives given  by the framework called as predefined directives.
+
+1. ng-app
+
+    - angular framework starts the execution from ng-app directive.
+
+    - ng-app directive takes the logical name of web application.
+
+    - logical name of web application optional for "static web applications"
+
+    - logical name of web application is mandatory for "dynamic web applications"
+
+    - we can have only one ng-app directive per web application.
+
+Manual Bootstrap:
+    - executing the angular application forcefully with out "ng-app" called as Manual Bootstrap.
+
+
+2. ng-repeat
+
+    - this directive used to iterate the list of elements from an array
+
+Syntax.
+
+    ng-repeat = "iteration_variable in array"
+        {{iteration_variable}}
+
+
+
+
+
+
+
+
+
