@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <script>
+        var obj = {
+                        "records":[
+                                {"Name":"Alfreds Futterkiste","City":"Berlin","Country":"Germany"},
+                                {"Name":"Ana Trujillo Emparedados y helados","City":"México D.F.","Country":"Mexico"},
+                                {"Name":"Antonio Moreno Taquería","City":"México D.F.","Country":"Mexico"},
+                                {"Name":"Around the Horn","City":"London","Country":"UK"},
+                                {"Name":"B's Beverages","City":"London","Country":"UK"},
+                                {"Name":"Berglunds snabbköp","City":"Luleå","Country":"Sweden"},
+                                {"Name":"Blauer See Delikatessen","City":"Mannheim","Country":"Germany"},
+                                {"Name":"Blondel père et fils","City":"Strasbourg","Country":"France"},
+                                {"Name":"Bólido Comidas preparadas","City":"Madrid","Country":"Spain"},
+                                {"Name":"Bon app'","City":"Marseille","Country":"France"},
+                                {"Name":"Bottom-Dollar Marketse","City":"Tsawassen","Country":"Canada"},
+                                {"Name":"Cactus Comidas para llevar","City":"Buenos Aires","Country":"Argentina"},
+                                {"Name":"Centro comercial Moctezuma","City":"México D.F.","Country":"Mexico"},
+                                {"Name":"Chop-suey Chinese","City":"Bern","Country":"Switzerland"},
+                                {"Name":"Comércio Mineiro","City":"São Paulo","Country":"Brazil"}
+                        ]
+        };
+        var __name;
+        var __city;
+        var __country;
+        var result="";
+        for(var i = 0;i<obj.records.length;i++){
+            __name=obj.records[i].Name;
+            __city=obj.records[i].City;
+            __country=obj.records[i].Country;
+            result=result+__name+"...."+__city+"...."+__country+"/n";
+
+
+        }
+
+        document.write("<h1>"+result+"</h1>");
+
+    </script>
+
+
+</html>

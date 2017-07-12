@@ -1,0 +1,138 @@
+JSON:
+
+    - JSON Stands for Java Script Object Notation.
+
+    - We can transfer the data over the network by using following formats
+
+            1. XML
+
+            2. JSON
+
+    -  XML Stands for Extensible markup language.
+
+    - In general we will parse/read the data from XML files by using parsers.
+
+        Ex.
+            DOM parser
+            SAX Parser
+            XML Pull Parser
+
+    - JSON is the ligth weigth compared to XML.
+
+    - we can easily parse the JSON Files.
+
+
+  Standards in JSON:
+  -----------------
+
+  1. Objects - { }
+
+    - we have two types of objects.
+
+        1. Named Objects
+        2. Annonymus Objects
+
+     Ex.
+
+        //Annonymus Object
+        {
+            //Data
+        }
+
+
+
+        //Named Object
+        "my_obj":{
+            //Data
+        }
+
+     2. Arrays - [ ]
+
+            - we have two types of arrays
+
+            1. Named Arrays
+            2. Annonymus Arrays
+
+
+        Ex.
+            //Named Array
+            my_array = [ ];
+
+            //Annonymus Array
+            [ ]
+
+     3. data - "key&value"
+
+            - in genaral we will store the data in the form of a "key&value" pairs
+
+            - key&value separated with the help of ":"
+
+            - each "key&value" pair separated by using ","
+
+           Ex.
+
+                "sub_one":"AngularJS",
+                "sub_two":"NodeJS",
+                "sub_three":"MongoDB"
+
+
+    Ex_1.
+
+                - create annonymus json object
+
+                - create "emp" array inside annonymus object
+
+                - create the three annonymus objects inside emp array
+
+                - store the data into annonymus objects
+
+                    -----------------------
+                {
+                    "emp":[
+                            {"e_no":111,"e_name":"emp_one","e_sal":50000},
+                            {"e_no":222,"e_name":"emp_two","e_sal":150000},
+                            {"e_no":333,"e_name":"emp_three","e_sal":250000}
+                    ]
+                }
+                    ----------------------
+
+  Ex_2.
+
+         - create annonumus json object
+
+         - create "products" object in annonymus object
+
+         - store the data into products object "(one key&valu pair)"
+
+         - create the "list" array in "products object"
+
+         - create three annonymus objects in "list" array.
+
+         {
+            "products":{
+                "name":"nareshit",
+                "list":[
+                            {"p_id":111,"p_name":"laptop","p_cost":50000},
+                            {"p_id":222,"p_name":"smart tv","p_cost":150000},
+                            {"p_id":333,"p_name":"mobile","p_cost":250000}
+                 ]
+            }
+         }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
