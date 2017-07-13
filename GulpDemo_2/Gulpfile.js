@@ -24,3 +24,8 @@ gulp.task("concat_js_minify",function () {
         .pipe(uglify())
         .pipe(gulp.dest("./prodEnvironment/scripts"));
 });
+
+
+gulp.task("default",["concat_css_minify","concat_html_minify","concat_js_minify"],function () {
+
+});
