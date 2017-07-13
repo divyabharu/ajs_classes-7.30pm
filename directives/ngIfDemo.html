@@ -1,0 +1,65 @@
+<!--
+ng-if:
+    - this directive used to write the conditions.
+    Syntax.
+        ng-if="true" / "false"
+-->
+
+<!--
+<!DOCTYPE html>
+<html ng-app>
+    <label>Uname.</label>&emsp;&emsp;&emsp;&emsp;
+    <input type="text" ng-model="uname">
+    <br><br>
+    <span ng-if="uname!=null && uname!=''">
+        <label>Upwd.</label>&emsp;&emsp;&emsp;&emsp;
+        <input type="password" ng-model="upwd">
+    </span>
+    <script src="bower_components/angular/angular.min.js"></script>
+</html>-->
+
+<!DOCTYPE html>
+<html ng-app="app" ng-controller="ctrl">
+
+    <h1 style="color: gray" ng-repeat="x in data">
+        <!--<span ng-if="x!='Hello_1' && x!='Hello_5'">
+            {{x}}
+        </span>-->
+        <span ng-if="$middle">
+            <span ng-if="x=='Hello_3'">
+                {{x}}
+            </span>
+        </span>
+    </h1>
+    <script src="bower_components/angular/angular.min.js"></script>
+    <script>
+        var app = angular.module("app",[]);
+        app.controller("ctrl",ctrl);
+        function ctrl($scope) {
+            $scope.data = ["Hello_1",
+                            "Hello_2",
+                            "Hello_3",
+                            "Hello_4",
+                            "Hello_5"];
+        }
+    </script>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
