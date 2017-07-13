@@ -1,0 +1,162 @@
+Repository.
+-----------
+	- Repository used to collabrate the work flow.
+	- GitHub is the Opne Source Repository Maintained by google.
+	- "Git" is the Interface tool used to interact with the GitHub.
+
+Installation Of Git.
+--------------------
+website : https://git-scm.com/download/win
+file name : Git-2.13.2-64-bit.exe
+
+GitHub Operations
+-----------------
+1. Create the repository locally.
+
+2. Add the user credentials to repository.
+
+3. create the files to the repository.
+
+4. commit the files to the repository
+
+5. create the branch
+
+6. merge the branches
+
+7. integration of github to the IDE'S
+	1. Webstrom
+	2. Ecilipse
+	3. Visual Studio , VisualStudioCode
+
+8. checkout the code from cloud repository.
+
+9. push the code to the cloud repository
+
+10.pull the code from cloud repository.
+
+
+
+------------------------------------------------
+1. Create the repository locally.
+	
+	- create the folder
+		Ex.
+			githubdemo
+
+	- open the "gitbash here" terminal on rigth click on folder
+
+	- execute the following command
+
+	> git init
+
+	[Note: automatically "githubdemo" initlized as a local repository]
+
+
+2. Add the user credentials to repository.
+
+> git config --global user.name "NareshIT"
+> git config --global user.email "hr@nareshit.in" 
+
+
+3. create the files to the repository.
+
+>touch sample.js
+	[Automatically "sample.js" file created to repository]
+
+
+4. commit the files to the repository
+
+> git status
+
+> git add sample.js
+
+> git commit
+
+> press "i"
+
+> type "initial commit"
+
+> press "ESC"
+
+> type ":wq"
+
+> press "enter"
+
+
+From 2nd Commit onwards folow the below commands to perform commit operation.
+
+> git add sample.js
+> git commit -m "Variables Created !"
+
+
+5.create the branch
+	>git branch AngularJS_10AM
+	>git checkout AngularJS_10AM
+
+
+6.Merge the Branch
+	> git checkout master
+	> git merge AngularJS_10AM
+
+
+7.integration of github to the IDE'S
+
+Download and install NodeJS
+----------------------------
+Website : https://nodejs.org/en/download/
+file name : node-v6.11.1-x64.msi
+
+we can check the node version by using followong command:
+> node -v
+O/P: v6.11.1
+
+
+Download and Install IDE(WebStrom)
+----------------------------------
+website : https://www.jetbrains.com/webstorm/download/#section=windows
+file name : WebStorm-2017.1.4.exe
+
+
+Checkout the code from cloud repository
+---------------------------------------
+Git Url : https://github.com/ajsnaresh/AJS_Classes.git
+
+- Run the Webstrom
+
+- checkout code from repository
+
+- github
+
+- click the button "create API token"
+
+- Enter the github login and password.
+
+- click the "login" button
+
+- enter the GitRepository URL and location to checkout code
+
+- clone
+
+- press "yes"
+
+- by default we are in "master" branch.
+
+- checkout the "angular2" branch
+
+- we can see the project explorer by using "Alt+1"
+
+
+
+9. push the code to the cloud repository.
+
+
+
+
+
+
+
+
+
+
+
+
