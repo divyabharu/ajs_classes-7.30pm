@@ -1,0 +1,172 @@
+1. What is AngularJS??
+
+2. Advantages Of AngularJS ??
+
+3. Disadvantages Of AngularJS ??
+
+4. key features of AngularJS ??
+
+5. Comparision Of AngularJS - Angular2
+
+                  AngularJS - reactJS
+
+                  AngularJS - NodeJS
+
+                  AngularJS - d3js
+
+
+AngularJS.
+
+        - AngularJS is a JavaScript Client Side Framework.
+
+        - AngularJS Follows the MVC Design Pattern
+
+                        M - Model
+
+                        Ex.
+                            javascript variables called as model in angularjs.
+
+                             var i = 100;
+                             var data ="data from mongodb soon...."
+                             where "i" & "data" called as model
+
+
+                        V - View
+                             Ex.
+                                we can use HTML , HTML5, JADE as the View in AngularJS.
+
+
+                        C - Controller
+                                Ex.
+                                    javascript functions called as controllers in angularjs.
+
+                                    function ctrl(){
+                                        var result = "data from database soon....";
+                                    }
+
+
+
+Advantages Of AngularJS
+-
+
+
+1. AngularJS "Supports/Provides" Predefined Modules.
+
+   1.ngAnimate
+    - it is used to develop the Animations in angular applications.
+
+   2.ngStorage
+    - it is used to work with the storages.
+    - we have two types of storages
+
+        1.localStorage
+        2.sessionStorage
+
+    3.ngMessages
+        - it is used to handle the client side validations.
+
+    4.ngRoute
+        - it is used to implement the Routing in Single Page Application.
+        - this module is the deprecated module.
+        - now a days no body using the "ngRoute" module in Single Page Application Development.
+
+    5.ui.router
+        - it is used to implement the Routing in Single Page Application.
+        - this module is the latest module provided by the 3rd party vendors.
+        - now a days all most all the projects using "ui.router" module in single page application development.
+
+
+    Ex.
+
+          Develop the Angular Application with following features
+
+            1. SPA - ui.router
+            2. Validations
+            3. Storages
+            4. Animations
+
+
+          ------------------
+          DemoApp
+
+             bower.json
+             .bowerrc
+             package.json
+             Gulpfile.js
+
+             index.html
+
+          ---------------
+
+
+bower.json
+-
+{
+        "name":"nareshit",
+         "dependencies":{
+            "angular":"latest",
+            "ngstorage":"latest
+         }
+}
+
+.bowerrc
+-
+{
+    "directory":"bower_components"
+}
+
+>bower install
+
+angular path --> bower_components/angular/angular.min.js
+storages path --> bower_components / ngstorage / ngStorage.min.js
+
+index.html
+-
+<!DOCTYPE html>
+<html ng-app="app">
+
+    //We can work with Storages.
+
+    <script src="bower_components/angular/angular.min.js"></script>
+    <script src="bower_components/ngstorage/ngStorage.min.js"></script>
+    <script>
+        var app = angular.module("app",["ngStorage"]);
+    </script>
+</html>
+
+2. Open Source Code
+
+    - As a Developer we can customize the Angular Framework accroding to application requirement.
+    - we can add / modify / update / delete the features of Angular Framework.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
