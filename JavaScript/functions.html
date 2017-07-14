@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+   <!-- <script>
+        function greet() {
+            document.write("Welcome to Functions !");
+        }
+
+        document.write(greet); //property calling
+                               //property calling returns the defination
+        greet(); //function calling
+                //return function output
+    </script>-->
+
+
+   <!-- <script>
+        function fun_one(arg1,arg2) {
+            return arg1+arg2;
+        }
+        function fun_two(){
+            return 10;
+        }
+        function fun_three(){
+            return 20;
+        }
+
+        var result = fun_one(fun_two(),fun_three());
+        document.write("<h1>"+result+"</h1>");
+    </script>-->
+
+
+   <!-- <script>
+        function fun_one(arg1,arg2) {
+            document.write(arg1()+arg2());
+        }
+
+        function fun_two() {
+            return 10;
+        }
+
+        function fun_three() {
+            return 20;
+        }
+
+        fun_one(fun_two,fun_three);
+
+    </script>-->
+
+    <script>
+        function fun_one() {
+            return fun_two;
+        }
+
+        function fun_two() {
+            return 100;
+        }
+
+       document.write("<h1>"+(fun_one())()+"</h1>");
+       /* var result = def();
+        document.write("<h1>"+result+"</h1>");
+       document.write("<h1>"+def+"</h1>");*/
+    </script>
+
+</html>

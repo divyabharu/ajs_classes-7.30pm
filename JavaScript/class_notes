@@ -1,0 +1,41 @@
+JavaScript.
+    - JavaScript is a interpreted language.
+    - JavaScript is a Scripting Language.
+    - JavaScript used to make the Dynamic Responsive Webpages.
+    - we can embed the JavaScript to Webpages.
+    - we can use the <script></script> tag to include the JavaScript to the Webpages.
+
+Variables:
+    - Variables in javascript used for store the data.
+
+    - we will use "var" keyword to declare the variable.
+
+Ex.
+
+    var i = 100;
+    var data = "Data from MongoDB Soon....";
+
+Functions:
+     - set of statements called as function.
+
+     - we can reuse the  business logic by using functions.
+
+     - we have two types of functions.
+
+        1. Anonymous Functions
+        2. Named Functions
+
+
+Syntax.
+
+        //create the function.
+        function function_name(){
+            //Business Logic
+        };
+
+
+        //call the function
+        function_name();
+
+
+
