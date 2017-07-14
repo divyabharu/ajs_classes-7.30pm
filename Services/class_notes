@@ -224,7 +224,66 @@ Ex_2.
 
 
 
+$q.
+-
+    - it is a predefined service in angularjs.
+    - this service used to make the asynchronus calles.
+    - this service used to eliminate the data redundency.
+
+ Ex.
+            //Making the Async Call
+            var deffered_one = $q.defer();
+            this.fun_one = function () {
+                return $http.get("http://demosoft.highgrowth.in/test/jsonexample.php")
+                                    .then(function (posRes) {
+                    deffered_one.resolve(posRes);
+                    return deffered_one.promise;
+                },function (errRes) {
+                    deffered_one.reject(errRes);
+                    return deffered_one.promise;
+                });
+            };
+
+             //Deleting the Duplicate Code
+             $q.all([my_service.fun_one(),my_service.fun_two()]).then(function (res) {
+                    $scope.var_one = res[0];
+                    $scope.var_two = res[1];
+             });
 
 
+3.$timeout
 
+        - this predefined service used to execute a "custom function" with a given time.
+
+Ex.
+
+    $timeout(fun_one,5000);
+
+    function fun_one(){
+        alert("Session Time Out !");
+    }
+
+    [Note : fun_one will execute after 5 sec]
+
+
+4. $interval
+
+        - this predefined used to execute a "custom function repeatedely" with a given interval of time
+
+Ex.
+        $interval(fun_two , 5000);
+
+        function fun_two(){
+            //Logic Goes Here
+        }
+
+        [Note : fun_two will execute repetedely for every 5 sec]
+
+
+5. $location.
+
+        - this predefined service used to find the absolute path of web application.
+
+Ex.
+        $scope.path = $location.absUrl();
 
