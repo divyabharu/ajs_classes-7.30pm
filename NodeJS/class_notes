@@ -1,0 +1,174 @@
+NodeJS.
+
+    - NodeJS is the Server Side Scripting language.
+    - By using NodeJS we can create http & tcp servers.
+    - in general we will prepare Node Applications by using javascript.
+    - node will support the modules to build server.
+
+modules in nodejs
+-----------------
+1. http
+    - by using this module we can create http server.
+
+2. mysql
+    - by using this module we can interact with the mysql database
+
+3. mongodb
+    - by using this module we can interact with the mongodb.
+
+4. fs
+    - "fs" stands for file system.
+    - by using this module we can interact with the flat files(text files), xml files , json files.....
+
+5. express
+    - by using this module we can develop the REST API.
+
+6. body-parser
+    - by using this module we can set the MIME Type.
+
+    Ex.
+
+        json
+        xml
+        text
+        --
+        --
+        --
+7. multer
+    - this module used to handle the file uploadings to server.
+
+
+ - in general we will download required modules by using "package.json" file.
+
+ - we can install the modules by using "npm install" command
+
+ - we can start the server by using "npm start" commnad.
+
+
+Example_1:
+     Launch Angular application by using node server.
+
+
+----------------------
+Basic_NodeEx
+    index.html
+    package.json
+    server.js
+----------------------
+
+
+package.json
+-
+{
+    "name":"nareshit",
+    "version":"1.0.0",
+    "description":"First Node Example !",
+    "dependencies":{
+        "express":"latest"
+    }
+}
+
+>npm install
+
+server.js
+-
+//import express module
+var express = require("express");
+
+//create the server
+var app = express();
+
+//Deploy the application
+app.use(express.static(__dirname+"/../Basic_NodeEx"));
+
+//Assign the Port No.
+app.listen(8080);
+console.log("Server Listening the Port No.8080");
+
+
+>npm start
+
+
+open the browser:
+
+http://localhost:8080
+
+
+
+Example_2:
+    interact with the "mysql database"
+
+---------------
+Node_MySQLEx
+    index.html
+    package.json
+    server.js
+---------------
+
+create the schema (database)
+>create schema demo_classes;
+
+switch the database
+>use demo_classes;
+
+create the table
+>create table emp(eno integer,ename varchar(20),eage integer)
+
+insert the data
+>insert into emp values(111,'emp_1',20);
+
+
+fetch the data
+-
+>select * from emp;
+
+
+
+
+server.js
+-
+
+var express = require("express");
+var mysql = require("mysql");
+
+//connection object.
+var connection = mysql.createConnection({
+    host:"localhost",
+    user : "root",
+    password:"root",
+    database : "demo_classes"
+});
+
+
+//connect to database.
+connection.connect();
+
+
+//create the get request
+app.get("/emp" , function(req,res){
+   connection.query("select * from emp", function(err,records,fields){
+        res.send(records);
+   });
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
