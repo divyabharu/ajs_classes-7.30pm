@@ -141,7 +141,67 @@ index.html
 
 
 
+3. As a Angular Developer we can directly work with the HTML DOM.
 
+    DOM Stands for Document Object Model.
+
+    Ex.
+        Copy the data from "one division" to "another division" by using HTML & JavaScript
+
+        <!DOCTYPE html>
+        <html>
+            <div id="div_one">
+                Hello
+            </div>
+            <div id="div_two"></div>
+            <script>
+                document.getElementById("div_two").innerHTML =
+                document.getElementById("div_one").value;
+            </script>
+        </html>
+
+        [Note : as a "HTML" & "JavaScript Developer" we must dependent on JavaScript to work on DOM ]
+
+
+   Ex.
+        copy the data from "one division" to "another division" by using AngularJS.
+
+
+    <!DOCTYPE html>
+    <html ng-app>
+         <div ng-model="div_one">Hello</div>
+         <div ng-bind="div_one"></div>
+        <script src="bower_components/angular/angular.min.js"></script>
+    </html>
+
+    [Note : we can work with the HTML DOM by using angular directives.]
+
+    [ - in above program framework starts the execution from "ng-app" directive
+
+      - "ng-model" directive creates the object in heap memory with the application data
+
+      - "ng-bind" directive binds the "model data" to the "view".
+    ]
+
+
+4. AngularJS Supports Two Way Data Binding.
+
+    Automatic Data Synchronization Between Model and View with the SuperVision Of Controller Called as
+
+    two way data binding.
+
+
+    In the above diagram we have following server calls.
+
+    1. http get request
+    2. http delete request
+    3. Async call (AJAX)
+
+    As a programming languages developer we must make above "all server calls" to meet application requirement.
+
+    As a angular/angular4 developer we can make only [ two server calls ] to meet application requirement.
+
+[Note : two way data binding reduces the burden on the server ]
 
 
 
