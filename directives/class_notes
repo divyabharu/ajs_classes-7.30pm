@@ -38,9 +38,67 @@ Syntax.
 
 
 
+4. ng-show
+    - ng-show directive will show / hide the HTML Elements from DOM Dynamically.
+    - ng-show won't works with the HTML DOM Directly.
+
+Syntax.
+
+        ng-show = "true" / "false"
+
+
+5. ng-hide
+
+       - it will show / hide the HTML Elements Based On Condition
+       - ng-hide won't works with the HTML DOM Directly
+
+
+Syntax.
+       ng-hide="true" / "false"
+        //true - hide
+        //false - show
 
 
 
 
+6. ng-init
+
+    - this directive used to inilize the variables in configuration phase.
+
+    - ng-init variables available in application scope.
+
+
+    Syntax.
+        ng-init = "db_user='root';
+                  "db_password='root'"
+
+
+    [Note : db_user & db_password available in application scope]
+
+
+7. ng-switch
+
+        - this directive used to write the switch cases in angular applications.
+
+
+Syntax.
+
+    <div ng-switch="expression">
+        <div ng-switch-when="value1">
+            //Code
+        </div>
+
+        <div ng-switch-when="value2">
+            //Code
+        </div>
+
+        <div ng-switch-when="value3">
+            //Code
+        </div>
+
+        <div ng-switch-default>
+           //Code
+        </div>
+    </div>
 
 
