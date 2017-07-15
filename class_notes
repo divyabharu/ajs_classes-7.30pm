@@ -224,6 +224,320 @@ gulp.task("task_one" , function(){
 
 
 
+Single Page Applications:
+
+    - Loading the Target web pages to Source webpage with out refreshing the whole web page
+      called as single page application.
+
+    - Loading the target web page to source web page in single page application called as
+      Routing
+
+    - in angularjs we can implement the routing by using following modules.
+
+        1. ngRoute
+        2. ui.router
+
+
+development of single page application by using ngRoute Module.
+
+
+Step 1.
+    download ngRoute module in visual studio IDE.
+
+Step 2.
+    add the ngRoute dependency.
+
+app.js
+-
+var app = angular.module("app",["ngRoute"]);
+
+step 3.
+    create the target templates
+
+--------
+Basic_ngRoute
+        templates
+            page_one.html
+            page_two.html
+--------
+page_one.html
+-
+<h1 style="color:red" ng-bind="var_one"></h1>
+
+page_two.html
+-
+<h1 style="color:green" ng-bind="var_two"></h1>
+
+step 4.
+     create the controllers
+----------------
+controllers
+     page_one.js
+     page_two.js
+----------------
+
+page_one.js
+-
+app.controller("page_one",page_one);
+function page_one($scope){
+    $scope.var_one = "MySQL Data Soon....";
+}
+
+page_two.js
+-
+app.controller("page_two",page_two);
+function page_two($scope){
+    $scope.var_two = "MongoDB Data Soon....";
+}
+
+
+
+config.js
+-
+app.config(config);
+function config($routeProvider){
+    $routeProvider.when("/page_one" , {
+        templateUrl:"templates/page_one.html",
+        controller : "page_one"
+    })
+    .when("/page_two" , {
+            templateUrl:"templates/page_two.html",
+            controller : "page_two"
+    })
+    .otherwise("/page_one" , {
+            templateUrl:"templates/page_one.html",
+            controller : "page_one"
+    });
+};
+
+
+Step 6.
+    create the source template.
+
+index.html
+-
+<a href="#page_one">Page_One</a>
+<a href="#page_two">Page_Two</a>
+<div ng-view></div>
+
+Passing the URL Parameters by using ngRoute Module
+--------------------------------------------------
+
+index.html
+-
+<a href="#page_one/111/emp_1/30">Page_One</a>
+
+
+config.js
+-
+
+$routeProvider.when("/page_one/:eid/:ename/:eage" , {
+    templateUrl:"templates/page_one.html",
+    controller : "page_one"
+});ca
+
+page_one.js
+-
+app.controller("page_one",page_one);
+function page_one($scope,$routeParams){
+    $routeParams.eid +"..."+$routeParams.ename+"...."+$routeParams.eage;
+};
+
+
+Single Page Applications by using ui.router Module:
+-
+    - ui.router module is the 3rd party module
+    - by using ui.router module we can implement Nested Routing
+    - by using ui.router module we can implement Named Views.
+    - by using ui.router module we can pass json as the URL Parameter.
+
+
+Steps to create the Basic Single Page Application by using "ui.router" module.
+
+step 1.
+    download the ui.router module.
+
+step 2.
+    add the ui.router dependency
+
+step 3.
+    create the templates
+
+step 4.
+    create the controllers
+
+step 5.
+    do the mapping in spa
+
+config.js
+-
+app.config(config);
+function config($stateProvider,$urlRouterProvider){
+    $stateProvider.state("page_one" , {
+        url:"/page_one",
+        templateUrl:"templates/page_one.html",
+        controller:"page_one"
+    })
+
+    .state("page_two" , {
+            url:"/page_two",
+            templateUrl:"templates/page_two.html",
+            controller:"page_two"
+    });
+
+    $urlRouterProvider.otherwise("/page_one");
+}
+
+Step 6.
+    create the source template.
+
+index.html
+-
+<a ui-sref="page_one">page_one</a>
+<a ui-sref="page_two">page_two</a>
+<div ui-view></div>
+
+
+passing json object as URL Parameter by using ui.router module
+--------------------------------------------------------------
+
+index.html
+-
+<a ui-sref="page_one({'p_id':1,'p_name':'laptop','p_cost':50000})">Page_One</a>
+
+config.js
+-
+$stateProvider.state("page_one",{
+    url:"/page_one/:p_id/:p_name/:p_cost",
+    templateUrl:"templates/page_one.html",
+    controller:"page_one"
+});
+
+page_one.js
+-
+app.controller("page_one",page_one);
+function page_one($scope,$stateParams){
+    $stateParams.p_id+"..."+$stateParams.p_name+"..."+$stateParams.p_cost
+}
+
+Nested routing by using ui.router module
+----------------------------------------
+
+----------------
+templates
+    page_one.html
+    page_two.html
+    child_one.html
+    child_two.html
+----------------
+page_one.html
+-
+<h1 style="color:red">{{var_one}}</h1>
+<a ui-sref=".child_one">Child_One</a>
+<div ui-view></div>
+
+
+page_two.html
+-
+<h1 style="color:green">{{var_two}}</h1>
+
+
+child_one.html
+-
+<h1>{{var_three}}</h1>
+
+
+child_two.html
+-
+<h1>{{var_four}}</h1>
+
+
+---------------
+controllers
+    page_one.js
+    page_two.js
+    child_one.js
+    child_two.js
+---------------
+
+
+config.js
+-
+$stateProvider.state("page_one.child_one",{
+    url:"/child_one",
+    templateUrl:"templates/child_one.html",
+    controller:"child_one"
+});
+
+
+NamedViews in ui.router module
+------------------------------
+
+page_one.html
+-
+<h1 style="color:red" ng-bind="var_one"></h1>
+<div ui-view="calc"></div>
+<div ui-view="summary"></div>
+
+
+config.js
+-
+$stateProvider.state("page_one",{
+    url:"/page_one",
+    views:{
+        '':{
+            templateUrl:"templates/page_one.html",
+            controller:"page_one"
+        },
+        'calc@page_one':{
+            templateUrl:"templates/calc.html",
+            controller:"calc"
+        },
+        'summary@page_one':{
+            templateUrl:"templates/summary.html",
+            controller:"summary"
+        }
+    }
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
