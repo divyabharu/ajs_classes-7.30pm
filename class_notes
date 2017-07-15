@@ -1,263 +1,160 @@
-1. Introduction.
+1. Introduction
 
-    1.What is AngularJS ??
-    2. Why AngularJS ??
+	What is AngularJS ??
+	Why AngularJS ??
 
 
-2.Automation Tool.
-
-    1. Bower
-
-    2. WebStrom , Visual Studio, Ecilipse
-
+2. Environmental Setup
 
 3. Angular Applications
-
-    1. Static Angular Application
-    2. Dynamic Angular Application
-
+	1. Static Angular Application
+	2. Dynamic Angular Application
 
 
 4. Directives
 
-    1. ng-app
-
-    2. ng-controller
-
-    3. ng-repeat
-
-    4. ng-click
-
-    5. ng- submit
-
-
 5. Services
 
-    1. Predefined Services
+6. Single Page Applications.
 
-    2. Custom Services
+	1.ngRoute
 
-
-6. Single page Applications
-
-    Routing - ngRoute
-
-              ui.router
+	2.ui.router
 
 
-7. NodeJS
-
-    AngularJS -- NodeJS -- MySQL
-
-    AngularJS  -- NodeJS -- MongoDB
+7. NodeJS Integration.
 
 
+AngularJS.
 
-AngularJS ??
+	- AngularJS is a Clinet Side JavaScript Framework.
 
-    - AngularJS is the Client Side JavaScript Framework.
+	- AngularJS Follows the MVC Design Pattern.
 
-    - AngularJS Follows the MVC Design Pattern
+		M - Model
 
-        M - Model
+		V - View
 
-        V - View
+		C - Controller
 
-        C - Controller
+	- By using AngularJS we can reduce the burden on the server by implementing
+	  business components at client side.
 
+	- we are missing the secuirity by angularjs.
 
-    - AngularJS have a so many predefined modules , as a Angular Developer we can use
-      the Predefined Modules.
+	- we can provide the communication between angularjs to programming languages like
+      java, dotnet,php....
 
-      1. ngAnimate.
-            - used to develop the Animations in Angular Applications.
+    - in genaral we will develop the secured code by using programming languages.
 
-      2. ngMessages.
-            - used to perform the Client Side Form Validations.
+    	Ex.
 
+    		payment gateways
+    		paypal services
+    		DB Configurations
+    		user details
 
-      3. ngStorage.
-            - used to perform the Operations on Storages.
-
-            - we have Two Types Of Storages.
-
-                    1. local Storage
-
-                    2. session Storage
+    - we can implement the "unsecured region" by using angularjs , angular4,reactsjs....
 
 
-      4. ngRoute
-
-            - used to implement the Routing in Single Page Applications.
-
-            - ngRoute Module is the Deprecated Module.
+    - angularjs supports the "two way data binding"
+    	Automatic Data syncronization between "model and view" with the supervision of controller called as Two way data binding.
 
 
-      5. ui.router
+    - in the above diagram we have the following server calls.
 
-            - used to implement the Routing in Single Page Applications.
+    	1. http get request
 
-            - ui.router module is the 3rd party Module.
+    	2. http delete request
 
-            - now a days all most all the projects using ui.router module
+    	3. async call
 
-              in SPA
+    - as a programming languages developer we must make above three server calls to meet application requirement.
 
+    - as a angularjs / angular4 developer we can only two server calls to meet application requirement because of two way data binding.
 
+    - two way data binding reduces the burden on the server.
 
+    - by using angularjs we can work with the HTML DOM directly.
 
-index.html
--
-
-<!DOCTYPE html>
-<html ng-app="app">
-
-    //Our Application will Supports the 1. Animations 2. Validations 3. Storages 4. Routing
-
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.0/angular.min.js"></script>
-    <script>
-        var app = angular.module("app",["ngAnimate","ui.router","ngMessages","ngStorage"]);
-    </script>
-</html>
+    - DOM Stands for Document Object Model
 
 
-
-bower.
-
-    - bower is a automation tool , used to download the required resources
-
-      to develop web application.
-
-    - bower is the automation tool given by the NodeJS.
-
-bower components.
--
-
-1. bower.json
-    - used to maintain the required dependencies to develop web application.
-
-{
-
-    "name":"nareshit",
-
-    "dependencies":{
-
-        "angular":"~1.6.0",
-        "bootstrap":"~3.3.6"
-    }
-
-}
-
-
-2. .bowerrc
-
-    - used to locate the path to "resources" downloading by using bower.
-
-{
-    "directory":"bower_components"
-}
-
+bower:
+    - bower is a automation tool used to download the dependencies to develop web application.
+    - bower based on node platform
 
 installation of bower.
+---------------------
+> npm install -g bower
 
-> bower install
 
+bower components
+----------------
+1.bower.json
+2. .bowerrc
 
 
-Angular Applications.
 
-    - we can develop two types of Angular Applications.
+Angular Applications:
 
-    1. Static Angular Application
+1. static angular application
+2. dynamic angular application
 
-    2. Dynamic Angular Application.
 
+static angular application:
 
-Static Angular Application.
+    - if view won't interacts with the controller for dynamic data then such type of application
+      called as static angular application.
 
-    - If View won't Interacts with the Controller for Dynamic Data then such type
-      of Angular Application Called as Static Angular Application.
 
 
+steps to create the static angular application:
+-----------------------------------------------
 
-Steps to Create Static Angular Application.
+step 1:
+    download angular by using bower
 
-Step 1.
-    Download angular by using bower.
 
+step 2:
+     create the view
 
-Step 2.
-    Create the View.
 
 
-Steps tp Create the Dynamic Angular Application.
--
+dynamic angular application
+---------------------------
+    - if view interacts with controller for dynamic data then such type of angular application
+      called as dynamic angular application.
 
-1. Load the Angular Framework
 
-2. Assign the Logical Name to Web Application
+steps to create the dynamic angular applications:
+-------------------------------------------------
 
-3. Declare the Controller
+step 1:
+    download angular by using bower
 
-4. Instantiate the App Module
+step 2:
+    load angular framework
 
-5. Implement the Controller
+step 3:
+    declare the logical name for the web application
+    ng-app="app"
 
+step 4:
+     declare the controller
 
+     <div ng-controller="ctrl">
 
+     </div>
 
 
+step 5.
+     add the dependencies to angular application.
 
+    var app = angular.module("app",[]);
 
 
+Step 6.
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    implement the controller.
 
