@@ -158,3 +158,72 @@ Step 6.
 
     implement the controller.
 
+
+Gulp:
+    - Gulp is the production tool for UI Applications.
+    - Gulp Based on NodeJS Platform.
+    - By using gulp we can concat the files.
+    - by using gulp we can minify the files
+    - by using gulp we can delete the duplicate code.
+    - by using gulp we can reduce file size.
+    - we can use the modules provided by the gulp to prepare the build
+
+1. gulp-concat
+    - used to concat the files.
+
+2. gulp-minify-html
+    - used to minify the html
+
+3. gulp-minify-css
+     - used to minify css
+
+4. gulp-uglify
+     - used to minify the js files.
+
+
+- we can use package.json file to download the modules(gulp modules).
+
+- we can run the package.json file by using following command.
+
+>npm install
+
+Ex.
+
+----------------------
+GulpDemo
+    devEnv
+        html
+            index_one.html
+            index_two.html
+
+        css
+            style_one.css
+            style_two.css
+
+        js
+             sample_one.js
+             sample_two.js
+-----------------------
+
+Gulpfile.js
+-
+//import the modules.
+var gulp = require("gulp");
+var concat = require("gulp-concat");
+var htmlMinify = require("gulp-minify-html");
+var cssMinify = require("gulp-minify-css");
+var uglify = require("gulp-uglify");
+
+gulp.task("task_one" , function(){
+
+    gulp.src("./devEnv/html/*.html")
+        .pipe(concat("final.min.html"))
+        .pipe(htmlMinify())
+        .pipe(gulp.dest("http://tcs.com/ajsproject/project_one/html"));
+});
+
+
+
+
+
+
