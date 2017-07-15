@@ -1,0 +1,33 @@
+Dynamic Angular Application:
+
+If view interacts with the controller for dynamic data, then such type of application called as dynamic angular application.
+
+Steps to create the Dynamic Angular application:
+-------------------------------------------------
+
+1. download angular framework by using bower.
+
+2. load the angular framework
+
+3. declare the logical name for the web application
+
+Ex.
+
+    ng-app = "app"
+
+4. declare the controller
+
+Ex.
+    <div ng-controller="ctrl">
+
+    </div>
+
+5. implement the controller
+
+//we need to create the app module object.
+var app = angular.module("app",[]);
+
+//implement the controller
+app.controller("ctrl",function(){
+
+});
