@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="app" ng-controller="ctrl">
+
+    <h1>{{var_one}}</h1>
+    <h1>{{var_two}}</h1>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.0/angular.min.js"></script>
+    <script>
+        angular.module("app",[]).controller("ctrl",function ($scope,$timeout,$interval) {
+
+            $scope.var_one = "Fetching Data ....";
+            $timeout(fun_one,5000);
+            function fun_one() {
+                $scope.var_one="Success !"
+            }
+
+            $scope.var_two = new Date().toLocaleTimeString();
+            $interval(fun_two,1000,5);
+            function fun_two() {
+                $scope.var_two = new Date().toLocaleTimeString();
+            };
+        });
+    </script>
+</html>

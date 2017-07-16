@@ -1,0 +1,40 @@
+<!--ng-click
+
+    ng-click = "expression"/ "function([parameters])" -->
+
+<!--
+<!DOCTYPE html>
+<html lang="en" ng-app ng-init="count=0">
+    <button class="glyphicon glyphicon-plus" ng-click="count=count+1"></button>
+    <button class="btn btn-success">{{count}}</button>
+    <button class="glyphicon glyphicon-minus" ng-click="count=count-1"></button>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.0/angular.min.js"></script>
+</html>-->
+
+<!DOCTYPE html>
+<html ng-app="app" ng-controller="ctrl">
+
+    <label>Uname.</label>&emsp;&emsp;&emsp;&emsp;&emsp;
+    <input type="text" ng-model="var_one.uname">
+
+    <br><br>
+    <label>Upwd.</label>&emsp;&emsp;&emsp;&emsp;&emsp;
+    <input type="password" ng-model="var_one.upwd">
+    <br><br>
+    <button ng-click="login()">Login</button>
+
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.0/angular.min.js"></script>
+<script>
+    angular.module("app",[]).controller("ctrl",function ($scope) {
+        $scope.var_one = {};
+        $scope.login = function () {
+            alert($scope.var_one);
+       };
+    });
+</script>
+</html>
+
+
+
+

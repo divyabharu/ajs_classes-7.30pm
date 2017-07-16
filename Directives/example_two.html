@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="app" ng-controller="ctrl">
+
+    <h1 style="color: red" ng-repeat="x in data">
+        {{x | uppercase}}
+    </h1>
+
+
+    <input type="text" ng-model="search"> <br><br>
+    <table border="1">
+        <tr>
+            <th>id</th>
+            <th>name</th>
+            <th>age</th>
+        </tr>
+
+        <tr ng-repeat="x in my_array | orderBy:'id' | limitTo:3 | filter:search">
+            <td>{{x.id}}</td>
+            <td>{{x.name}}</td>
+            <td>{{x.age}}</td>
+        </tr>
+    </table>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.0/angular.min.js"></script>
+    <script>
+        var app = angular.module("app",[]);
+
+        app.controller("ctrl",ctrl);
+        function ctrl($scope) {
+            $scope.data = ["AngularJS","Angular4","reactJS","NodeJS","MongoDB"];
+
+            $scope.my_array = [{'id':1,'name':'hello_1','age':20},
+                                {'id':5,'name':'hello_5','age':28},
+                                {'id':2,'name':'hello_2','age':22},
+                                {'id':4,'name':'hello_4','age':26},
+                                {'id':3,'name':'hello_3','age':24}];
+
+
+        }
+    </script>
+</html>

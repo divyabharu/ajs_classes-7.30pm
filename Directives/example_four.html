@@ -1,0 +1,52 @@
+<!--
+    ng-options : this directive used to pass the values to dropdown.
+    syntax.
+        ng-options = "model_values as dropdown_values for variable in array"
+-->
+
+<!DOCTYPE html>
+<html lang="en" ng-app="app" ng-controller="ctrl" ng-init="model_five=data[0]">
+
+
+    <select ng-model="model_one" ng-options="x.id as x.sub for x in array">
+        <option value="">--Select One--</option>
+    </select>
+    <h1>{{model_one}}</h1>
+
+    <br>
+    <select ng-model="model_two" ng-options="x.sub as x.id for x in array">
+        <option value="">--Select One--</option>
+    </select>
+    <h1>{{model_two}}</h1>
+
+    <br>
+    <select ng-model="model_three" ng-options="x.id as x.id for x in array">
+        <option value="">--Select One--</option>
+    </select>
+    <h1>{{model_three}}</h1>
+
+    <br>
+    <select ng-model="model_four" ng-options="x.sub as x.sub for x in array">
+        <option value="">--Select One--</option>
+    </select>
+    <h1>{{model_four}}</h1>
+
+    <br>
+    <select ng-model="model_five" ng-options="x as x for x in data"></select>
+    <h1>{{model_five}}</h1>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.0/angular.min.js"></script>
+    <script>
+        var app = angular.module("app",[]);
+
+        app.controller("ctrl",ctrl);
+        ctrl.$inject=["$scope"];
+        function ctrl($scope) {
+            $scope.array = [{'id':1,'sub':'AngularJS'},
+                            {'id':2,'sub':'Angular4'},
+                            {'id':3,'sub':'NodeJS'}];
+
+            $scope.data = ["Hello_1","Hello_2","Hello_3"];
+        }
+    </script>
+</html>
