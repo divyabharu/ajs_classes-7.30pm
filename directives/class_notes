@@ -102,3 +102,83 @@ Syntax.
     </div>
 
 
+8. ng-options:
+    - this directive used to populate the values to the dropdown.
+
+Syntax.
+
+    ng-options="model_value as
+                dropdown_values for
+                variable in
+                array"
+
+
+Ex.
+
+    $scope.array = [{'id':1,'sub':'AngularJS'},
+                    {'id':2,'sub':'Kotlin'},
+                    {'id':3, 'sub':'reactJS'},
+                    {'id':4,'sub':'NodeJS'},
+                    {'id':5,'sub':'MongoDB'}];
+
+
+    //dropdown - sub
+    //model - id's
+    <select ng-model="model_one" ng-options="x.id as x.sub for x in array">
+
+
+    //dropdown - id's
+    //model - sub
+    <select ng-model="model_two" ng-options="x.sub as x.id for x in array">
+
+    //dropdown - sub
+    //model - sub
+    <select ng-model="model_three" ng-options="x.sub as x.sub for x in array">
+
+    //dropdown - id's
+    //model - id's
+    <select ng-model="model_four" ng-options="x.id as x.id for x in array">
+
+
+    $scope.data = ["AngularJS","Angular2","reactJS","Kotlin","Cassandra"];
+    //dropdown - sub's
+    //model - sub's
+    <select ng-model="model_five" ng-options="x as x for x in data">
+
+ng-click
+--------
+    - when ever we click the user interface elements, automatically ng-click directive
+      executed by angular framework.
+
+Syntax.
+
+      ng-click = "Expression" /
+
+                 "user defined function" /
+
+                 "user defined function with arguments".
+
+Ex.
+
+       ng-click="count=count+1"
+
+       ng-click="login()"
+
+       ng-click="login(uname,upwd)"
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
