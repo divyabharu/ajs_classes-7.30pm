@@ -204,6 +204,149 @@ index.html
 [Note : two way data binding reduces the burden on the server ]
 
 
+Disadvantages:
+-
+1. by using AngularJS we are missing the Secuirity.
+
+2. understanding the angular applications are difficult, because of no coding standards given by vendors.
+
+3. must enable the javascript in browsers , then only angular applications will execute.
+
+
+key features of angularjs
+-------------------------
+
+1. single page applications
+
+    - by using angularjs we can create the single page applications.
+
+    - loading the target templates to source template without refreshing the whole web page
+      called as single page application.
+
+
+2. directives
+
+    - angularjs provides the directives.
+
+    - directives enhances the html capabilities.
+
+    - we have two types of directives.
+
+        1.predefined directives
+
+        2.custom directives
+
+    predefined directives:
+
+        - the directives given by the framework called as predefined directives.
+
+        Ex.
+            ng-app
+            ng-model
+            ng-bind
+
+    custom directives:
+
+            - the directives developed by developer called as custom directives.
+
+
+
+3. services.
+
+    - services in angularjs used to share the common business logic controller.
+
+    - we have two types of services
+
+        1. predefined services
+
+        2. custom services
+
+    predefiend service:
+
+            - the services given by framework called as predefined service.
+
+    custom service:
+
+            - the services developed by developer called as custom service.
+
+4. filters
+
+    - filters are used to format the application data accroding to application requirement.
+
+    - we have two types of filters.
+
+        1. predefined filters
+
+        2. custom filters
+
+    predefined filter:
+
+           - the filters given by framework called as predefined filters.
+
+    custom filter:
+
+           - the filters developed by developer called as custom filter.
+
+
+comparision of angularjs -  angular2
+------------------------------------
+- by using angularjs we can create web applications.
+  by using angular2 we can create web and mobile applications.
+  [Note : angular2 with ionic framework will gives the mobile applications]
+
+- we can develop the angularjs applications by using javascript.
+  we can develop the angular2 applications by using typescript.
+
+
+- angular2 have a good performance compared to angularjs (5 X)
+  angularjs have a poor performance compared to angular2
+
+- the vendor for angularjs is google.
+  the vendor for angular2 is "google+microsoft"
+
+- we can run the angularjs applications directly in browsers.
+  we can't run the angular2 applications directly in browsers.
+  [transpilation : converting the typescript to javascript]
+
+
+comparision of angularjs - reactJS
+----------------------------------
+
+- angularjs is the javascript framework.
+  reactJS is the javascript library.
+
+- angularjs supports two way data binding
+  reactJS supports one way data binding.
+
+- reactJS good in server side data rendering
+  angularJS good in client side data rendering(2 way data binding).
+
+
+Comparision of AngularJS - NodeJS
+-
+
+    - AngularJS is the Client Side JavaScript Framework.
+      NodeJS is the server side scripting language.
+
+    - we can't create the servers by using angularjs.
+      we can create the servers by using nodejs (Http & Tcp)
+
+
+d3js
+-
+      d3 is the javascript library recomended for graphs and charts.
+
+      d3 graphs and chart are more reliable compared to (jquery,angularjs) graphs and charts
+
+
+
+
+
+
+
+
+
+
 
 
 
