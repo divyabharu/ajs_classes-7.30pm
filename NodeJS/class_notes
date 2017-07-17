@@ -152,6 +152,70 @@ app.get("/emp" , function(req,res){
 });
 
 
+mongodb:
+-
+    - mongodb is the ligth weigth database compared to other databases.
+
+    - mongodb supports JSON.
+
+    - we can perform the CRUD Operations on JSON by using MongoDB.
+
+Installation Of MongoDB:
+------------------------
+website : https://www.mongodb.com/download-center?jmp=nav#community
+
+    - mongodb follows the client server architecture.
+
+mongodb operations:
+-
+start the server
+>mongod
+
+connect to server(mongo server)
+>mongo
+
+    - in genaral mongo server running on the port no : 27017
+                                                     : mongodb (protocol)
+
+
+show the databases:
+>show dbs;
+
+create and switch to database:
+>use demo;
+    [Note : automatically demo database will create and switches to database]
+
+
+create the collection
+>db.createCollection("emp");
+
+insert the data
+>db.emp.insert({'id':1,'name':'Hello_1','age':20});
+
+
+fetch the data
+>db.emp.find()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
