@@ -1,0 +1,16 @@
+directives:
+
+    -directives enhances html   capabilities.
+
+    -we have two types of directives
+    1 predefined directives
+    2custom directives
+
+Predefined  Directives:
+
+        -The  Directives  given   by  the framework calledas Predefined Directives.
+
+1. ng-app
+
+    - Framework starts the execution from ng-app directive.
+

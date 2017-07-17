@@ -1,0 +1,93 @@
+<!--
+<!DOCTYPE html>
+<html lang="en">
+
+    <div ng-app>
+        <h1 style="color: red">Addition.{{10+10}}</h1>
+        <div>
+            <h1 style="color: green">Subtraction.{{20-10}}</h1>
+        </div>
+    </div>
+
+    <div>
+        <h1>Multiplication.{{10*10}}</h1>
+    </div>
+
+    <script src="bower_components/angular/angular.min.js"></script>
+</html>-->
+
+
+
+
+<!--<!DOCTYPE html>
+<html>
+    <h1 style="color: red">Addition.{{10+10}}</h1>
+    <h1 style="color: green">Subtraction.{{20-10}}</h1>
+    <h1>Multiplication.{{10*10}}</h1>
+    <script src="bower_components/angular/angular.min.js"></script>
+    &lt;!&ndash; Manual Bootstrap of Static Angular Application.&ndash;&gt;
+    <script>
+        angular.bootstrap(document);
+    </script>
+</html>-->
+
+
+
+
+<!--<!DOCTYPE html>
+<html>
+    <div ng-controller="ctrl">
+        <h1>{{var_one}}</h1>
+    </div>
+    <script src="bower_components/angular/angular.min.js"></script>
+    <script>
+        var app = angular.module("app",[]);
+
+        app.controller("ctrl",ctrl);
+        function ctrl($scope) {
+            $scope.var_one = "I am from Dynamic Angular Application !";
+        }
+
+        &lt;!&ndash; Manual Bootstrap of Dynamic Angular Application&ndash;&gt;
+        angular.bootstrap(document,["app"]);
+
+    </script>
+</html>-->
+
+
+<!DOCTYPE html>
+<html>
+
+    <div ng-app="app" ng-controller="ctrl_one">
+        <h1 ng-bind="var_one"></h1>
+    </div>
+
+    <div id="my_div" ng-controller="ctrl_two">
+        <h1 ng-bind="var_two"></h1>
+    </div>
+
+<script src="bower_components/angular/angular.min.js"></script>
+<script>
+    var app= angular.module("app",[]);
+
+    app.controller("ctrl_one",ctrl_one);
+    function ctrl_one($scope){
+        $scope.var_one="I Am from auto bootstrap";
+    }
+
+    app.controller("ctrl_two",ctrl_two);
+    function ctrl_two($scope){
+        $scope.var_two="I Am from manual bootstrap";
+    }
+
+    var my_div = document.getElementById("my_div");
+    angular.bootstrap(my_div,["app"]);
+</script>
+</html>
+
+
+
+
+
+
+

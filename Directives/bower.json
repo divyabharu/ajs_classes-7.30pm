@@ -1,0 +1,7 @@
+{
+  "name":"directives",
+  "dependencies":{
+    "angular":"latest",
+    "bootstrap": "latest"
+  }
+}
