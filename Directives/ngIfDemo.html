@@ -1,0 +1,41 @@
+<!--
+<!DOCTYPE html>
+<html lang="en" ng-app="app" ng-controller="ctrl">
+
+    <p ng-repeat="x in data">
+       &lt;!&ndash; <span ng-if="$middle">
+            {{x}}
+        </span>&ndash;&gt;
+
+        <span ng-if="x!=10 && x!=50">
+            <span ng-if="x==30">
+                {{x}}
+            </span>
+        </span>
+
+    </p>
+
+    <script src="bower_components/angular/angular.min.js"></script>
+    <script>
+        var app = angular.module("app",[]);
+
+        app.controller("ctrl",ctrl);
+        function ctrl($scope) {
+            $scope.data = [10,20,30,40,50];
+        }
+    </script>
+</html>-->
+
+
+<!DOCTYPE html>
+<html ng-app>
+    <label>Uname.</label>&emsp;&emsp;&emsp;&emsp;
+    <input type="text" ng-model="uname">
+    <br><br>
+    <span ng-if="uname!=null && uname!=''">
+        <label>Upwd.</label>&emsp;&emsp;&emsp;&emsp;
+        <input type="password" ng-model="upwd">
+    </span>
+    <script src="bower_components/angular/angular.min.js"></script>
+</html>
+

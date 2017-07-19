@@ -1,0 +1,72 @@
+<!--
+ngRepeat : this directive used to iterate the list of elements from an collection(array).
+syntax:
+    ng-repeat = "iteration_variable in array"
+                {{iteration_variable}}
+-->
+
+<!--
+<!DOCTYPE html>
+<html lang="en" ng-app>
+
+    <h1 style="color: red" ng-repeat="x in ['Samba','Naresh','Teja','Neeraja','Kundana','Balaji','Sai','Gopi']">
+        {{x}}...{{$index}}...{{$first}}...{{$last}}...{{$middle}}...{{$even}}...{{$odd}}
+    </h1>
+
+    <script src="bower_components/angular/angular.min.js"></script>
+</html>-->
+
+
+<!--
+<!DOCTYPE html>
+<html ng-app="app" ng-controller="ctrl">
+
+    <p ng-repeat="x in array">
+        {{x}}
+    </p>
+
+
+    <script src="bower_components/angular/angular.min.js"></script>
+    <script>
+        var app = angular.module("app",[]);
+
+        app.controller("ctrl",ctrl);
+        function ctrl($scope) {
+            $scope.array = [10,20,30,40,50];
+        }
+    </script>
+</html>
+
+-->
+
+<!DOCTYPE html>
+<html ng-app="app" ng-controller="ctrl">
+
+    <table border="2">
+        <tr>
+            <th>id</th>
+            <th>name</th>
+            <th>rank</th>
+        </tr>
+
+        <tr ng-repeat="x in array">
+            <td>{{x.id}}</td>
+            <td>{{x.name}}</td>
+            <td>{{x.rank}}</td>
+        </tr>
+    </table>
+
+    <script src="bower_components/angular/angular.min.js"></script>
+    <script>
+        var app = angular.module("app",[]);
+
+        app.controller("ctrl",ctrl);
+        function ctrl($scope) {
+            $scope.array = [{'id':1,'name':'AngularJS','rank':1},
+                            {'id':2,'name':'Angular2','rank':2},
+                            {'id':3,'name':'reactJS','rank':3},
+                            {'id':4,'name':'NodeJS','rank':4},
+                            {'id':5,'name':'Kotlin','rank':5}];
+        }
+    </script>
+</html>
