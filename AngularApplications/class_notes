@@ -1,0 +1,161 @@
+Angular Applications:
+
+    - By using AngularJS, we can create two types of applications.
+
+    1. Static Angular Application.
+
+    2. Dynamic Angular Application.
+
+Static Angular Application:
+
+       - If view won't interacts with the controller for dynamic data , then such type of
+       Angular Application Called as Static Angular Application
+
+
+Dynamic Angular Application:
+
+       - If View Interacts with the Controller for Dynamic Data then such type of application
+         called as Dynamic Angular Application.
+
+
+Steps to create Static Angular Application:
+-------------------------------------------
+
+Step 1:
+         download the angular framework by using bower.
+-------------
+StaticAngularApplication
+    bower.json
+    .bowerrc
+--------------
+bower.json
+-
+{
+    "name":"nareshit",
+    "dependencies":{
+        "angular":"latest"
+    }
+}
+
+.bowerrc
+-
+{
+    "directory":"bower_components"
+}
+
+>bower install
+
+Step 2:
+    create the view.
+
+index.html
+-
+<!DOCTYPE html>
+<html ng-app>
+    <input type="number" ng-model="model_one"><br><br>
+    <input type="number" ng-model="model_two"><br><br>
+    <h1 style="color:red" ng-bind="model_one+model_two"></h1>
+    <script src="bower_components/angular/angular.min.js"></script>
+</html>
+
+1. angular framework (angular.min.js) starts the execution from ng-app directive.
+
+2. "logical name of web application" optional for static angular application.
+
+Ex.
+
+    <html ng-app>
+        //Logic Goes Here
+    </html>
+
+3. ng-model directive creates the objects internally with application data.
+
+4. ng-bind directive binds the application data to the view (model data)
+
+
+Steps to create the dynamic angular application.
+------------------------------------------------
+Step 1:
+    download angular framework by using bower.
+
+step 2:
+     load the angular framework
+
+step 3:
+     declare the logical name for the web application.
+
+     Ex.
+            ng-app = "app"
+
+
+Step 4:
+    Declare the controller by using "ng-controller" directive
+    Ex.
+
+        <div ng-controller="ctrl">
+
+        </div>
+
+
+Step 5:
+    Add the Required Dependencies to the application.
+
+    var app = angular.module("app",[]);
+        (Object)            (Logical Name)
+
+
+
+Step 6:
+    Implement the controller
+
+    app.controller("ctrl" , ctrl);
+    function ctrl($scope){
+        $scope.data = "Data From database soon....";
+    }
+
+
+
+
+
+
+
+
+
+index.html
+-
+<!DOCTYPE html>
+<html ng-app="app">
+
+    <div ng-controller="ctrl">
+        <h1 ng-bind="var_one"></h1>
+    </div>
+
+
+    <script src="bower_components/angular/angular.min.js"></script>
+    <script>
+        var app = angular.module("app",[]);
+
+        app.controller("ctrl" , ctrl);
+        function ctrl($scope){
+            $scope.var_one = "Data From DataBase Soon....";
+        }
+
+    </script>
+
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
