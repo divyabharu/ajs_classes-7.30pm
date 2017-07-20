@@ -168,6 +168,36 @@ Ex.
 
 
 
+ng-controller:
+    - this directive used to declare the controllers.
+    - we may have more than one controller per web application.
+    - in general we will declare controllers in view.
+        Ex.
+            ng-controller = "ctrl"
+
+    - in general we will implement controllers in javascript.
+        Ex.
+            app.controller("ctrl",ctrl);
+            function ctrl($scope){
+                //Business Logic
+            }
+
+
+
+ng-dblclick:
+    - when ever we double click the user interface elements , automatically ng-dblclick directive
+      will be executed by angular framework
+
+Syntax.
+
+    ng-dblclick = "Expression" /
+                  "user defined function" /
+                  "user defined function with parameters"
+
+
+
+
+
 
 
 
