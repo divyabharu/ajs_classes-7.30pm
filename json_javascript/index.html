@@ -1,0 +1,123 @@
+<!--
+<script>
+    var data = {
+        "sub_one":"AngularJS",
+        "sub_two":"NodeJS",
+        "sub_three":"MongoDB"
+    };
+
+    document.write(data.sub_one+"<==>"+data.sub_two+"<==>"+data.sub_three);
+</script>-->
+
+
+<!--<script>
+    var data = {
+                    "emp":{
+                        "my_array":[
+                            {'p_id':1,'p_name':'laptop','p_cost':50000},
+                            {'p_id':2,'p_name':'mobile','p_cost':30000},
+                            {'p_id':3,'p_name':'tv','p_cost':150000}
+                        ]
+                    }
+    };
+    var result="";
+    for(var i=0;i<data.emp.my_array.length;i++){
+        var obj = data.emp.my_array[i];
+        var __id = obj.p_id;
+        var __name = obj.p_name;
+        var __cost = obj.p_cost;
+        result = result+__id+"..."+__name+"..."+__cost+"<br>";
+    }
+    document.write("<h1>"+result+"</h1>");
+
+
+    var jsonData = {
+                        "records":[
+                            {"Name":"Alfreds Futterkiste","City":"Berlin","Country":"Germany"},
+                            {"Name":"Ana Trujillo Emparedados y helados","City":"México D.F.","Country":"Mexico"},
+                            {"Name":"Antonio Moreno Taquería","City":"México D.F.","Country":"Mexico"},
+                            {"Name":"Around the Horn","City":"London","Country":"UK"},
+                            {"Name":"B's Beverages","City":"London","Country":"UK"},
+                            {"Name":"Berglunds snabbköp","City":"Luleå","Country":"Sweden"},
+                            {"Name":"Blauer See Delikatessen","City":"Mannheim","Country":"Germany"},
+                            {"Name":"Blondel père et fils","City":"Strasbourg","Country":"France"},
+                            {"Name":"Bólido Comidas preparadas","City":"Madrid","Country":"Spain"},
+                            {"Name":"Bon app'","City":"Marseille","Country":"France"},
+                            {"Name":"Bottom-Dollar Marketse","City":"Tsawassen","Country":"Canada"},
+                            {"Name":"Cactus Comidas para llevar","City":"Buenos Aires","Country":"Argentina"},
+                            {"Name":"Centro comercial Moctezuma","City":"México D.F.","Country":"Mexico"},
+                            {"Name":"Chop-suey Chinese","City":"Bern","Country":"Switzerland"},
+                            {"Name":"Comércio Mineiro","City":"São Paulo","Country":"Brazil"}
+                        ]
+    };
+
+    var res="";
+    for(var i=0;i<jsonData.records.length;i++){
+        var obj = jsonData.records[i];
+        var __name = obj.Name;
+        var __city = obj.City;
+        var __country = obj.Country;
+        res=res+__name+"...."+__city+"...."+__country+"<br>"
+    }
+
+    document.write("<h1 style='color:red'>"+res+"</h1>");
+
+
+
+</script>-->
+
+
+
+
+
+
+
+<!--<script>
+    var data = {
+        "fun_one":fun_one
+    };
+    
+    function fun_one() {
+        return "Welcome to JSON !";
+    }
+    console.log(data.fun_one());
+</script>-->
+
+
+<script>
+    function my_fun() {
+        return {
+            'fun_two':function () {
+                return "I am from anonymous function !"
+            },
+            'fun_three':fun_three
+        };
+    }
+
+    function fun_three(){
+        return "i am from property calling !";
+    }
+
+    var obj = my_fun();
+    var fun_def = obj.fun_two;
+    console.log(fun_def());
+
+    var fun_deff = obj.fun_three;
+    console.log(fun_deff());
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
