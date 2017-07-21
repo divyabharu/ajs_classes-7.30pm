@@ -1,0 +1,7 @@
+{
+  "name": "nareshit",
+  "dependencies": {
+    "angular": "latest",
+    "jquery": "^3.2.1"
+  }
+}

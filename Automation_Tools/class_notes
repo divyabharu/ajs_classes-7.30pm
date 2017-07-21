@@ -1,0 +1,146 @@
+Automation Tools:
+    - we can develop the UI Applications like angularjs , angular4, reactJS , d3js,...with the help of following
+      Automation tools.
+
+      1. bower
+      2. Gulp
+      3. Karma with Jasmine
+
+bower:
+
+    bower is the Automation tool used to download the dependencies to develop web application
+
+    bower based on NodeJS
+
+installation of bower:
+----------------------
+>npm install -g bower
+
+
+bower components:
+-----------------
+
+1. bower.json
+
+2. .bowerrc
+
+
+
+bower.json
+-
+    - this component used to mention the required dependencies to develop web application.
+
+
+bower.json
+----------
+{
+    "name":"nareshit",
+    "dependencies":{
+        "angular":"latest",
+        "bootstrap":"latest"
+    }
+}
+
+.bowerrc
+--------
+
+    - this component used to mention the path to dependencies downloading by bower.
+
+{
+    "directory":"bower_components"
+}
+
+
+
+
+installation of bower components
+--------------------------------
+> bower install
+
+[Note : when ever we install the bower components , automatically "angular&bootstrap" frameworks
+        will downloads to "bower_components" folder(directory)].
+
+        **************************
+bower_components
+    angular
+        angular.min.js
+
+    bootstrap
+        dist
+            css
+                bootstrap.min.css
+    jquery
+        dist
+            jquery.min.js
+         *************************
+
+index.html
+-
+<html>
+
+    <script src="bower_components/angular/angular.min.js"></script>
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
+    <script src="bower_components/jquery/dist/jquery.min.js"></script>
+</html>
+
+
+commands in bower:
+------------------
+1. bower list
+
+    - it will return all the dependencies with versions available in web application.
+
+2. bower uninstall bootstrap --save
+
+    - it will uninstall the bootstrap and updates the bower.json file automatically.
+
+3. bower install jquery --save
+
+    - it will download jquery latest version and updates the bower.json file automatically.
+
+
+
+Gulp:
+----
+    - Gulp is the production tool , used to perform the following operations on UI Projects.
+
+
+    1. Concat the files.
+
+    2. Uglify the JS, HTML , CSS files. (Compress)
+
+    3. warm up the servers.
+
+    4. open the browsers
+
+    5. conversion of LESS & SASS to CSS files.
+
+    6. Detecting the front end application changes.
+
+    7. live reloading the browsers.
+
+
+installation of gulp:
+---------------------
+> npm install -g gulp
+
+
+Gulp Component:
+---------------
+    - package.json
+
+        - by using package.json file we can download gulp related modules.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
