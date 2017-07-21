@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="app" ng-controller="ctrl">
+
+    <div ng-mouseenter="enter()" ng-mouseleave="leave()">
+        ngMouseEnter & ngMouseLeave Events
+    </div>
+
+    <style>
+        div{
+            border: 2px solid tomato;
+            width: 200px;
+            height: 200px;
+            color: darkgray;
+            text-align: center;
+            font-size: large;
+
+        }
+    </style>
+    <script src="bower_components/angular/angular.min.js"></script>
+    <script>
+        angular.module("app",[]).controller("ctrl",function ($scope) {
+            $scope.enter = function () {
+              console.log("Mouse Enter Event Fired !");
+            };
+
+            $scope.leave = function () {
+                console.log("Mouse Leave Event Fired !");
+            };
+        });
+    </script>
+</html>

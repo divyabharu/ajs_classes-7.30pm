@@ -198,6 +198,100 @@ Syntax.
 
 
 
+ng-class-odd:
+------------
+    - this directive used to apply the css classes to the odd rows of table.
+
+Syntax.
+
+    ng-class-odd = "my_class"
+
+
+
+ng-class-even:
+--------------
+    - this directive used to apply the css classes to even rows of table
+
+Syntax.
+
+    ng-class-even = "my_class"
+
+
+
+
+ng-include:
+-----------
+    - this directive used to embed the one template to another template.
+
+Ex.
+
+    <div ng-include="'table.html'"></div>
+
+    - by using ng-include directive , we can increase the readability of application.
+
+
+
+ng-submit:
+    - this directive used to submit the whole form at a time to the controller.
+
+Syntax.
+
+<form ng-submit="login()">
+
+    //Form Elements
+
+    <input type="submit"></input>
+
+</form>
+
+[Note : when ever we click the submit button , automatically login() will execute in controller ]
+
+
+ng-cloak:
+
+    - this directive used to prevent the uncompiled(unparsed) data while refreshing the web application.
+
+Ex.
+
+    <div ng-controller="ctrl_one" ng-cloak>
+        <h1>{{var_one}}</h1>
+    </div>
+
+
+Mouse Events:
+-------------
+
+
+ng-mousedown /
+ng-mouseup
+
+
+ng-mouseover/
+ng-mouseout        = "Expression" / "user defined function" / "user defined function with parameters"
+
+
+ng-mouseenter/
+ng-mouseleave
+
+
+ng-mousemove
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
