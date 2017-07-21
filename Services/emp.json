@@ -1,9 +1,0 @@
-{
-  "emp":[
-    {"id":1,"sub":"AngularJS"},
-    {"id":2,"sub":"Angular2"},
-    {"id":3,"sub":"NodeJS"},
-    {"id":4,"sub":"MongoDB"},
-    {"id":5,"sub":"Kotlin"}
-  ]
-}

@@ -1,7 +1,0 @@
-{
-  "emp":[
-    {"id":1,"name":"Hello_1","age":20},
-    {"id":2,"name":"Hello_2","age":22},
-    {"id":3,"name":"Hello_3","age":24}
-  ]
-}

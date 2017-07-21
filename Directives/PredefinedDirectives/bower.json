@@ -1,7 +1,0 @@
-{
-  "name":"nareshit",
-  "dependencies":{
-    "angular":"~1.6.0",
-    "bootstrap": "~3.3.6"
-  }
-}
