@@ -113,6 +113,11 @@ Branch : AngularJS_7AM
             - push
 
 
+11. Pull the Code from Repository.
+
+    VCS   --->   Git  ---> Pull ---> AngularJS_7AM ---> Pull.
+
+
 
 
 
