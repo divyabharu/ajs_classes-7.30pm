@@ -1,0 +1,163 @@
+<!--
+<!DOCTYPE html>
+<html lang="en" ng-app="app">
+
+    <div ng-controller="parent_controller">
+
+        <button ng-click="clickMe()">ClickMe</button>
+
+        <div ng-controller="child_one">
+            <h1>{{var_one}}</h1>
+        </div>
+
+        <div ng-controller="child_two">
+            <h1>{{var_two}}</h1>
+        </div>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.0/angular.min.js"></script>
+    <script>
+        var app = angular.module("app",[]);
+
+        app.controller("parent_controller",parent_controller);
+        function parent_controller($scope) {
+            $scope.clickMe = function () {
+                $scope.$broadcast("key1",{'key_one':'For Child One','key_two':'For Child Two'});
+            };
+        };
+
+
+        app.controller("child_one",child_one);
+        function child_one($scope) {
+            $scope.$on("key1",function (event,res) {
+                $scope.var_one = res.key_one;
+            });
+        };
+
+        app.controller("child_two",child_two);
+        function child_two($scope) {
+            $scope.$on("key1",function (event,res) {
+                $scope.var_two = res.key_two;
+            });
+        };
+
+    </script>
+</html>-->
+
+
+
+
+<!--<!DOCTYPE html>
+<html ng-app="app">
+
+    <div ng-controller="parent_controller">
+        <h1>{{var_one}}</h1>
+        <div ng-controller="child_controller">
+            <button ng-click="clickMe()">Click Me</button>
+        </div>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.0/angular.min.js"></script>
+    <script>
+        var app = angular.module("app",[]);
+
+        app.controller("child_controller",child_controller);
+        function child_controller($scope) {
+            $scope.clickMe = function () {
+                $scope.$emit("key1","For Parent Controller !");
+            };
+        };
+
+        app.controller("parent_controller",parent_controller);
+        function parent_controller($scope) {
+            $scope.$on("key1",function (event,res) {
+                $scope.var_one = res;
+            });
+        };
+    </script>
+
+</html>-->
+
+<!--<!DOCTYPE html>
+<html ng-app="app">
+
+    <div ng-controller="ctrl_one">
+        <input type="text" ng-model="model_one"> <br><br>
+        <button ng-click="clickMe(model_one)">ClickMe</button>
+    </div>
+
+    <div ng-controller="ctrl_two">
+        <h1>{{var_one}}</h1>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.0/angular.min.js"></script>
+    <script>
+        var app = angular.module("app",[]);
+
+        app.controller("ctrl_one",ctrl_one);
+        function ctrl_one($scope) {
+            $scope.clickMe = function (arg1) {
+                $scope.my_fun(arg1);
+            };
+        };
+
+
+        app.controller("ctrl_two",ctrl_two);
+        function ctrl_two($rootScope,$scope) {
+            $rootScope.my_fun = function (data) {
+                $scope.var_one = data;
+            };
+        };
+    </script>
+</html>-->
+
+
+<!DOCTYPE html>
+<html ng-app="app">
+
+    <div ng-include="'ctrl_one.html'"></div>
+    <div ng-include="'ctrl_two.html'"></div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.0/angular.min.js"></script>
+    <script>
+        var app = angular.module("app",[]);
+        
+        app.service("my_service",my_service);
+        function my_service() {
+            this.data = "";
+            this.setData = function (arg1) {
+                this.data = arg1;
+            }
+            this.getData = function () {
+                return this.data;
+            };
+        };
+        app.controller("ctrl_one",ctrl_one);
+        function ctrl_one($scope,my_service) {
+            $scope.clickMe = function (arg1) {
+                my_service.setData(arg1);
+            };
+        };
+        app.controller("ctrl_two",ctrl_two);
+        function ctrl_two($scope,my_service) {
+            $scope.read = function () {
+                $scope.var_one = my_service.getData();
+            };
+        };
+    </script>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
