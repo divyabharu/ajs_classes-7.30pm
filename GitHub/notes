@@ -1,0 +1,222 @@
+1.Installation Of Git.
+	- Git is the interface tool , used to interact with the GitHub.
+
+	website : https://git-scm.com/downloads
+	file name : Git-2.13.2-64-bit.exe
+
+2. create the repository locally.
+
+	- create the folder.
+	Ex.
+
+		E:/githubdemo
+
+	- open the GitBash Here terminal
+	
+	- execute the following command.
+
+	>git init
+
+	[Note : Automatically githubdemo converted as local repository]
+
+
+3. Add the user credentials to the Repository.
+
+>git config --global user.name "NareshIT"   // add the user name
+>git config --global user.email "hr@nareshit.in"  // add the email
+
+
+4. create the files to the repository
+>touch sample.js
+
+Knowing the status of files in Repository
+-----------------------------------------
+>git status
+
+[Note : "red color label" files indicating untracked files in repository]
+
+
+5. commit the files to repository
+
+>git add sample.js
+
+>git commit
+
+>press "i"
+
+>type "initial commit"
+
+>press "ESC"
+
+>type ":wq"
+
+>press Enter.
+
+from the 2nd commit onwards:
+
+>git add sample.js
+>git commit -m "JavaScript Code Added"
+
+knowing the commit log
+----------------------
+>git log
+
+
+6. creating the branch
+>git branch "AngularJS_7AM"
+
+
+7. checkout the branch
+>git checkout AngularJS_7AM
+
+
+8.Merging the Branches to the Master.
+>git merge AngularJS_7AM 
+
+
+
+9. Integration Of GitHub to the IDE
+
+	IDE - Integrated Development Environment
+	- in general the recomended IDE for UI Application Development is WebStrom.
+
+
+Download and install the NodeJS
+--------------------------------
+
+website : https://nodejs.org/en/download/
+
+file name : node-v6.11.1-x64.
+
+Download and install the IDE (WebStrom)
+---------------------------------------
+
+Website : https://www.jetbrains.com/webstorm/download/#section=windows
+
+File name : Webstrom-2017.2.exe
+
+Checkout the Code from Cloud Repository
+---------------------------------------
+
+URL : https://github.com/ajsnaresh/AJS_Classes.git
+Branch : AngularJS_7AM
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
