@@ -131,8 +131,100 @@ Gulp Component:
 
         - by using package.json file we can download gulp related modules.
 
+gulp modules:
+-------------
+
+1. gulp-concat
+
+    - this module used to concat the files.
 
 
+2. gulp-uglify
+
+    - this module used to ugligy the javascript (compress)
+
+
+3. gulp-bower
+
+    - this module used to install bower.
+
+
+4. gulp-minify-html
+
+    - this module used to compress (uglify) the HTML Code.
+
+
+5. gulp-minify-css
+
+    - this module used to minify css files.
+
+
+6. browser-sync
+
+    - this module used to sync the front end changes to browser.
+
+7. gulp-open
+
+    - this module used to open the browsers.
+
+
+
+Example:
+
+---------------------------
+gulpdemo
+    package.json
+    Gulpfile.js
+    devEnv   (folder)
+        html  (folder)
+            index_one.html
+            index_two.html
+        css   (folder)
+            style_one.css
+            style_two.css
+        js   (folder)
+            sample_one.js
+            sample_two.js
+     bower.json
+     .bowerrc
+------------------------------------
+
+package.json
+------------
+{
+    "name":"gulp project"
+    "version":1.0.0,
+    "description":"test project on gulp",
+    "devDependencies":{
+            "gulp-concat":"latest",
+            "gulp-uglify":"latest",
+            "gulp-minify-html":"latest",
+            "gulp-minify-css":"latest",
+            "gulp-bower":"latest",
+            "gulp":"latest"
+    }
+}
+
+>npm install
+
+Gulpfile.js
+-----------
+
+var gulp = require("gulp");
+var bower = require("gulp-bower");
+var minifyHTML = require("gulp-minify-html");
+var cssMinify = require("gulp-minify-css");
+var uglify = require("gulp-uglify");
+var concat = require("gulp-concat");
+
+
+gulp.task("task_one" , function(){
+    gulp.src("./devEnv/html/*.html")
+        .pipe(concat("final.min.html"))
+        .pipe(minifyHTML())
+        .pipe(gulp.dest("./prodEnv/html"));
+
+});
 
 
 
