@@ -1,4 +1,5 @@
 <!--
+&lt;!&ndash;
     ng-controller:
 
         - this directive used to declare the controllers
@@ -15,7 +16,7 @@
             function ctrl(){
                 //Logic
             }
--->
+&ndash;&gt;
 
 <!DOCTYPE html>
 <html lang="en" ng-app="app">
@@ -44,6 +45,103 @@
         }
     </script>
 </html>
+
+-->
+
+
+<!--
+<!DOCTYPE html>
+<html ng-app="app">
+    <h1>{{my_fun()}}</h1>
+
+    <div ng-controller="ctrl">
+        <h1>{{my_fun()}}</h1>
+    </div>
+
+    <script src="bower_components/angular/angular.min.js"></script>
+    <script>
+        var app = angular.module("app",[]);
+
+        app.controller("ctrl",ctrl);
+        function ctrl($rootScope,$scope) {
+
+            $scope.sub_one = "Angular2";
+            $scope.sub_two = "NodeJS";
+            $scope.sub_three="MongoDB";
+
+            //implementation of my_fun with $rootScope
+            $rootScope.my_fun = function () {
+                return $scope.sub_one+"..."+$scope.sub_two+"..."+$scope.sub_three;
+            };
+        }
+    </script>
+</html>
+-->
+
+<!DOCTYPE html>
+<html ng-app="app">
+
+
+<div class="my_class">
+    <div ng-controller="parent_controller">
+        {{parent}}
+        <div ng-controller="child_controller">
+            {{child}}
+            <div ng-controller="sub_controller">
+                {{sub}}
+            </div>
+        </div>
+    </div>
+</div>
+
+
+    <style>
+        div.my_class div{
+            border: 2px solid tomato;
+            padding: 10px;
+            text-align: center;
+            color: grey;
+            font-size: large;
+        }
+    </style>
+
+    <script src="bower_components/angular/angular.min.js"></script>
+    <script>
+        angular.module("app",[])
+            .controller("parent_controller",function ($scope) {
+                $scope.parent = "I am from parent controller !";
+        }).controller("child_controller",function ($scope) {
+                $scope.child = "I am from child controller !";
+        }).controller("sub_controller",function ($scope) {
+                $scope.sub = "I am from sub controller !";
+        });
+    </script>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

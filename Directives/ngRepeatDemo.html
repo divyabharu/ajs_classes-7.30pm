@@ -1,0 +1,77 @@
+<!--
+ng-repeat:
+    &#45;&#45; this directive used to iterate the list of elements from an array.
+
+    Syntax:
+        ng-repeat = "variable in array"
+
+        {{variable}}
+-->
+
+<!--
+<!DOCTYPE html>
+<html lang="en" ng-app>
+
+    <h1 style="color: red" ng-repeat="x in [10,20,30,40,50]">
+        {{x}}....{{$index}}...{{$first}}...{{$last}}...{{$middle}}...{{$even}}...{{$odd}}
+    </h1>
+
+    <script src="bower_components/angular/angular.min.js"></script>
+</html>-->
+
+
+<!DOCTYPE html>
+<html ng-app="app" ng-controller="ctrl">
+
+    <h1 ng-repeat="x in my_array" ng-bind="x"></h1>
+
+    <table class="table table-responsive">
+        <tr>
+            <th>p_id</th>
+            <th>p_name</th>
+            <th>p_cost</th>
+        </tr>
+
+        <tr ng-repeat="x in array">
+            <td>{{x.p_id}}</td>
+            <td>{{x.p_name}}</td>
+            <td>{{x.p_cost}}</td>
+        </tr>
+    </table>
+
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
+    <script src="bower_components/angular/angular.min.js"></script>
+    <script>
+        var app = angular.module("app",[]);
+
+        app.controller("ctrl",ctrl);
+        function ctrl($scope) {
+            $scope.my_array = ["AngularJS","Angular4","reactJS","NodeJS","MongoDB"];
+
+            $scope.array = [{'p_id':1,'p_name':'Laptop','p_cost':50000},
+                            {'p_id':2,'p_name':'Mobile','p_cost':30000},
+                            {'p_id':3,'p_name':'Tv','p_cost':150000},
+                            {'p_id':4,'p_name':'Watch','p_cost':20000},
+                            {'p_id':5,'p_name':'China Mobile','p_cost':1000}
+                            ];
+
+        }
+
+    </script>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
