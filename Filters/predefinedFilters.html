@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="app" ng-controller="ctrl">
+
+    <h1>{{"hello" | uppercase}}</h1>
+    <h1>{{"HELLO" | lowercase}}</h1>
+    <h1>{{100 | currency:"$":3}}</h1>
+
+
+    <input type="text" ng-model="search"> <br><br>
+
+    <table border="2">
+        <tr>
+            <th>id</th>
+            <th>sub</th>
+        </tr>
+
+        <tr ng-repeat="x in [{'id':1,'sub':'AngularJS'},
+                             {'id':5,'sub':'MongoDB'},
+                             {'id':2,'sub':'Angular4'},
+                             {'id':4,'sub':'reactJS'},
+                             {'id':3,'sub':'NodeJS'}]
+                             | orderBy:'id'
+                             | limitTo:3
+                             | filter:search">
+
+            <td>{{x.id}}</td>
+            <td>{{x.sub}}</td>
+        </tr>
+    </table>
+
+    <h1>{{todayDate | date:'short'}}</h1>
+    <h1>{{todayDate | date:'medium'}}</h1>
+    <h1>{{todayDate | date:'fullDate'}}</h1>
+    <h1>{{todayDate | date:'shortTime'}}</h1>
+    <h1>{{todayDate | date:'dd-MM-yy'}}</h1>
+
+
+    {{obj}}
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.0/angular.min.js"></script>
+    <script>
+        angular.module("app",[]).controller("ctrl",function ($scope) {
+            $scope.todayDate = new Date();
+            $scope.obj = {'id':1,'name':'Hello'};
+        });
+    </script>
+</html>

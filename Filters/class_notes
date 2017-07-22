@@ -1,0 +1,96 @@
+Filters:
+    - filters are used to format the data accroding to application requirement.
+
+    - we have two types of filters.
+
+        1. predefined filters
+
+        2. custom filters
+
+predefined filters:
+    - the filters given by the framework called as predefined filters.
+
+1. uppercase
+
+    - this filter used to convert the lower case characters to uppercase.
+
+Ex.
+    {{'hello'}} //hello
+    {{'hello' | uppercase }} //HELLO
+
+
+2. lowercase
+
+    - this filter used to convert the uppercase characters to lowercase.
+
+Ex.
+    {{"HELLO"}} //HELLO
+    {{"HELLO" | lowercase}} //hello
+
+
+3. currency
+
+    - this filter used to append the "$" symbol to the numerical values.
+
+Ex.
+    {{100}}  //100
+    {{100 | currency}} //$100.00
+    {{100 | currency:"$":4}}  //$100.0000
+
+
+4. orderBy
+
+    - this filter used to arrange the data either in assending / decending order.
+
+
+5. limitTo
+
+    - this filter used to display the number of records from an array.
+
+
+6. filter
+
+    - this filter used to search the whole array based on user input.
+
+Ex.
+    $scope.my_array = [{'id':1,'sub':'AngularJS'},
+                        {'id':5,'sub':'MongoDB'},
+                        {'id':2,'sub':'Angular4'},
+                        {'id':4,'sub':'NodeJS'},
+                        {'id':3,'sub':'reactJS'}];
+
+    <input type = "text" ng-model="search"> <br><br>
+    <table border="1">
+        <tr>
+            <th>id</th>
+            <th>sub</th>
+        </tr>
+        <tr ng-repeat="x in my_array | orderBy:'id' | limitTo:3 | filter: search">
+            <td>{{x.id}}</td>
+            <td>{{x.sub}}</td>
+        </tr>
+    </table>
+
+7. date
+    - this filter used to format the date accroding to application requirement.
+
+Ex.
+
+    {{new Date() | date:'dd-MM-yy'}}
+    {{new Date() | date:'MM-dd-yyyy'}}
+    {{new Date() | date:'shortDate'}}
+    {{new Date() | date:'medium'}}
+    {{new Date() | date:'fullDate'}}
+    {{new Date() | date:'shortTime'}}
+
+
+8. json
+    - this filter used to convert the json objects to json strings.
+
+
+
+
+
+
+
+
