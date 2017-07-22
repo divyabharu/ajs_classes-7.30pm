@@ -1,0 +1,50 @@
+Validations:
+
+    - by default angular framework supports form validations.
+
+    - "$error" is the predefined object used to store the form related errors.
+
+
+Ex. Text Validation
+-------------------
+
+<form name="myForm">
+    <input type="text"
+           name="uname"
+           ng-model="uname"
+           ng-minlength="3"
+           ng-maxlength="6"
+           required>
+     <p ng-if="myForm.uname.$error.minlength">*** Minimum 3 Characters are Required**** </p>
+     <p ng-if="myForm.uname.$error.maxlength">****Maximum 6 Characters are Allowed***</p>
+     <p ng-if="myForm.uname.$error.required">****Can't Left Blank****</p>
+</form>
+
+
+
+Validations by using ngMessages Module:
+---------------------------------------
+
+    - by using this module we can overcome data redundancy.
+    - by using this module we can reuse the validation messages.
+
+
+Steps to develop  the  validations by using ngMessages Module:
+--------------------------------------------------------------
+
+Step 1:
+    download the ngMessages Module by using Gulp.
+
+Step 2:
+    Add the ngMessages Dependency.
+
+Step 3:
+    Create the Validation Messages with "ng-message" directive in separate file (messages.html).
+
+step 4:
+    import the validations from external file by using "ng-messages-include" & "ng-messages" directive
+
+
+
+
+
