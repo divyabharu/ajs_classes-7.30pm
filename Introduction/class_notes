@@ -1,0 +1,176 @@
+Introduction:
+
+    - What is AngularJS ??
+
+    - Advantages Of AngularJS ??
+
+    - Disadvantages Of AngularJS ??
+
+    - Key Features Of AngularJS ??
+
+    - Comparision Of AngularJS - Angular2
+
+                     AngularJS - reactJS
+
+                     AngularJS - NodeJS
+
+What is AngularJS ??
+
+    - AngularJS is the JavaScript client side framework.
+
+    - AngularJS follows the MVC Design Pattern.
+
+        M - Model
+            javascript variables called as model in angularjs.
+            Ex.
+                var data = "Data From DataBase Soon...";
+
+        [Note : where "data" called as model in angularjs]
+
+
+        V - View
+            we can use HTML , HTML5, JADE, Python..... as the View in angularjs.
+
+
+        C - Controller
+            javascript functions called as controllers in angularjs.
+
+
+Advantages of AngularJS:
+-----------------------
+1. angularjs supports modules.
+    collection of classes called as module(javascript classes).
+
+    - ngAnimate
+        - this module used to develop the animations.
+
+    - ngMessages
+        - this module used to handle the form validations.
+
+    - ngStorage
+        - this module used to work with the storages.
+        - we have two types of client side storages.
+            1. localStorage
+            2. sessionStorage
+
+    - ngRoute
+        - loading the "target webpage" to "source webpage" called as Routing in single page application.
+        - this module used to implement the routing in single page application.
+        - this module is the deprecated module, now a days "no project" using ngRoute Module.
+
+    - ui.router
+        - this module used to implement the Routing in single page application.
+        - this module is 3rd party module.
+        - ui.router module have so many advantages compared to ngRoute Module.
+        - now a days all most all the projects using ui.router module in single page applications.
+
+    Ex.
+
+        <!DOCTYPE html>
+        <html ng-app="app">   // ng-app directive used to assign the logical name for web application.
+
+            //Logic Goes Here
+
+            <script src="bower_components/angular/angular.min.js"></script>
+            <script>
+                var app = angular.module("app",["ngAnimate","ngStorage","ui.router"]);
+                    (object)             (logical name)
+            </script>
+        </html>
+
+
+
+
+2. As a angular developer we can directly work with HTML DOM.
+    DOM Stands for Document Object Model.
+   Ex.
+    copy the data from "one div" to "another div" by using html and javascript.
+
+    index.html
+    -
+    <html>
+        <div id="div_one">Hello</div>
+        <div id="div_two"></div>
+        <script>
+            document.grtElementById("div_two").innerHTML=
+            document.getElementById("div_one").value;
+        </script>
+    </html>
+
+    [Note : as a html & javascript developer , we must dependent
+            on javascript to work with HTML DOM]
+
+
+
+    Ex.
+        copy the data from "one div" to "another div" by using angularjs.
+
+    index.html
+    -
+    <html ng-app="app">
+        <div ng-model="div_one">Hello</div>
+        <div ng-bind="div_one"></div>
+        <script src="bower_components/angular/angular.min.js"></script>
+    </html>
+
+
+    [1. framework (angular.min.js) starts the execution from ng-app directive
+
+     2. "ng-model" directive creates the object in heap memory with application data
+
+     3. "ng-bind" directive binds the "application data(model data)" to view(html).
+
+     4.  as a angular developer we can work with HTML DOM by using angular directives instead of
+         javascript
+    ]
+
+3. open source code
+
+     - as a angular developer we can customize the framework accroding to application requirement.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            Ex.
+
+                function ctrl(){
+                    var data = "data from database"
+                }
+
+                [Note : where ctrl called as controller in angularJS]
+
+
+
+
+
+
+
+
+
