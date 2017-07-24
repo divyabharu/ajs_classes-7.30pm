@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en" ng-app ng-init="my_model=0">
+
+    <input type="number" ng-model="my_model">
+
+    <div ng-switch="my_model">
+        <div ng-switch-when="1" class="btn btn-success">{{my_model}}</div>
+        <div ng-switch-when="2" class="btn btn-danger">{{my_model}}</div>
+        <div ng-switch-when="3" class="btn btn-primary">{{my_model}}</div>
+        <div ng-switch-default  class="btn btn-default">{{my_model}}</div>
+    </div>
+
+
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
+    <script src="bower_components/angular/angular.min.js"></script>
+</html>
