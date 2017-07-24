@@ -1,0 +1,176 @@
+Custom Directives:
+    - creating our own directives based on application requirement called as custom directive.
+    - in angularjs , we can use the custom directives in 4 ways.
+
+        1. Element
+        2. CSS Class
+        3. Attribute
+        4. Comment
+
+    Ex.
+        name of custom directive -    "my_dir"
+
+        <my_dir></my_dir>           // Element Level Usage
+        <div class="my_dir"></div>  // CSS Class Level Usage
+        <div my_dir></div>          // Attribute Level Usage
+        <!-- directive:my_dir -->   // Comment Level Usage
+
+
+properties of custom directives:
+
+1. restrict
+    - this property used to describe the usage of custom directive.
+Ex.
+    app.directive("my_dir",my_dir);
+    function my_dir(){
+
+        return {
+            //restrict : "E"
+            //restrict: "C"
+            //restrict : "A"
+            restrict : "M"
+        }
+    }
+    [Note : the default value of restrict property is "E" ]
+
+
+2. template
+      - this property used to add the html to the custom directive.
+Ex.
+    app.directive("attrType",attrType);
+    function attrType(){
+        return {
+            restrict:"A",
+            template:"<h1>Welcome to Custom Directives !</h1>"
+        }
+    }
+
+    <div attr-type></div> //Welcome to Custom Directives !
+
+3.templateUrl
+    - this property used to add the external templates to the custom directive.
+-----------
+templates
+    sample.html
+-----------
+sample.html
+-----------
+<h1>Welcome to Custom Directives !</h1>
+---------
+directives
+    classType.js
+----------
+app.directive("classType",classType);
+function classType(){
+    return{
+        restrict : "C",
+        templateUrl : "templates/sample.html"
+    }
+}
+
+index.html
+----------
+<div class = "class-type"></div> //Welcome to Custom Directives !
+
+
+4. controller
+    - this property used to declare the "controller" to "external template" of a custom directive.
+
+Ex.
+
+------------
+Demo
+    templates
+        sample.html
+
+    controllers
+        sample.js
+
+    directives
+        sample.js
+
+    index.html
+------------
+templates / sample.html
+{{var_one}}
+
+controllers/sample.js
+app.controller("sample" , sample);
+function sample($scope){
+    $scope.var_one = "Welcome to Custom Directives !";
+}
+
+directives/sample.js
+app.directive("commentType",commentType);
+function commentType(){
+    return {
+        restrict: "M",
+        templateUrl : "templates/sample.html",
+        controller : "sample"
+    }
+}
+
+index.html
+----------
+<!-- directive : comment-type --> //Welcome to Custom Directives !
+
+
+
+-------------------------
+Example_1:
+    index.hml
+    app.js
+    directives
+        my_directive.js
+------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
