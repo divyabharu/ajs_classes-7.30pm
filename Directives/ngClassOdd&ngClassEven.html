@@ -1,0 +1,25 @@
+<!--ng-class-odd:
+    - this directive used to apply the css classes to the odd rows of table.
+
+    Ex.
+        ng-class-odd = "'my_class'"
+
+ng-class-even:
+    - this directive used to apply the css classes to the even rows of table.
+    Ex.
+        ng-class-even = "'my_class'"-->
+
+
+<!DOCTYPE html>
+<html lang="en" ng-app ng-init="data=[{'id':1,'sub':'AngularJS'},
+                        {'id':2,'sub':'Angular4'},
+                        {'id':3,'sub':'reactJS'},
+                        {'id':4,'sub':'NodeJS'},
+                        {'id':5,'sub':'MemSQL'}]">
+
+
+    <div ng-include="'table.html'"></div>
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="my_style.css">
+    <script src="bower_components/angular/angular.min.js"></script>
+</html>

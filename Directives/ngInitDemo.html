@@ -1,0 +1,39 @@
+<!--
+ng-init:
+    - this directive used to initilise the variables in config phase.
+    - scope of "variables are initilised by ng-init" belongs to application scope.
+    - we can initilize the data in the form of a key&value pairs.
+    Ex:
+        ng-init="db_user='root'"
+-->
+
+<!DOCTYPE html>
+<html lang="en" ng-app>
+
+    <h1>{{db_user}}</h1>
+    <h1>{{db_password}}</h1>
+    <h1>{{list_of_tables}}</h1>
+    <table border="2">
+        <tr>
+            <th>id</th>
+            <th>sub</th>
+        </tr>
+        <tr ng-repeat="x in data">
+            <td>{{x.id}}</td>
+            <td>{{x.sub}}</td>
+        </tr>
+    </table>
+
+    <div ng-init="db_user='root';
+                  db_password='root';
+                  list_of_tables=3;
+                  data=[{'id':1,'sub':'AngularJS'},
+                        {'id':2,'sub':'Angular4'},
+                        {'id':3,'sub':'reactJS'},
+                        {'id':4,'sub':'NodeJS'},
+                        {'id':5,'sub':'MemSQL'}]">
+
+    </div>
+
+    <script src="bower_components/angular/angular.min.js"></script>
+</html>
