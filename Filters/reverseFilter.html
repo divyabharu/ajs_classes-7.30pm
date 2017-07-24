@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="app" ng-controller="ctrl">
+
+    <h1>{{var_one | reverse}}</h1>
+    <h1>{{100 | my_currency:" &#8377;" : false}}</h1>
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.0/angular.min.js"></script>
+
+    <script>
+        angular.module("app",[])
+            .controller("ctrl",function ($scope) {
+
+                $scope.var_one = "angularjs";
+        })
+           .filter("reverse",function () {
+            return function (arg1) {
+                var data = "";
+                for(var i=0;i<arg1.length;i++){
+                    data = arg1[i]+data;
+                }
+                return data;
+            };
+        })
+            .filter("my_currency",function () {
+            return function (amount,symbol,position) {
+                if(position){
+                    return symbol+" "+amount;
+                }else{
+                    return amount+" "+symbol;
+                }
+            };
+        });
+    </script>
+
+
+</html>
