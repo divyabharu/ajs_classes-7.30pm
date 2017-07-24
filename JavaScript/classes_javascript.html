@@ -1,0 +1,111 @@
+<!--
+
+    class :
+        collection of variables & functions called as class.
+
+        in class all the members(variables & functions)
+        should start with the "this" keyword.
+
+    Syntax.
+
+        function my_class(){
+
+            this.sub_one = "AngularJS";
+            this.sub_two = "NodeJS";
+            this.sub_three = "MongoDB";
+
+            this.meanStack = function(){
+                return this.sub_one+"<==>"+this.sub_two+"<==>"+this.sub_three;
+            }
+
+        }
+
+        var obj = new my_class();
+
+        obj.sub_one; // AngularJS
+        obj.sub_two; // NodeJS
+        obj.sub_three; //MongoDB
+
+        obj.meanStack; // function defination will return
+        obj.meanStack(); AngularJS<==>NodeJS<==>MongoDB;
+
+
+
+
+-->
+
+<!--
+<script>
+    function my_class(arg1,arg2,arg3) {
+        this.sub_one = arg1;
+        this.sub_two=arg2;
+        this.sub_three = arg3;
+        this.meanStack = function () {
+            return this.sub_one+"<==>"+this.sub_two+"<==>"+this.sub_three;
+        };
+    }
+    var obj = new my_class("AngularJS","NodeJS","MongoDB")
+    console.log(obj.sub_one+"..."+obj.sub_two+"..."+obj.sub_three+"..."+obj.meanStack+"..."+obj.meanStack());
+</script>
+-->
+
+<!--<script>
+    function my_class() {
+        this.my_class = function () {
+            return "Welcome to Classes !";
+        };
+    };
+    function my_fun() {
+        return new my_class();
+    }
+    document.write(my_fun().my_class());
+</script>-->
+
+<script>
+    
+    function class_one(arg1,arg2) {
+        var num_one = arg1.class_two();
+        var num_two = arg2.class_three();
+        this.result = num_one+num_two;
+    }
+    
+    function class_two() {
+        this.class_two = function () {
+            return 100;
+        };
+    };
+    
+    function class_three() {
+        this.class_three = function () {
+            return 200;
+        };
+    };
+
+    var obj= new class_one(new class_two(),new class_three());
+    console.log(obj.result);
+    
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

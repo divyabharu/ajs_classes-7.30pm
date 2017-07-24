@@ -1,0 +1,89 @@
+<!--
+
+    - the function without name called as Anonymous Function
+
+    - anonymous functions are more secured compared to named functions.
+
+    Syntax.
+        var my_var = function(){
+            //Business Logic
+        }
+        my_var();
+-->
+
+<!--
+<script>
+    var fun_one = function(){
+        return "Welcome to Anonymous Functions !";
+    }
+    console.log(fun_one);   //calling the anonymous function at property level.
+    console.log(fun_one()); // calling the anonymous function.
+</script>-->
+
+
+
+<!--<script>
+    var fun_one = function (arg1) {
+        console.log(arg1);
+        console.log(arg1());
+        return arg1();
+    };
+    var fun_two = function () {
+        return "I am from second anonymous function !";
+    };
+    document.write("<h1>"+fun_one(fun_two)+"</h1>");
+</script>-->
+
+
+<!--<script>
+    var fun_one = function () {
+        return function () {
+            return "I am from inner anonymous function !";
+        };
+    };
+    console.log(fun_one()());
+</script>-->
+
+<script>
+    var fun_one = function (arg1,arg2) {
+        //arg1;   // fun_two def
+        //arg1();  // fun_two output  --  inner anonymous function
+        //arg1()();  //10
+        //document.write(arg1()() + arg2()());
+        document.write(arg1+arg2);
+    };
+
+    var fun_two = function(){
+        return function () {
+            return 10;
+        };
+    };
+
+    var fun_three = function () {
+        return function () {
+          return 20;
+        };
+    };
+
+    //fun_one(fun_two,fun_three);
+
+    fun_one(fun_two()(),fun_three()());
+
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

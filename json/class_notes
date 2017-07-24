@@ -1,0 +1,103 @@
+JSON:
+
+    - JSON Stands for JavaScript Object Notation.
+
+    - JSON used to carry the data over the Network.
+
+    - JSON is light weight compared to XML.
+
+    - Parsing of JSON easy Compared to XML Parsing.
+
+Conventions in JSON:
+-------------------
+
+1. Objects
+
+    - we can represent objects by using - { }
+
+    - we have two types of Objects.
+
+        1. Anonymous JSON Objects
+
+        Ex.
+
+            {
+
+            }
+
+        2. Named JSON Objects.
+
+            Ex.
+
+                "emp":{
+
+                }
+
+2. Arrays
+
+    - we can represent the Arrays by using [ ]
+
+    - we have two types of Arrays
+
+    1. Anonymous Array.
+
+        Ex. [ //data ]
+
+    2. Named JSON Arrays.
+
+        Ex.
+
+            "emp":[
+                //data
+            ]
+
+
+3. data
+
+    - we can store the data in the form of a "key&value" pairs.
+
+  Ex.
+        "sub_one":"AngularJS",
+
+        "sub_two" : sub_two,
+
+        "sub_three" : function(){
+                         return "MongoDB"
+                      }
+
+
+        function sub_two(){
+            return "NodeJS";
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
