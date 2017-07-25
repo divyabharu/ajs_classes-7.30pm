@@ -130,6 +130,211 @@ Advantages of AngularJS:
 
 
 
+4. two way data binding
+    - angularjs supports two way data binding.
+
+    [ automatic data syncronization between model and view with the supervision of controller
+    called as "two way data binding" ]
+
+
+
+
+    - in the above diagram , we have following server calls.
+
+    1. http get request
+
+           - used to fetch the all employee details from database.
+
+    2. http delete request
+
+            - used to delete the particular employee details from database.
+
+    3. AJAX Call
+
+            - used to sync the data between "view" and "database".
+
+
+
+    [Note : as a programming languages developer we must make above all requests to meet
+            application requirement
+
+            Ex.
+                java
+                dot net
+                php
+                --
+                -- ]
+
+    [Note : as a angularjs / angular2 developer we can only two server calls because of two way data binding]
+
+    [Note : two way data binding reduces the burden on the server]
+
+
+Disadvantages of AngularJS
+--------------------------
+1. secuirity
+    we are implementing the business components at client side , so we are missing the secuirity.
+
+2. client (browser) must enables the javascript.
+
+3. understanding the angular applications are difficult because of no coding standards from vendors.
+
+
+key features of angularjs
+-------------------------
+
+1. single page applications
+
+    loading the "target web pages" to "source web page" without refreshing the whole application
+    called as single page applications.
+
+    as a angular developer we can develop the single page applications.
+
+
+
+2. directives
+    directives in angularjs , enhances the html capabilities.
+
+    we have two types of directives.
+
+        1. predefined directives
+                - the directives given by the framework called as predefined directives.
+                Ex.
+                    ng-app
+                    ng-model
+                    ng-bind
+
+        2. custom directives
+                - the directives developed by developer called as custom directives.
+                Ex.
+                    my_dir
+
+3. services
+    - we can share the common business logic to multiple controllers with the help of services.
+    - we have two types of services.
+        1.predefined services
+            - the services given by the framework called as predefined services.
+                Ex.
+                    $http - used to connect to servers by using http protocol
+                    $q    - used to make the async calls
+                    $interval - used to execute a custom function repetedely
+                    $timeout - used to execute a custom function with a given specified time
+                    $location - used to know the absolute path of web application.
+
+        2. custom services:
+            - creating our own service based on application requirement called as custom service.
+
+
+4. filters
+    - filters are used to format the application data.
+    - we have two types of filters
+
+        1. predefined filters
+            - the filters given by the framework called as predefined filters.
+        2. custom filters
+            - the filters developed by developer called as custom filters.
+
+
+differences between angularjs - angular2
+----------------------------------------
+
+    - by using angularjs , we can prepare web applications.
+      by using angular2 , we can prepare web and mobile applications.
+        [Note : we can prepare the mobile applications with ionic framework]
+
+
+    - angularjs introduced by google.
+      angular2 introduced by google and microsoft.
+
+
+    - angularjs difficult in programming because of no coding standards.
+      angular2 easy compared to angularjs.
+
+
+
+    - in general we will prepare angularjs applications by using "javascript".
+      in general we will prepare angular2 applications by using "typescript"
+      [transpilation : converting the typescript to javascript called as transpilation]
+
+
+
+    - angularjs have a poor performance compared to angular2.
+      angular2 have a 5X more performance compared to angularjs.
+
+
+    - we can run the angularjs applications locally
+      we must dependent environmental setup provided vendor to run angular2 applications.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
