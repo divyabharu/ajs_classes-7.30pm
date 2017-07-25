@@ -125,6 +125,79 @@ Example_1:
 ------------------------
 
 
+Example_2:
+----------
+
+templates/header.html
+-
+
+<div class="dropdown">
+    <button class="btn btn-primary dropdown-caret"
+            data-toggle="dropdown">ClickMe</button>
+
+    <ul class="dropdown-menu">
+        <li>Option_1</li>
+        <li>Option_2</li>
+        <li>Option_3</li>
+        <li>Option_4</li>
+        <li ng-click="logout()">Logout</li>
+    </ul>
+</div>
+
+controllers/header.js
+-
+app.controller("header" , header);
+function header($scope){
+    $scope.logout = function(){
+        console.log("Logged Out Successfully !");
+    }
+}
+
+
+directives/header.js
+---------------------
+app.directive("header",header);
+function header(){
+    return{
+        restrict:"AE",
+        templateUrl:"templates/header.html",
+        controller:"header"
+    }
+}
+
+index.html
+----------
+<header></header>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
