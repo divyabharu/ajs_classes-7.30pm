@@ -1,0 +1,64 @@
+﻿<!-- 
+    ng-if:
+        this directive used to write the conditions.
+    Syntax.
+        ng-if="true" / "false"    
+
+<!DOCTYPE html>
+<html ng-app>
+<head>
+    <title></title>
+	<meta charset="utf-8" />
+</head>
+<body>
+    <label>Uname.</label>&emsp;&emsp;&emsp;&emsp;
+    <input type="text" ng-model="uname" />
+
+    <span ng-if="uname!=null && uname!=''">
+        <label>Upwd.</label>&emsp;&emsp;&emsp;&emsp;
+        <input type="password" ng-model="upwd" />
+    </span>
+    <script src="Scripts/angular.min.js"></script>
+</body>
+</html>
+
+-->
+
+<!DOCTYPE html>
+<html ng-app="app" ng-controller="ctrl">
+    <head></head>
+    <body>
+
+
+        <h1 style="color:orangered" ng-repeat="x in array">
+            <!--<span ng-if="$middle">
+                 {{x}}
+            </span>-->
+            <span ng-if="x!='Hello_1' && x!='Hello_5'">
+                {{x}}
+            </span>
+        </h1>
+
+
+        <script src="Scripts/angular.min.js"></script>
+        <script>
+            angular.module("app", []).controller("ctrl", function ($scope) {
+                $scope.array = ["Hello_1","Hello_2","Hello_3","Hello_4","Hello_5"];
+            });
+        </script>
+    </body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+

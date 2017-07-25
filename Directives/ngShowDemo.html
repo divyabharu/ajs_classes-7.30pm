@@ -1,0 +1,25 @@
+﻿<!-- 
+  ng-show:
+        this directive used to show / hide the elements based on condition.
+        this directive won't works with the HTML DOM Directly.
+    
+    Syntax.
+        ng-show = "true" / "false"  
+-->
+<!DOCTYPE html>
+<html ng-app>
+<head>
+    <title></title>
+	<meta charset="utf-8" />
+</head>
+<body>
+
+    <p style="color:rebeccapurple" ng-repeat="x in [10,20,30,40,50]">
+        {{x}}
+        <button ng-show="$first">First</button>
+        <button ng-show="$last">Last</button>
+    </p>
+
+    <script src="Scripts/angular.min.js"></script>
+</body>
+</html>
