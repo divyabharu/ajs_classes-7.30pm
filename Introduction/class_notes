@@ -1,0 +1,137 @@
+Introduction:
+
+    1. Automation Tools
+
+        1. bower
+        2. Gulp
+        3. karma with Jasmine
+
+
+    2. What is AngularJS  ??
+
+    3. Advantages Of AngularJS ??
+
+    4. Disadvantages Of AngularJS ??
+
+    5. Key features of AngularJS ??
+
+    6. Differences Between AngularJS - Angular2
+                           AngularJS - NodeJS
+                           AngularJS - reactJS
+
+
+bower:
+    - bower is the Automation tool for UI Application Development.
+    - bower will manage the dependencies for UI Application Development.
+    - bower based on NodeJS platform.
+
+installation of bower tool:
+--------------------------
+    - we can install bower by using the nodejs commands.
+
+>npm install -g bower
+
+
+bower components
+----------------
+    - we have following bower components.
+
+    1. bower.json
+
+    2. .bowerrc
+
+bower.json
+----------
+    - this component used to mention the required resources to develop web application.
+{
+    "name":"nareshit",
+    "dependencies":{
+        "angular":"latest",
+        "bootstrap":"latest",
+        "react":"latest",
+        "d3":"latest"
+    }
+}
+
+
+.bowerrc
+--------
+    - this component used to "locate the path to dependencies" downloading
+      by using bower.
+
+{
+    "directory":"bower_components"
+}
+
+[Note : automatically all the dependencies will downloads to "bower_components" folder]
+
+
+installation of bower components:
+---------------------------------
+
+>bower install
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
