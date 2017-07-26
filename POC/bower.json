@@ -1,0 +1,22 @@
+{
+  "name": "POC",
+  "homepage": "https://github.com/ajsnaresh/AJS_Classes",
+  "authors": [
+    "Naresh <hr@nareshit.in>"
+  ],
+  "description": "",
+  "main": "",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies":{
+    "angular":"latest",
+    "angular-ui-router": "latest",
+    "ngstorage": "latest"
+  }
+}
