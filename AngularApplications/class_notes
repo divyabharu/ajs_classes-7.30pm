@@ -1,0 +1,115 @@
+
+- by using angularjs we can create two types of applications.
+
+    1. static angular application.
+
+    2. dynamic angular application.
+
+
+static angular application:
+
+    - if view won't interacts with the controller for dynamic data , then such type of angular
+      application called as static angular application.
+
+steps to create the static angular application:
+-----------------------------------------------
+1. download angular framework by using bower.
+
+2. create the view by using following directives.
+
+    1. ng-app
+    2. ng-model
+    3. ng-bind
+
+
+---------------------
+AJS_Classes
+    AngularApplications
+        StaticAngularApplication
+            bower.json
+            index.html
+---------------------
+
+
+dynamic application:
+-
+    - if view interacts with the controller for dynamic data , then such type of application called as
+      dynamic angular application.
+
+
+steps to develop the dynamic angular application
+------------------------------------------------
+
+step 1:
+    download angular by using bower.
+
+step 2:
+    load the angular framework
+
+
+step 3:
+    declare the logical name for the web application.
+Ex.
+    ng-app="app"
+
+
+step 4:
+    declare the controller by using "ng-controller" directive.
+
+Ex.
+    <div ng-controller="ctrl">
+        <h1 ng-bind="sub_one + '...'+sub_two+'...'+sub_three></h1>
+    </div>
+
+step 5:
+    add the required modules to the angular application.
+Ex.
+
+    var app = angular.module("app",[]);
+
+step 6:
+    implement the controller.
+
+    app.controller("ctrl",function($scope){
+        $scope.sub_one = "AngularJS";
+        $scope.sub_two = "NodeJS";
+        $scope.sub_three = "MongoDB";
+    });
+
+
+
+---------------------
+DynamicAngularApplication
+
+        bower.json
+
+        index.html
+
+        app.js
+
+        controllers
+
+              ctrl.js
+-------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -267,7 +267,17 @@ differences between angularjs - angular2
 
 
 
+differences between angularjs - reactjs
+---------------------------------------
 
+    - angularjs is the framework (javascript framework)
+      reactjs is the javascript library.
+
+    -
+
+
+    - angularjs recomended for data rendering on view(JSON)
+      reactJS recomended for data structures manipulations (server side data rendering)
 
 
 
