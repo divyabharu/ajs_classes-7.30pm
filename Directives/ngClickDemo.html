@@ -1,0 +1,87 @@
+<!--
+    ng-click:
+        - when ever we click the user interface elements, automatically ng-click directive
+          executed by angular framework.
+
+    Syntax.
+
+        ng-click = "Expression" /
+                    "user defined function" /
+                    "user defined function with parameters"
+
+    Ex.
+        ng-click="count=count+1"
+
+        ng-click="login()"
+
+        ng-click="login("uname","upwd")"
+
+-->
+
+
+<!--
+<!DOCTYPE html>
+<html lang="en" ng-app ng-init="count=0">
+    <button class="glyphicon glyphicon-plus" ng-click="count=count+1"></button>
+    <button class="btn btn-danger">{{count}}</button>
+    <button class="glyphicon glyphicon-minus" ng-click="count=count-1"></button>
+    <script src="bower_components/angular/angular.min.js"></script>
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
+</html>-->
+
+
+
+<!DOCTYPE html>
+<html ng-app="app" ng-controller="ctrl">
+
+
+    <label>Uname.</label>&emsp;&emsp;&emsp;&emsp;
+    <input type="text" ng-model="obj.uname">
+    <br><br>
+    <label>Upwd.</label>&emsp;&emsp;&emsp;&emsp;
+    <input type="password" ng-model="obj.upwd">
+    <br><br>
+    <!--<button ng-click="login(uname,upwd)">Login</button>-->
+    <!--<button ng-click="login({'uname':uname,'upwd':upwd})">Login</button>-->
+        <button ng-click="login()">Login</button>
+
+    <script src="bower_components/angular/angular.min.js"></script>
+    <script>
+        var app = angular.module("app",[]);
+
+        app.controller("ctrl",ctrl);
+        function ctrl($scope) {
+            /*$scope.login = function (arg1,arg2) {
+                if(arg1 == "admin" && arg2=="admin"){
+                    alert("Login Success !");
+                }else{
+                    alert("Login Fail !");
+                }
+            };*/
+
+            /*$scope.login = function (obj) {
+                if(obj.uname == "admin" && obj.upwd=="admin"){
+                    alert("Login Success !");
+                }else{
+                    alert("Login Fail !");
+                }
+            };*/
+
+            $scope.obj={};
+            $scope.login = function () {
+                if($scope.obj.uname == "admin" && $scope.obj.upwd=="admin"){
+                    alert("Login Success !");
+                }else{
+                    alert("Login Fail !");
+                }
+            };
+
+
+        };
+    </script>
+</html>
+
+
+
+
+
