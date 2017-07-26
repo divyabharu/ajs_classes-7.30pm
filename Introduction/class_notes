@@ -72,6 +72,380 @@ installation of bower components:
 >bower install
 
 
+Gulp:
+----
+    - Gulp is the production tool.
+
+    - gulp based on nodejs platform.
+
+Advantages Of Gulp:
+------------------
+
+1. deletes the comments in development code
+
+2. concat the files.
+
+3. disables the log
+
+4. uglify(compress) the js files.
+
+5. minifies(compress) the html
+
+6. minifies the css.
+
+7. convert the "LESS & SASS" to CSS.
+
+8. warm up (startup) the servers.
+
+9. detecting the front end application changes.
+
+10. live reloading of web applications.
+
+11. provides predefined modules support.
+
+
+Modules in Gulp:
+----------------
+1. gulp-concat
+    - this module used to concat the files.
+
+Ex.
+    ctrl_one.js  +  ctrl_two.js ---> final.js
+
+
+2. gulp-uglify
+    - this module used to minifies (compress) the js files.
+
+
+3. gulp-minify-html
+    - this module used o minifies the html files.
+
+
+4. gulp-minify-css
+    - this module used to minifies the css files.
+
+
+5. gulp-bower
+    - this module used to install the bower components.
+
+6. gulp-open
+    - this module used to launch the browsers.
+
+7. browsersync
+    - this module sync the front end application changes to browser loading.
+
+
+[Note : in genaral we will download gulp modules by using "package.json" file]
+
+[Note : we can install the package.json file by using following command
+
+        > npm install
+]
+
+
+Steps to Build the Gulp Application:
+------------------------------------
+
+1. install the Gulp Plugin
+
+    >npm install -g gulp
+
+
+2. create the application directory structure
+----------------------------
+gulpdemo
+    devEnv
+        html
+            index_one.html
+            index_two.html
+        css
+            style_one.css
+            style_two.css
+
+        js
+            sample_one.js
+            sample_two.js
+
+    package.json
+    bower.json
+    .bowerrc
+----------------------------------
+
+step 3:
+    download the required gulp modules by using package.json
+
+package.json
+------------
+{
+    "name":"nareshit",
+    "version":1.0.0,
+    "description":"demo application",
+    "devDependencies":{
+        "gulp-concat":"latest",
+        "gulp":"latest",
+        "gulp-uglify":"latest",
+        "gulp-minify-html":"latest",
+        "gulp-minify-css":"latest",
+        "gulp-bower":"latest"
+    }
+}
+
+
+Step 4:
+    install the gulp modules
+
+    >npm install
+
+
+Step 5:
+    create the gulp script
+
+Gulpfile.js
+-----------
+var concat=require("gulp-concat");     // require() function used to import the modules.
+var gulp=require("gulp");
+var uglify=require("gulp-uglify");
+var minifyHTML=require("gulp-minify-html");
+var minifyCSS=require("gulp-minify-css");
+var bower=require("gulp-bower");
+
+
+//create the gulp task
+gulp.task("task_one",function(){
+    gulp.src("./devEnv/html/*.html")
+        .pipe(concat("final.min.html"))
+        .pipe(minifyHTML())
+        .pipe(gulp.dest("./prodEnv/html"));
+
+});
+
+
+//create the gulp task
+gulp.task("task_two",function(){
+    gulp.src("./devEnv/css/*.css)
+        .pipe(concat("final.min.css"))
+        .pipe(minifyCSS())
+        .pipe(gulp.dest("./prodEnv/css"));
+});
+
+
+//create the gulp task
+gulp.task("task_three",function(){
+    gulp.src("./devEnv/js/*.js)
+        .pipe(concat("final.min.js"))
+        .pipe(uglify())
+        .pipe(gulp.dest("./prodEnv/js"));
+});
+
+
+//create the task
+gulp.task("task_four", function(){
+    return bower();
+});
+
+
+//create the default task
+gulp.task("default",["task_one","task_two","task_three","task_four"] , function(){
+
+});
+
+
+Step 6:
+    Execute the gulp script
+
+> gulp
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
