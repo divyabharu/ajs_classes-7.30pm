@@ -1,0 +1,187 @@
+Communication Between Controllers:
+
+    - in angularjs we can provide the communication between controllers in four ways.
+
+        1. broadcast
+        2. emit
+        3. rootScope
+        4. custom services
+
+broadcast communication:
+
+    - sharing the data from parent controllers to child controllers called as broadcast communication.
+
+
+Ex.
+
+parent_controller.js
+-
+$scope.$broadcast("key1" , "For Child Controller !");
+
+child_controller.js
+-
+$scope.$on("key1", function(event,res){
+    console.log(res);   // For Child Controller !
+});
+
+[Note : $broadcast object used to share the data to all child controllers
+
+        $on object used to listen the either broadcasted data or emited data]
+
+emit communication:
+-
+    - sharing the data from child controllers to parent controllers called as emit communication.
+
+Ex.
+    child_controller.js
+    -------------------
+    $scope.$emit("key1" , "For Parent Controller !");
+
+    parent_controller.js
+    --------------------
+    $scope.$on("key1" , function(event,res){
+        console.log(res);    //For Parent Controller !
+    });
+
+
+broadcast:
+
+
+<div ng-controller="parent_controller">
+
+    <input type="text" ng-model="model_one">
+    <input type="text" ng-model="model_two">
+    <button ng-click="clickMe({'key1':model_one,'key2':model_two})">ClickMe</button>
+
+    <div ng-controller="child_one">
+        <h1>{{var_one}}</h1>
+    </div>
+
+
+    <div ng-controller="child_two">
+            <h1>{{var_two}}</h1>
+    </div>
+
+</div>
+
+parent_controller.js
+--------------------
+$scope.clickMe = function(obj){
+    $scope.$broadcast("key1",obj);
+}
+
+child_one.js
+------------
+$scope.$on("key1",function(event,res){
+    $scope.var_one = res.key1;
+});
+
+
+child_two.js
+------------
+$scope.$on("key1",function(event,res){
+    $scope.var_two = res.key2;
+});
+
+
+emit example
+------------
+<div ng-controller="parent_controller">
+    <h1>{{var_one}}</h1>
+
+    <div ng-controller="child_controller">
+        <input type="text" ng-model="model_one">
+        <button ng-click="clickMe(model_one)">ClickMe</button>
+    </div>
+</div>
+
+
+child_controller.js
+-
+$scope.clickMe = function(arg1){
+    $scope.$emit("key1",arg1);
+}
+
+
+parent_controller.js
+--------------------
+$scope.$on("key1",function(event,res){
+    $scope.var_one = res;
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
