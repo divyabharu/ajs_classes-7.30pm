@@ -1,0 +1,22 @@
+<!--
+ng-cloak:
+    - this directive used to avoid the blinking/flickering of web page while refreshing.
+-->
+<!DOCTYPE html>
+<html lang="en" ng-app="app">
+
+    <div ng-controller="ctrl_one" ng-cloak>
+        <h1>{{var_one}}</h1>
+    </div>
+
+
+    <div ng-controller="ctrl_two" ng-cloak>
+        <h1>{{var_two}}</h1>
+    </div>
+
+
+    <script src="../bower_components/angular/angular.min.js"></script>
+    <script src="app.js"></script>
+    <script src="controllers/ctrl_one.js"></script>
+    <script src="controllers/ctrl_two.js"></script>
+</html>
