@@ -5,5 +5,12 @@
     "gulp": "^3.9.1",
     "gulp-bower":"^0.0.13",
     "gulp-open":"^2.0.0"
+  },
+  "dependencies": {
+    "express": "^4.15.3",
+    "mysql": "^2.14.0",
+    "mongodb": "^2.2.30",
+    "jwt-simple": "^0.5.1",
+    "body-parser": "^1.17.2"
   }
 }
