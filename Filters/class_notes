@@ -1,0 +1,24 @@
+Filter:
+    Filters are used to format the application data based on application requirements.
+    We have two types of filters:
+    1. Pre-defined filters
+    2. Custom filters
+
+  Pre-Defined filters: The filters given by the frameworks called as predefined filters.
+  Custom filters: The filters developed by developer based on application requirements
+
+
+
+1. uppercase
+
+2. lowercase
+
+3. currency
+
+4. orderBy (+ --> assending - --> decending)
+
+5. limitTo
+
+6. filter
+
+7. date

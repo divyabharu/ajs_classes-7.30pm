@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="app" ng-controller="ctrl">
+
+    <h1 style="color: red">{{"welcome" | uppercase}}</h1>
+    <h1 style="color: green">{{"ANGULARJS" | lowercase}}</h1>
+    <h1 style="color: blue">{{100 | currency:"$":4}}</h1>
+
+
+    <input type="text" ng-model="search"> <br><br>
+
+    <table border="2">
+        <tr>
+            <th>id</th>
+            <th>sub</th>
+            <th>rank</th>
+        </tr>
+
+        <tr ng-repeat="x in [{'id':1,'name':'AngularJS','rank':1},
+                            {'id':5,'name':'mongoDB','rank':5},
+                            {'id':2,'name':'Angular4','rank':2},
+                            {'id':4,'name':'NodeJS','rank':4},
+                            {'id':3,'name':'reactJS','rank':3}]
+
+                            | orderBy:'id'
+                            | limitTo:3
+                            | filter: search">
+
+
+            <td>{{x.id}}</td>
+            <td>{{x.name}}</td>
+            <td>{{x.rank}}</td>
+        </tr>
+    </table>
+
+
+    <h1>{{todayDate}}</h1>
+    <h1>{{todayDate | date:'medium'}}</h1>
+    <h1>{{todayDate | date:'short'}}</h1>
+    <h1>{{todayDate | date:'fullDate'}}</h1>
+    <h1>{{todayDate | date:'dd-MM-yy'}}</h1>
+    <h1>{{todayDate | date:'shortTime'}}</h1>
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.0/angular.min.js"></script>
+    <script>
+        var app = angular.module("app",[]);
+        app.controller("ctrl",ctrl);
+        function ctrl($scope) {
+            $scope.todayDate = new Date();
+        }
+    </script>
+</html>
