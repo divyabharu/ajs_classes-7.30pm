@@ -257,6 +257,433 @@ Step 6:
 
 
 
+AngularJS ??
+
+    - AngularJS is the client side javascript framework.
+
+    - angularjs follows the MVC Design pattern.
+
+        M - Model
+
+            Ex. javascript variables called as model in angularjs
+                var data = "Data from database soon....";
+
+        [Note : where "data" variable called as model in angularjs]
+
+
+       V - View
+
+            - we can use HTML / HTML5 / JADE as the View in angularJS.
+
+       C - Controller
+
+            - javascript functions called as controllers in angularjs.
+
+        Ex.
+            function fetchData(){
+                var data = "Data From MongoDB....";
+            }
+
+        [Note : fetchData() function called as controller in angularjs]
+
+
+Advantages Of AngularJS:
+------------------------
+1. AngularJS Supports Modules (both predefined modules and custom modules).
+
+    Module : collection of predefined javascript classes called as Module
+
+
+- ngAnimate
+        - this module used to develop the animations in angular application.
+
+
+- ngStorage
+        - this module used to work with the client side storages.
+        - we have two types of storages.
+            1. localStorage
+            2. sessionStorage
+
+- ngMessages
+    - this module used to handle the client side form validations.
+
+- ngRoute
+    - this module used to implement the routing in single page applications.
+    - ngRoute module is the deprecated module
+    - now a days no project using ngRoute Module in single page applications.
+
+- ui.router
+    - this module used to implement the routing in single page application.
+    - ui.router module is the 3rd party module
+    - ui.router module have so many advantages compared to ngRoute Module.
+    - now a days all most all projects using ui.router module while implementing the single page applications.
+
+
+Ex.
+develop angular application with following features.
+
+1. Animations       (ngAnimate)
+2. Validations      (ngMessages)
+3. Single Page Application (ui.router)
+4. Storages         (ngStorage)
+
+index.html
+----------
+<!DOCTYPE html>
+<html ng-app="myApp">
+
+    //we can develop the Animations , work on storages, validations and routing
+
+    <script src="bower_components/angular/angular.min.js"></script>
+    <script>
+        var app = angular.module("myApp",["ngAnimate","ngStorage","ngMessages","ui.router"]);
+    </script>
+</html>
+
+
+
+2. As a angular developer we can directly work with HTML DOM.
+
+    - DOM stands for document object model
+    - in general DOM Object created by browser engine.
+
+
+Ex.
+
+    copy the data from "one div" to "another div" by using html & javascript
+
+index.html
+----------
+<html>
+    <div id="div_one">Hello</div>
+    <div id="div_two"></div>
+    <script>
+        document.getElementById("div_two").innerHTML =
+        document.getElementById("div_one").value;
+    </script>
+</html>
+
+[Note : as a html developer we must dependent on javascript to manipulate the DOM]
+
+
+Ex.
+    copy the data from "one div" to "another div" by using angularjs.
+
+index.html
+----------
+<html ng-app>
+    <div ng-model="div_one">Hello</div>
+    <div ng-bind="div_one"></div>
+    <script src="bower_components/angular/angular.min.js"></script>
+</html>
+
+
+1. in the above sample application we have following angular directives.
+
+    1. ng-app
+    2. ng-model
+    3. ng-bind
+
+2. angular framework starts the execution from ng-app directive
+
+3. ng-model directive internally creates the object in heap memory with application data.
+
+4. ng-bind directive binds the "model data" to "view".
+
+
+[Note : as a angular developer we will dependent on angular directives to manipulate the DOM ]
+
+
+3. open source code
+    - we can customize the framework accroding to application requirement.
+
+        Ex.
+            adding the new features to framework
+
+            update the existing  features
+
+            delete the features
+
+                --
+                --
+
+4. two way data binding
+
+    - angular framework supports two way data binding.
+
+    [automatic data syncronization between model and view with the supervision of controller
+     called as two way data binding]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
