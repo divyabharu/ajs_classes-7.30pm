@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="app" ng-controller="ctrl">
+
+    <h1>{{todayDate | date:'medium'}}</h1>  <!--Jul 27, 2017 6:40:36 PM-->
+    <h1>{{todayDate | date:'short'}}</h1>   <!--7/27/17 6:41 PM-->
+    <h1>{{todayDate | date:'fullDate'}}</h1> <!--Thursday, July 27, 2017-->
+    <h1>{{todayDate | date:'shortTime'}}</h1>  <!--6:42 PM-->
+    <h1>{{todayDate | date:'dd-MM-yy'}}</h1>   <!--27-07-17-->
+    <h1>{{todayDate | date:'MM-dd-yyyy'}}</h1>  <!--07-27-2017-->
+
+
+    <h1>{{"welcome" | uppercase}}</h1>
+    <h1>{{"ANGULARJS" | lowercase}}</h1>
+    <h1>{{100 | currency}}</h1>   <!--$100.00-->
+    <h1>{{200 | currency:"$":4}}</h1> <!--$100.0000-->
+
+    <input type="text" ng-model="search"><br><br>
+    <table border="2">
+        <tr>
+            <th>id</th>
+            <th>name</th>
+            <th>age</th>
+        </tr>
+        <tr ng-repeat="x in [{'id':1,'name':'Hello_1','age':20},
+                             {'id':5,'name':'Hello_5','age':28},
+                             {'id':2,'name':'Hello_2','age':22},
+                             {'id':4,'name':'Hello_4','age':26},
+                             {'id':3,'name':'Hello_3','age':24}]
+                            | orderBy:'age'
+                            | limitTo:3
+                            | filter:search">
+
+            <td>{{x.id}}</td>
+            <td>{{x.name}}</td>
+            <td>{{x.age}}</td>
+        </tr>
+    </table>
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.0/angular.min.js"></script>
+    <script>
+        var app=angular.module("app",[]);
+
+
+        app.controller("ctrl",ctrl);
+        function ctrl($scope) {
+            $scope.todayDate = new Date();
+        }
+    </script>
+</html>
