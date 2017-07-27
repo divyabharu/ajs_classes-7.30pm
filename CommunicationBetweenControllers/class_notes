@@ -110,6 +110,108 @@ $scope.$on("key1",function(event,res){
 });
 
 
+communication between controllers by using rootScope:
+-----------------------------------------------------
+app.controller("ctrl_one",ctrl_one);
+function ctrl_one($scope){
+    $scope.clickMe = function(arg1){
+        $scope.my_fun(arg1);
+    }
+}
+app.controller("ctrl_two",ctrl_two);
+function ctrl_two($rootScope,$scope){
+    $rootScope.my_fun = function(arg1){
+        $scope.var_one = arg1;
+    }
+}
+<div ng-controller="ctrl_one">
+    <input type="text" ng-model="model_one">
+    <button ng-click="clickMe(model_one)">ClickMe</button>
+</div>
+<div ng-controller="ctrl_two">
+    {{var_one}}
+</div>
+
+communication between controllers by using custom service:
+----------------------------------------------------------
+
+my_service.js
+-------------
+app.service("my_service",my_service);
+function my_service(){
+    this.my_var="";
+    this.setData = function(arg1){
+        this.my_var=arg1;
+    }
+    this.getData = function(){
+        return this.my_var;
+    }
+}
+
+ctrl_one.js
+-----------
+app.controller("ctrl_one",ctrl_one);
+function ctrl_one($scope,my_service){
+    $scope.clickMe = function(arg1){
+       my_service.setData(arg1);
+    }
+}
+
+ctrl_two.js
+-----------
+app.controller("ctrl_two",ctrl_two);
+function ctrl_two($scope,my_service){
+    $scope.clickMe = function(){
+        $scope.var_one = my_service.getData();
+    }
+}
+
+view_one.html
+-------------
+<div ng-controller="ctrl_one">
+    <input type="text" ng-model="model_one">
+    <button ng-click="clickMe(model_one)">SetData</button>
+</div>
+
+view_two.html
+-------------
+<div ng-controller="ctrl_two">
+    <button ng-click="clickMe()">Get Data</button>
+    <h1>{{var_one}}</h1>
+</div>
+
+index.html
+----------
+<html ng-app="app">
+    <div ng-include="view_one.html"></div>
+    <div ng-include="view_two.html"></div>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
