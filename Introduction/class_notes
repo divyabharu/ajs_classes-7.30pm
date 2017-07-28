@@ -407,12 +407,59 @@ index.html
                 --
                 --
 
-4. two way data binding
+4. AngularJS Reduces the burden on the server.
+    - As a Angular Developer we can implement the business components at client side
 
+
+5. two way data binding
     - angular framework supports two way data binding.
 
     [automatic data syncronization between model and view with the supervision of controller
      called as two way data binding]
+
+
+     - in the above diagram we have following server requests
+
+
+     1. http get request
+     2. http delete request
+     3. AJAX Call
+
+
+    - As a programming languages developer, we must make above all server calls to meet application
+      requirement.
+
+    - As a angularjs / angular2 developer we can make only two server calls to meet application requirement
+      because of two way data binding.
+
+[Note : two way data binding reduces the burden on the server]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
