@@ -1,4 +1,7 @@
 app.controller("homeController",homeController);
-function homeController($scope) {
-    $scope.home = "Welcome to Home Page !"
-}
+function homeController($scope,$location,$localStorage) {
+    $scope.logout = function () {
+        delete $localStorage.poc;
+        $location.path("/login");
+    };
+};
