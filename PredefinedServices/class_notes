@@ -1,0 +1,9 @@
+1. $http
+    - this predefined service used to connect to servers by using http protocol.
+
+    Ex.
+        Tomcat
+        Weblogic
+        IIS
+        Xampp
+        NodeServer
