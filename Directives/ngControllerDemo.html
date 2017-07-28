@@ -1,3 +1,4 @@
+<!--
 <!DOCTYPE html>
 <html lang="en" ng-app="app">
 
@@ -27,4 +28,143 @@
 
     </script>
 
+</html>-->
+
+
+
+
+
+
+<!--
+
+<!DOCTYPE html>
+<html ng-app="app">
+
+<div class="my_class">
+    <div ng-controller="parent_controller">
+        {{parent}}
+        <div ng-controller="child_controller">
+            {{child}}
+            <div ng-controller="sub_controller">
+                {{sub}}
+            </div>
+        </div>
+    </div>
+</div>
+
+    <style>
+        div.my_class div{
+            border: 2px solid red;
+            text-align: center;
+            color: green;
+            font-size: large;
+            padding: 10px;
+        }
+    </style>
+
+
+    <script src="bower_components/angular/angular.min.js"></script>
+    <script>
+        var app = angular.module("app",[]);
+
+
+        app.controller("parent_controller",parent_controller);
+        function parent_controller($scope) {
+            $scope.parent = "I am from parent controller !";
+        }
+
+        app.controller("child_controller",child_controller);
+        function child_controller($scope) {
+            $scope.child = "I am from child controller !";
+        }
+
+        app.controller("sub_controller",sub_controller);
+        function sub_controller($scope) {
+            $scope.sub = "I am from sub controller !";
+        }
+
+
+
+    </script>
 </html>
+-->
+
+<!DOCTYPE html>
+<html ng-app="app">
+
+    <h1>{{my_fun()}}</h1>
+    <div ng-controller="ctrl">
+        <h1>{{my_fun()}}</h1>
+    </div>
+
+    <script src="bower_components/angular/angular.min.js"></script>
+    <script>
+        var app = angular.module("app",[]);
+
+        app.controller("ctrl",ctrl);
+        function ctrl($rootScope,$scope) {
+
+            $scope.sub_one = "AngularJS";
+            $scope.sub_two = "NodeJS";
+            $scope.sub_three = "MongoDB";
+
+
+            $rootScope.my_fun = function () {
+                return $scope.sub_one+"<==>"+$scope.sub_two+"<==>"+$scope.sub_three;
+            };
+        };
+
+    </script>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

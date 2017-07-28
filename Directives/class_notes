@@ -43,7 +43,11 @@ manual bootstrap:
 
 
 
-
+3. ng-repeat
+    - this directive used to iterate the list of elements from an array.
+    Syntax.
+        ng-repeat = "variable in array"
+            {{variable}}
 
 
 
