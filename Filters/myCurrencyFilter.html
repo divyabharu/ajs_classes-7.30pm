@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="app">
+
+    <h1>{{100 | my_currency:"&#8377;":true}}</h1>
+    <h1>{{200 | my_currency:"&#8364;":false}}</h1>
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.0/angular.min.js"></script>
+    <script>
+
+        var app = angular.module("app",[]);
+
+        app.filter("my_currency",my_currency);
+        function my_currency() {
+            return function (amount,symbol,position) {
+                if(position){
+                    return symbol+" "+amount;
+                }else{
+                    return amount+" "+symbol;
+                }
+            }
+        }
+
+    </script>
+
+
+</html>

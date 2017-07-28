@@ -22,3 +22,31 @@ Filter:
 6. filter
 
 7. date
+
+
+
+custom filters:
+    - creating our own filter based on application requirement called as custom filter.
+
+
+Syntax.
+
+    app.filter("my_filter",my_filter);
+    function my_filter(){
+        return function(arg1,arg2,arg3,arg4,.....){
+            //Code
+        }
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
