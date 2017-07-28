@@ -1,0 +1,9 @@
+{
+  "name": "Example_1",
+  "version": "0.0.1",
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-bower":"^0.0.13",
+    "gulp-open":"^2.0.0"
+  }
+}
