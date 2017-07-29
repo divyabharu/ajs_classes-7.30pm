@@ -147,6 +147,101 @@ index.html
 <div class="sample"></div>
 
 
+Example_2:
+---------
+
+--------------
+Example_2
+    templates
+        header.html
+    controllers
+        header.js
+    directives
+        header.js
+    app.js
+    index.html
+------------------
+
+templates/header.html
+-
+<div class="dropdown">
+    <button class="btn btn-primary" data-toggle="dropdown">Click Me</button>
+    <ul class="dropdown-menu">
+        <li>Option_1</li>
+        <li>Option_2</li>
+        <li>Option_3</li>
+        <li>Option_4</li>
+        <li ng-click="logout()">Logout</li>
+    </ul>
+</div>
+
+
+[Note : "dropdown" bootstrap class used to make the html element as dropdown
+
+        "data-toggle" is a jQuery event for toggling the menu functionality
+
+        "dropdown-menu" class used to create the menu inside dropdown]
+
+
+
+controllers/header.js
+---------------------
+app.controller("header",header);
+function header($scope){
+    $scope.logout = function(){
+        alert("Logged Out Successfully !");
+    }
+}
+
+
+directives/header.js
+--------------------
+app.directive("header",header);
+function header(){
+    return{
+        templateUrl:"templates/header.html",
+        controller : "header"
+    }
+}
+
+
+index.html
+----------
+
+<header></header>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
