@@ -1,0 +1,16 @@
+Storages:Browser supports two types of storages.
+1. Local storage
+2. Session storage
+
+Local Storage:
+
+    - As a developer, we must delete the local storage.
+
+Session Storage:
+    - Whenever we close the browser automatically we will lost the data.
+
+
+- in general we will store the data in the form of a "key&value" pairs.
+
+
+
