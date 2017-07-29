@@ -1,0 +1,21 @@
+{
+  "name": "Storages",
+  "homepage": "https://github.com/ajsnaresh/AJS_Classes",
+  "authors": [
+    "Samba <samba.pendela@gmail.com>"
+  ],
+  "description": "",
+  "main": "",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies":{
+    "angular":"latest",
+    "ngstorage":"latest"
+  }
+}
