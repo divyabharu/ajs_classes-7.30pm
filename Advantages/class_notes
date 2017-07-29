@@ -1,0 +1,98 @@
+By using AngularJS , we can manipulate the DOM Object Directly.
+
+    DOM - Document Object Model.
+
+    in general DOM Object Created By Browser Engines.
+
+Ex:
+    Copy the Data From One Div to Another Div by using "HTML & JavaScript"
+
+
+index.html
+----------
+<!DOCTYPE html>
+
+<html>
+    <div id="div_one">Data From DB Soon....</div>
+    <div id="div_two"></div>
+
+    <script>
+        document.getElementById("div_two").innerHTML =
+        document.getElementById("div_one").value;
+    </script>
+</html>
+
+
+Copy the Data From One Div to Another Div by using AngularJS:
+-------------------------------------------------------------
+index.html
+----------
+
+<!DOCTYPE html>
+<html ng-app>
+
+    <div ng-model="div_one">Hello</div>
+
+    <div ng-bind="div_one"></div>
+
+    <script src="bower_components/angular/angular.min.js"></script>
+
+
+</html>
+
+- angular framework starts the execution from ng-app directive.
+
+- ng-model directive creates the object with application data
+
+- ng-bing directive binds the application data to view.
+
+note: As a angular developer we can manipulate DOM directly without depending on javascript.
+
+
+2. AngularJS Follows MVC Design Pattern.
+
+
+    M - Model
+
+    V - View
+
+    C - Controller
+
+
+
+3. by using AngularJS , we can create two types of applications.
+
+       1. Static Angular Application.
+
+       2. Dynamic Angular Application.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
