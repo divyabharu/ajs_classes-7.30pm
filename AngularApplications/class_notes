@@ -1,0 +1,141 @@
+
+
+    - by using angularjs, we can create two types of angular applications.
+
+        1. static angular application
+
+        2. dynamic angular application
+
+
+static angular application:
+
+    - if view won't interacts with the controller for dynamic data then such type of application called as
+      static angular application.
+
+
+steps to design the static angular application:
+-----------------------------------------------
+
+Step 1:
+
+    download angular framework by using bower.
+
+
+Step 2:
+
+    load angular framework
+
+
+Step 3:
+    create view
+
+
+
+- Angular Framework starts the execution from ng-app directive.
+
+- static angular applications won't take take logical name of web application.
+
+    Ex.
+        ng-app
+
+- ng-model directive creates the object internally with application data.
+
+- ng-bind directive binds the application data (model data) to the view.
+
+
+
+dynamic angular application:
+----------------------------
+
+    - if view interacts with the controller, for dynamic data then such type of application
+      called as dynamic angular application.
+
+
+steps to create the dynamic angular application:
+------------------------------------------------
+
+Step 1:
+    download angular framework by using bower
+
+Step 2:
+    load angular framework
+
+step 3:
+    declare the logical name for the web application
+
+step 4:
+    declare the controller
+
+Step 5:
+    implement the controller.
+
+    //create the object (Application Level Object)
+
+    var app = angular.module("myApp",[]);   //@app  - object
+                                            // we can call controllers, services, filters, directives....
+
+
+
+    app.controller("ctrl" , ctrl);
+    function ctrl(){
+        //Business Logic
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

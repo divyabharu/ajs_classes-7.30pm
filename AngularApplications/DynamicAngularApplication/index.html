@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="app">
+    <!-- 1. Declaration Of Controller
+         2. ctrl is the name of controller
+    -->
+    <div ng-controller="ctrl">
+        <h1>{{sub_one+"<==>"+sub_two+"<==>"+sub_three}}</h1>
+    </div>
+    <script src="bower_components/angular/angular.min.js"></script>
+    <script>
+        var app = angular.module("app",[]);
+        app.controller("ctrl",ctrl);
+        function ctrl($scope) {
+            //variable
+            $scope.sub_one = "AngularJS";
+            $scope.sub_two = "NodeJS";
+            $scope.sub_three = "MongoDB";
+
+        }
+    </script>
+</html>
