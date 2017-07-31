@@ -52,20 +52,114 @@ manual bootstrap:
 
 
 
+4.ng-options
+    - this directive used to populate the data to the dropdown.
+    Syntax.
+        ng-options="model_values as dropdown_values for variable in array"
+
+    Ex.
+        $scope.array = [
+                        {'id':1,'name':'AngularJS'},
+                        {'id':2,'name':'Angular2'},
+                        {'id':3,'name':'reactJS'},
+                        {'id':4,'name':'NodeJS'},
+                        {'id':5,'name':'mongodb'}
+                        ];
+
+                *****************
+        Use Case_1:
+            dropdown - sub's
+            model    - id's
+
+        <select ng-model="model_one"
+                ng-options="x.id as x.sub for x in array">
+            <option value="">--Choose Subject--</option>
+        </select>
+        <h1>{{model_one}}</h1>
+                ******************
+
+                ---------------------------
+        Use Case_2:
+            dropdown - id's
+            model    - sub's
+
+        <select ng-model="model_two"
+                ng-options="x.sub as x.id for x in array">
+            <option value="">--Select ID--</option>
+        </select>
+        <h1>{{model_two}}</h1>
+             -------------------------------
 
 
 
+                    ##############################
+        Use Case_3:
+
+            dropdown-sub's
+            model   - sub's
+
+        <select ng-model="model_three"
+                ng-options="x.sub as x.sub for x in array">
+            <option value="">Select Sub</option>
+        </select>
+        <h1>{{model_three}}</h1>
+                ####################################
+
+
+                    *********************************
+        Use Case_4:
+
+            dropdown - id's
+            model    - id's
+        <select ng-model="model_four"
+                ng-options="x.id as x.id for x in array">
+            <option value="">--Choose ID--</option>
+        </select>
+        <h1>{{model_four}}</h1>
+                *******************************************
+
+        Ex.
+
+        $scope.array = ["AngularJS","Angular2","reactJS","NodeJS","mongoDB"];
+
+        Use Case:
+            dropdown - sub's
+            model    - sub's
+        <select ng-model="model_five"
+                ng-options="x as x for x in array"></select>
+
+
+5. ng-dblclick
+    - when ever we double click the user interface elements, automatically angular framework will
+      execute ng-dblclick directive.
+
+Syntax.
+    ng-dblclick="expression"/
+                "user defined function"/
+                "user defined function with parameters"
 
 
 
+6.ng-class-odd
+    - this directive used to apply the "css classes" to the "odd rows" of table.
+
+Syntax.
+    ng-class-odd="my_class"
 
 
 
+7.ng-class-even
+    - this directive used to apply the css classes to the even rows of table.
+
+Syntax:
+    ng-class-even="my_class"
 
 
+8.ng-include
+    - this directive used to include target template to source template.
 
-
-
+Syntax.
+    ng-include="sample.html"
 
 
 
