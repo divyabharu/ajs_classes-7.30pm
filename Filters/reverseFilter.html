@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="app" ng-controller="ctrl">
+
+    <h1>{{var_one | reverse}}</h1>
+
+    <h1>{{var_two | reverse}}</h1>
+
+    <script src="bower_components/angular/angular.min.js"></script>
+
+    <script>
+        var app = angular.module("app",[]);
+
+
+        app.controller("ctrl",ctrl);
+        function ctrl($scope) {
+            $scope.var_one = "angularjs";
+            $scope.var_two = "nodejs";
+        }
+
+
+        app.filter("reverse",reverse);
+        function reverse() {
+            return function (arg1) {
+                var data="";
+                for(var i=0;i<arg1.length;i++){
+                    data=arg1[i]+data;
+                }
+                return data;
+            };
+        };
+    </script>
+</html>

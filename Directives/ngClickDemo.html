@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="app" ng-controller="ctrl">
+
+    <h1>{{obj}}</h1>
+
+    <label>Uname.</label>&emsp;&emsp;&emsp;&emsp;
+    <input type="text" ng-model="obj.uname">
+
+    <br><br>
+    <label>Upwd.</label>&emsp;&emsp;&emsp;&emsp;
+    <input type="password" ng-model="obj.upwd">
+
+    <br><br>
+    <!--<button ng-click="login(uname,upwd)">Login</button>-->
+    <!--<button ng-click="login({'uname':uname,'upwd':upwd})">Login</button>-->
+    <button ng-click="login()">Login</button>
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.0/angular.min.js"></script>
+    <script>
+        var app = angular.module("app",[]);
+
+        app.controller("ctrl",ctrl);
+        function ctrl($scope) {
+
+            /*$scope.login = function (arg1,arg2) {
+                if(arg1=="admin" && arg2=="admin"){
+                    alert("Login Success !!!");
+                }else{
+                    alert("Login Fails !!!");
+                }
+            };*/
+
+            /*$scope.login = function (arg1) {
+                alert(arg1.uname+"..."+arg1.upwd);
+            };*/
+
+            $scope.obj={};
+            $scope.login = function () {
+                alert($scope.obj.uname+"..."+$scope.obj.upwd);
+            };
+
+        }
+    </script>
+</html>

@@ -1,0 +1,41 @@
+Filters: Filters are used to format the application data
+         according to application requirement.
+
+         we have 2 types of filters
+                1. Pre defined filters
+                2. Custom filters
+
+        Pre Defined Filters: Filters given by the angular framework called as pre defined filters
+
+                1.uppercase:
+                    - used to convert lower case characters to uppercase
+                2.lowercase:
+                    - used to convert upper case characters to lowercase.
+                3.currency:
+                    - used to append the '$' symbol to numerical values.(default $ symbol)
+                4.date:
+                    -used to format the date according to application requirment.
+                5.orderBy:
+                    -used to arrange the data either ascending or descending order('+' means ascending;'-' means descending)
+                6.limitTo:
+                    - used to display the required number of records
+                7.filter:
+                    - used to search the whole array based on user input.
+
+
+                Custom Filters:
+
+                    - creating our own filter based on application requirement called as Custom Filters.
+
+
+
+                Syntax:
+
+                       app.filter("reverse" , reverse);
+                       function reverse(){
+                            return function(arg1,arg2,arg3,arg4,.....argn){
+                                //Logic
+                            }
+                       }
+
+

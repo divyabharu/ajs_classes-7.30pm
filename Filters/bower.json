@@ -1,0 +1,6 @@
+{
+  "name":"filters",
+  "dependencies":{
+    "angular":"latest"
+  }
+}

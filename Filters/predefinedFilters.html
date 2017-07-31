@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="app">
+
+    <div ng-controller="ctrl">
+        <!--<h2>{{todayDate | date:'dd-MM-yyyy'}}</h2>
+        <h2>{{todayDate | date:'medium'}}</h2>
+        <h2>{{todayDate | date:'fullDate'}}</h2>
+        <h2>{{todayDate | date:'shortTime'}}</h2>
+        <h2>{{todayDate | date:'MM-dd-yy'}}</h2>-->
+
+        <!--<h1>{{amount | currency}}</h1>
+        <h1>{{amount | currency:"$":4}}</h1>-->
+
+        <!--<h1>{{var_one | uppercase}}</h1>-->
+       <!-- <h1>{{var_two | lowercase}}</h1>-->
+
+
+        <input type="text" ng-model="search"><br><br>
+
+        <table border="1">
+            <tr>
+                <th>id</th>
+                <th>name</th>
+            </tr>
+            <tr ng-repeat="x in array |
+                            orderBy:'-id' |
+                            limitTo:3 |
+                            filter:search">
+                <td>{{x.id}}</td>
+                <td>{{x.name}}</td>
+            </tr>
+        </table>
+
+    </div>
+
+    <script src="bower_components/angular/angular.min.js"></script>
+    <script>
+
+        var app = angular.module("app",[]);
+
+        app.controller("ctrl",ctrl);
+        function ctrl($scope) {
+            $scope.todayDate = new Date();
+            $scope.amount=300;
+            $scope.var_one = "angularjs";
+            $scope.var_two="NODEJS";
+
+            $scope.array = [{'id':1,'name':'Raja'},
+                            {'id':5,'name':'Karthic'},
+                            {'id':2,'name':'Naresh'},
+                            {'id':4,'name':'Sairam'},
+                            {'id':3,'name':'Veeru'}];
+
+
+        }
+
+    </script>
+</html>
