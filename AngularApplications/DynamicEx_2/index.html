@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="app" ng-controller="ctrl">
+
+    <h1 style="color: red">{{sub_one+"<==>"+sub_two+"<==>"+sub_three}}</h1>
+    <h1 style="color: green">{{fun_one()}}</h1>
+    <h1 style="color: blue">{{fun_two()}}</h1>
+    <h1 ng-repeat="x in array">{{x}}</h1>
+    <h1>{{obj.id+"...."+obj.name}}</h1>
+
+
+    <script src="bower_components/angular/angular.min.js"></script>
+    <script>
+        var app = angular.module("app",[]);
+
+        app.controller("ctrl",ctrl);
+        function ctrl($scope) {
+            //create the variables
+            $scope.sub_one = "AngularJS";
+            $scope.sub_two="NodeJS";
+            $scope.sub_three = "MongoDB";
+
+            $scope.fun_one=function () {
+                return $scope.sub_one+"<==>"+$scope.sub_two+"<==>"+$scope.sub_three;
+            };
+
+            $scope.fun_two = function () {
+                return $scope.fun_three();
+            };
+
+            $scope.fun_three = function () {
+                return $scope.sub_one+"<==>"+$scope.sub_two+"<==>"+$scope.sub_three;
+            };
+
+
+            $scope.array = [10,20,30,40,50];
+
+            $scope.obj = {'id':1,'name':'AngularJS'};
+
+
+
+        }
+    </script>
+</html>

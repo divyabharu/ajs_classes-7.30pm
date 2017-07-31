@@ -1,0 +1,76 @@
+Directives:
+    - Directives in angularjs, used to enhances the html capabilities.
+
+    - we have to types of directives.
+
+        1. predefined directives
+
+        2. custom directives
+
+
+predefined directives:
+    - the directives given by the angular framework called as predefined directives.
+
+    Ex.
+        ng-app
+        ng-model
+        ng-bind
+        ng-repeat
+        --
+        --
+        --
+
+custom directives:
+    - the directives developed by developer called as custom directives
+
+Ex.
+    my_dir
+
+
+predefined directives:
+----------------------
+1.ng-controller
+
+    - this directive used to declare the controllers.
+
+    - in general we will declare the controllers in view.
+
+        Ex.
+            <div ng-controller="ctrl">
+
+            </div>
+
+    - in genaral we will implement controllers in javascript
+
+        Ex.
+            app.controller("ctrl",ctrl);
+            function ctrl($scope){
+                //Logic
+            }
+
+    - in general we can take more than one controller per web application.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

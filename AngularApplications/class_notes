@@ -82,6 +82,77 @@ Step 5:
     }
 
 
+Declaration of Members(variables & functions) in controller.
+------------------------------------------------------------
+//declaration of variables.
+$scope.var_one = "Welcome to AngularJS !";
+$rootScope.var_one = "Welcome to AngularJS !";
+
+
+
+//Declaration of functions.
+Ex_1:
+$scope.fun_one = function(){
+    return "Welcome to AngularJS";
+}
+
+Ex_2:
+$scope.fun_one = function(){
+    $scope.fun_two();
+}
+$scope.fun_two = function(){
+    return "I am from fun_two !";
+}
+
+Ex_3:
+$rootScope.fun_one = function(){
+    return "welcome to functions !";
+}
+
+
+//Declaration of Arrays in controllers
+$scope.array = [10,20,30,40,50];
+$scope.array = [{'id':1,'name':'Hello_1','age':20},
+                {'id':2,'name':'Hello_2','age':22},
+                {'id':3,'name':'Hello_3','age':24},
+                {'id':4,'name':'Hello_4','age':26},
+                {'id':5,'name':'Hello_5','age':28}];
+
+
+
+//Declaration Of Objects(JSON Objects) in controllers
+$scope.obj = {'id':1,'name':'Hello_1','age':20};
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
