@@ -64,6 +64,52 @@ function my_service($http){
 };
 
 
+$timeout:
+---------
+    - this service used to execute a custom function with a given timer.
+
+Syntax.
+    $timeout(fun_one,5000);
+    function fun_one(){
+        //Business Logic
+    }
+[ Note: fun_one will execute after 5 sec ]
+
+
+$interval:
+----------
+    - this service used to execute a custom function repetedely with a given interval of time.
+
+
+Syntax.
+    $interval(fun_two,1000);
+    function fun_two(){
+        //Business Logic
+    }
+
+[Note : fun_two will execute repetedely for every 1 sec]
+
+$location:
+----------
+    - this service used to find the absolute path of web application.
+
+Syntax.
+    $scope.var_three = $location.absUrl();
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

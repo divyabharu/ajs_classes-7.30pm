@@ -1,0 +1,129 @@
+NodeJS:
+    - NodeJS is the server side scripting language.
+    - by using NodeJS, we can create the http&tcp servers.
+    - in general node applications we can develop by using javascript.
+
+modules in NodeJS:
+-----------------
+1. express
+    - this module used to develop the Rest API.
+
+2. mysql
+    - this module used to interact with the mysql database.
+
+3.mongodb
+    - this module used to interact with the mongodb.
+
+4. http
+    - this module used to create the http servers.
+
+5.body-parser
+    - this module used to set the MIME Type.
+    Ex.
+        text
+        json
+        xml
+        --
+        --
+        --
+6.jwt-simple
+    - this module used to  maintain the token based authentication system.
+
+7.fs
+    - this module used to interact with the flat files.
+    Ex.
+        text files
+        json files
+        xml files
+            --
+            --
+            --
+8.multer
+    - this module used to handle the multimedia images.
+
+9.cluster
+     - this module used to implement the clustering in node applications.
+
+- in general we will download the node modules by using "package.json" file.
+
+- we can execute the package.json file by using "npm install" command.
+
+
+Ex_1:
+    Basic Communication Between Angular and Node.
+
+------------------------
+Node_BasicEx
+
+        index.html
+
+        package.json
+
+        server.js
+-----------------------
+
+package.json
+{
+    "name":"nareshit",
+    "version":"1.0.0",
+    "description":"basic node example",
+    "dependencies":{
+        "express":"latest"
+    }
+}
+
+
+>npm install
+
+
+server.js
+---------
+//import express
+var express = require("express");
+
+
+//create the server instance
+var app = express();
+
+
+//deploy the application
+app.use(express.static(__dirname+"/../Node_BasicEx"));
+
+
+//assign the port no.
+app.listen(8080);
+console.log("Server Listening the Port No.8080");
+
+
+>npm start
+[Startup the Server]
+
+
+
+Example_2:
+================
+Node_StaticData
+    emp.json
+    index.html
+    package.json
+    server.js
+================
+
+Launch the Application:
+http://localhost:8080/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
