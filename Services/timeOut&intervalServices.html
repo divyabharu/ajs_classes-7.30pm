@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="app" ng-controller="ctrl">
+
+    <h1>{{todayDate}}</h1>
+
+    <h1>{{var_one}}</h1>
+
+    <h1>{{path}}</h1>
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.0/angular.min.js"></script>
+    <script>
+        var app = angular.module("app",[]);
+
+        app.controller("ctrl",ctrl);
+        function ctrl($scope,$interval,$timeout,$location) {
+            $scope.todayDate = new Date().toLocaleTimeString();
+            
+            $interval(fun_one,1000,5);
+            function fun_one() {
+                $scope.todayDate = new Date().toLocaleTimeString();
+            }
+
+            $scope.var_one = "Fetching Data from Server.....";
+            $timeout(fun_two,5000);
+            function fun_two() {
+                $scope.var_one = "Got the Data From Server....!";
+            }
+
+            $scope.path = $location.absUrl();
+
+
+        }
+
+
+    </script>
+</html>
