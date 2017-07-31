@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="app">
+    <div ng-controller="parent_controller">
+        <input type="text" ng-model="model_one"> <br><br>
+        <input type="text" ng-model="model_two"> <br><br>
+        <button ng-click="clickMe({'key1':model_one,'key2':model_two})">ClickMe</button>
+        <div ng-controller="child_controller">
+            <h1>{{child}}</h1>
+            <div ng-controller="sub_controller">
+                <h1>{{sub}}</h1>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.0/angular.min.js"></script>
+    <script>
+        var app = angular.module("app",[]);
+
+        app.controller("parent_controller",parent_controller);
+        function parent_controller($scope) {
+            $scope.clickMe = function (obj) {
+                $scope.$broadcast("demo",obj);
+            };
+        };
+
+        app.controller("child_controller",child_controller);
+        function child_controller($scope) {
+            $scope.$on("demo",function (event,res) {
+                $scope.child=res.key1;
+            });
+        };
+
+        app.controller("sub_controller",sub_controller);
+        function sub_controller($scope) {
+            $scope.$on("demo",function (event,res) {
+                $scope.sub=res.key2;
+            });
+        };
+
+
+    </script>
+</html>
