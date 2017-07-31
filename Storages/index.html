@@ -23,24 +23,39 @@
     <script>
         var app = angular.module("app",["ngStorage"]);
 
-
         app.controller("ctrl",ctrl);
         function ctrl($scope,$localStorage,$sessionStorage) {
             $scope.save = function (obj) {
-                $localStorage.online = obj;
+                <!-- AngularJS Storage-->
+                //$localStorage.online = obj;
+
+                <!--HTML5 localStorage -->
+                //window.localStorage.setItem("online",obj);
+
+                $sessionStorage.online = obj;
             };
 
             $scope.read = function () {
+                //$scope.result = $localStorage.online.uname+"...."+$localStorage.online.upwd;
 
-                var obj = $localStorage.online;
-                $scope.result = obj.uname+"...."+obj.upwd;
+                $scope.result = $sessionStorage.online.uname+"...."+$sessionStorage.online.upwd;
+
             };
 
             $scope.remove = function () {
-                delete $localStorage.online;
-                $scope.result="";
+                //delete $localStorage.online;
+                delete  $sessionStorage.online;
+                $scope.result = "";
+                $scope.uname="";
+                $scope.upwd="";
+
+                //window.localStorage.removeItem("online")
             };
-        };
+
+
+        }
+
+
 
     </script>
 
