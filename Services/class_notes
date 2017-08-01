@@ -1,0 +1,109 @@
+Services:
+    - Services are used to share the common business logic to multiple number of controllers.
+
+    - by using services we can reuse the business logic.
+
+    - we have two types of services
+
+        1. predefined services
+
+        2. custom services
+
+
+predefined services:
+
+    - the services given by the framework called as predefined services.
+
+Ex.
+    $http
+
+    $q
+
+    $timeout
+
+    $interval
+
+    $location
+
+custom services:
+
+    - creating our own service based on application requirement called as
+      custom service.
+
+    - in angularjs, we can create custom services in 5 ways.
+
+        1. factory()
+
+        2. service()
+
+        3. provider()
+
+        4. value()
+
+        5. constant()
+
+
+creating the custom service by using factory()
+----------------------------------------------
+
+app.factory("my_service",my_service);
+function my_service(){
+    return "Data From MongoDB Soon...";
+}
+
+
+app.controller("ctrl_one",ctrl_one);
+function ctrl_one($scope,my_service){
+    $scope.var_one = my_service;
+}
+
+
+app.controller("ctrl_two",ctrl_two);
+function ctrl_two($scope,my_service){
+    $scope.var_two = my_service;
+}
+
+
+creating the custom service by using service()
+----------------------------------------------
+
+    - service() function used to create the custom services.
+
+    - service() depending on user defined functions to provide services to
+      the controllers
+
+
+Ex.
+    app.service("my_service",my_service);
+
+    function my_service(){
+
+        this.fun_one = function(){
+            return "Data From MySQL Soon....";
+        }
+
+        this.fun_two = function(){
+            return "Data From MongoDB Soon....";
+        }
+    }
+
+
+
+    app.controller("ctrl_one",ctrl_one);
+    function ctrl_one($scope,my_service){
+        $scope.var_one = my_service.fun_one();
+    }
+
+
+    app.controller("ctrl_two",ctrl_two);
+    function ctrl_two($scope,my_service){
+        $scope.var_two = my_service.fun_two();
+    }
+
+
+
+
+
+
+
+
