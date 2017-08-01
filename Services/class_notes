@@ -43,3 +43,66 @@ custom services:
     4.value()
 
     5.constant()
+
+
+Creating the Custom Service by using factory()
+----------------------------------------------
+Ex.
+
+    app.factory("my_service",my_service);
+    function my_service(){
+        return {"key1":"For Controller One !","key2":"For Controller Two !"};
+    }
+
+
+    app.controller("ctrl_one",ctrl_one);
+    function ctrl_one($scope,my_service){
+        $scope.var_one = my_service.key1;
+    }
+
+
+    app.controller("ctrl_two",ctrl_two);
+    function ctrl_two($scope,my_service){
+        $scope.var_two = my_service.key2;
+    }
+
+
+
+
+
+creating the custom service by using service()
+----------------------------------------------
+
+    - service() function depending on user defined functions to provide the services to controllers.
+
+
+Ex.
+
+        app.service("my_service",my_service);
+
+        function my_service(){
+            this.fun_one = function(){
+                return "For Controller One !";
+            }
+
+            this.fun_two = function(){
+                return "For Controller Two !";
+            }
+        }
+
+
+        app.controller("ctrl_one",ctrl_one);
+        function ctrl_one($scope,my_service){
+            $scope.var_one = my_service.fun_one();
+        }
+
+         app.controller("ctrl_two",ctrl_two);
+         function ctrl_two($scope,my_service){
+             $scope.var_two = my_service.fun_two();
+         }
+
+
+
+
+
+
