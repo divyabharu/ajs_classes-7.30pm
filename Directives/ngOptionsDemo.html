@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="app" ng-controller="ctrl" ng-init="model_five=my_array[0]">
+
+    <select ng-model="model_one" ng-options="x.s_code as x.s_name for x in array">
+        <option value="">--Select Subject--</option>
+    </select>
+    <h1>{{model_one}}</h1>
+
+    <select ng-model="model_two" ng-options="x.s_name as x.s_code for x in array">
+        <option value="">--Select ID--</option>
+    </select>
+    <h1>{{model_two}}</h1>
+
+
+    <select ng-model="model_three" ng-options="x.s_name as x.s_name for x in array">
+        <option value="">--Select Subject--</option>
+    </select>
+    <h1>{{model_three}}</h1>
+
+
+    <select ng-model="model_four" ng-options="x.s_code as x.s_code for x in array">
+        <option value="">--Select ID--</option>
+    </select>
+    <h1>{{model_four}}</h1>
+
+    <select ng-model="model_five" ng-options="x as x for x in my_array">
+        <option value="">--Select Subject--</option>
+    </select>
+    <h1>{{model_five}}</h1>
+
+    <script src="bower_components/angular/angular.min.js"></script>
+    <script>
+        var app = angular.module("app",[]);
+
+        app.controller("ctrl",ctrl);
+        function ctrl($scope) {
+            $scope.array = [
+                {'s_code':1,'s_name':'AngularJS'},
+                {'s_code':2,'s_name':'Angular4'},
+                {'s_code':3,'s_name':'reactJS'},
+                {'s_code':4,'s_name':'nodeJS'},
+                {'s_code':5,'s_name':'Kotlin'}
+            ];
+
+            $scope.my_array = ["AngularJS","Angular4","NodeJS","reactJS","MongoDB"];
+        }
+    </script>
+</html>

@@ -50,6 +50,118 @@ predefined directives:
 
     - in general we can take more than one controller per web application.
 
+2. ng-click
+
+    - when ever we click the user interface elements , automatically ng-click directive executed by
+      angular framework.
+
+Syntax.
+    ng-click = "Expression" /
+                "user defined function"/
+                "user defined function with parameters"
+
+Ex.
+    ng-click="count=count+1"
+
+    ng-click = "login()"
+
+    ng-click="login('admin','admin')"
+
+
+3. ng-init
+     - this directive used to initilize the the variable.
+     - we can initilize the variables in the form of a "key&value" pairs.
+     - ng-init variables scope is "application scope"
+
+Ex.
+    ng-init="db_user='root';
+            db_password='root'"
+
+
+4. ng-options
+    - this directive used to populate the values to the dropdown.
+
+Syntax.
+    ng-options="model_values as dropdown_values for variable in array"
+
+
+    $scope.array = [
+        {'s_code':1,'s_name':'AngularJS'},
+        {'s_code':2,'s_name':'Angular4'},
+        {'s_code':3,'s_name':'reactJS'},
+        {'s_code':4,'s_name':'nodeJS'},
+        {'s_code':5,'s_name':'Kotlin'}
+    ];
+
+    Use Case : 1
+
+        dropdown --> s_name
+        model    --> s_code
+
+    <select ng-model="model_one"
+            ng-options="x.s_code as x.s_name for x in array"></select>
+
+
+    Use Case : 2
+        dropdown --> s_code
+        model    --> s_name
+
+    <select ng-model="model_two"
+            ng-options="x.s_name as x.s_code for x in array">
+
+
+
+    Use Case : 3
+        dropdown --> s_name
+        model    --> s_name
+
+    <select ng-model="model_three"
+            ng-options="x.s_name as x.s_name for x in array">
+
+
+    Use Case : 4
+        dropdown - s_code
+        model    - s_code
+
+    <select ng-model="model_four"
+                ng-options="x.s_code as x.s_code for x in array">
+
+
+            *********************
+    $scope.my_array = ["AngularJS","Angular4","NodeJS","reactJS","MongoDB];
+    <select ng-model="model_five"
+            ng-options="x as x for x in my_array">
+            *********************
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
