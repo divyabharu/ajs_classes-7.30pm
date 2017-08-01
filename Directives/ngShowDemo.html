@@ -1,0 +1,29 @@
+<!--  
+	ng-show:
+		- this directive used to show / hide the elements 
+		  based on conditions
+	Syntax:
+		ng-show = "true" / "false"
+-->
+<!DOCTYPE html>
+<html ng-app="app" ng-controller="ctrl">
+	
+	<p style="color: red;" ng-repeat="x in array">
+		{{x}}
+		<button ng-show="$first" ng-click="clickMe(x)">First</button>
+		<button ng-show="$last" ng-click="clickMe(x)">Last</button>
+	</p>
+	
+	<script type="text/javascript" src="bower_components/angular/angular.min.js"></script>
+	<script type="text/javascript">
+		var app = angular.module("app",[]);
+		
+		app.controller("ctrl",ctrl);
+		function ctrl($scope) {
+			$scope.array = [10,20,30,40,50];
+			$scope.clickMe = function(x) {
+				alert(x);
+			};
+		}
+	</script>
+</html>

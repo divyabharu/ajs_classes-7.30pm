@@ -1,0 +1,30 @@
+<!--  
+	ng-hide:
+		this directive used to show / hide the elements
+		based on the condition.
+	
+	Syntax:
+		ng-hide="true" / "false"	
+ -->
+
+<!DOCTYPE html>
+<html ng-app="app" ng-controller="ctrl" ng-init="my_model=1">
+	<input type="number" 
+		   ng-model="my_model" 
+		   ng-change="findNumber(my_model)">	
+
+	
+	<h1 ng-hide="result">Odd Number</h1>
+	<h1 ng-hide="!result">Even Number</h1>
+
+	<script type="text/javascript" src="bower_components/angular/angular.min.js"></script>
+	<script type="text/javascript">
+		var app = angular.module("app",[]);
+		app.controller("ctrl",ctrl);
+		function ctrl($scope) {
+			$scope.findNumber = function(arg1) {
+				$scope.result = arg1%2 == 0?true:false;
+			}
+		}
+	</script>
+</html>
