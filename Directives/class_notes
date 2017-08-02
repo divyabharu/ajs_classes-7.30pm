@@ -134,6 +134,70 @@ Syntax.
             *********************
 
 
+5. ng-app
+
+    - this directive called as root directive
+
+    - angular framework starts the execution from ng-app directive
+
+    - ng-app directive takes the logical name of web application.
+
+    - logical name of web application optional for static angular applications.
+
+    - logical name of web application mandatory for dynamic angular applications.
+
+    - we can have only one ng-app directive per web application.
+
+manual bootstrap of angular application
+---------------------------------------
+    - executing the angular application forcefully with out ng-app directive called as manual bootstrap.
+
+
+6. ng-dblclick
+
+    - this directive used to execute a "Expression" / "function" with double click event.
+
+Syntax.
+    ng-dblclick = "Expression" / "function" / "function with parameters"
+
+
+7. ng-if
+    - this directive used to write the conditions.
+
+Syntax:
+    ng-if="true" / "false"
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

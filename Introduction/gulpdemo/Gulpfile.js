@@ -42,7 +42,7 @@ gulp.task("bower",function () {
 
 //launch html page
 gulp.task("open",function () {
-    gulp.src("./index.html")
+    gulp.src("./ngInitDemo.html")
         .pipe(open());
 });
 
