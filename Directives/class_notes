@@ -162,6 +162,88 @@ Syntax.
     ng-include="sample.html"
 
 
+9.ng-switch
+    - used to write the switch cases in angular applications.
+
+Syntax.
+    <div ng-switch="expression">
+        <div ng-switch-when="value_one">
+            //Code
+        </div>
+
+        <div ng-switch-when="value_two">
+            //Code
+        </div>
+            --
+            --
+            --
+        <div ng-switch-default>
+            //Code
+        </div>
+    </div>
+
+10. ng-submit:
+        - this directive used to submit the whole form at a time to the controller.
+
+Syntax:
+        <form ng-submit="login()">
+
+            //Form Elements
+
+            <input type="submit"></input>
+        </form>
+
+[Note : when ever we click the submit button automatically login() will
+        execute in controller]
+
+
+11. MouseEvents:
+
+
+    ng-mousedown/
+    ng-mouseup
+
+
+    ng-mouseenter/
+    ng-mouseleave
+                        "Expression" /
+                        "user defined function" /
+                        "user defined function with optional parameters"
+
+    ng-mouseover/
+    ng-mouseout
+
+
+    ng-mousemove
+
+
+12. ng-cloak:
+
+        - this directive used to avoid the flickering of webpage while
+          refreshing with expressions
+
+-----------
+ngCloakDemo
+    index.html
+    app.js
+    controllers
+        ctrl_one.js
+        ctrl_two.js
+------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
