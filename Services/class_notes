@@ -101,6 +101,136 @@ Ex.
     }
 
 
+creating the custom service by using value()
+--------------------------------------------
+
+    - we can create the custom service in the form of a "key" & "value" pairs.
+
+Ex.
+
+    app.value("my_service" , "First Value");
+    app.value("my_service" , "Second Value");
+
+
+    app.controller("ctrl_one",ctrl_one);
+    function ctrl_one($scope,my_service){
+         $scope.var_one = my_service;
+    }
+
+
+    app.controller("ctrl_two",ctrl_two);
+    function ctrl_two($scope,my_service){
+          $scope.var_two = my_service;
+    }
+
+    O/P :  Second Value
+
+           Second Value
+
+[Note : overriding will be happen in value()]
+
+
+
+creating the custom service by using constant()
+-----------------------------------------------
+    - we can create the custom service in the form of a "key" & "value" pairs.
+Ex.
+    app.constant("my_service" , "First Value");
+    app.constant("my_service" , "Second Value");
+
+    app.controller("ctrl_one",ctrl_one);
+    function ctrl_one($scope,my_service){
+         $scope.var_one = my_service;
+    }
+
+    app.controller("ctrl_two",ctrl_two);
+    function ctrl_two($scope,my_service){
+          $scope.var_two = my_service;
+    }
+
+    O/P :  First Value
+
+           First Value
+
+[Note : overriding won't  happen in constant()]
+
+
+creating the custom service by using provider()
+-----------------------------------------------
+
+    - provider() depending on "$get" to provide the services to the controllers.
+
+    - "$get()" is the predefined function in angularjs.
+
+
+Ex.
+
+
+
+
+
+    app.provider("my_service",my_service);
+    function my_service(){
+        this.db_password="root_one";
+        this.$get = function(){
+            return this.db_password;
+        }
+    }
+
+    app.config(config);
+    function config(my_serviceProvider){
+        my_serviceProvider.db_password="root_two";
+    }
+
+    app.controller("ctrl_one",ctrl_one);
+    function ctrl_one($scope,my_service){
+        $scope.var_one = my_service;
+    }
+
+    app.controller("ctrl_two",ctrl_two);
+    function ctrl_two($scope,my_service){
+          $scope.var_two = my_service;
+    }
+
+
+Predefined Services:
+
+1. $http
+    - this service used to connect with the servers by using http protocol.
+
+my_service.js
+-------------
+app.service("my_service",my_service);
+function my_service($http){
+    this.getData = function(){
+        return $http.get("https://www.w3schools.com/angular/customers.php")
+            .then(function(posRes){
+                return posRes;
+            },function(errRes){
+                return errRes;
+            });
+    }
+}
+
+
+ctrl.js
+-------
+app.controller("ctrl",ctrl);
+function ctrl($scope,my_service){
+    my_service.getData().then(function(res){
+        $scope.result = res;
+    });
+};
+
+
+
+
+
+
+
+
+
+
 
 
 
