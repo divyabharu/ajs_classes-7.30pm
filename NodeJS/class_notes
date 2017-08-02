@@ -229,6 +229,25 @@ query the collection
 >db.emp.find();
 
 
+-----------------------
+
+server.js
+---------
+
+//import mongodb
+var mongodb = require("mongodb");
+
+//create the mongo client
+var nareshIT = mongodb.MongoClient;
+
+//create the get request.
+app.get("/products",function(req,res){
+    nareshIT.connect("mongodb://localhost:27017/test",function(err,db){
+        db.collection("emp").find().toArray(function(err,array){
+            res.send(array);
+        });
+    });
+});
 
 
 
