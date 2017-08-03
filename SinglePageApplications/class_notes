@@ -1,0 +1,485 @@
+SinglePageApplications:
+
+    - Loading the Target webpage to Source Webpage, without refreshing the
+      whole webpage called as Single page Application.
+
+    - Loading the target web page to source webpage called as Routing
+      in Single Page Application.
+
+    - In AngularJS, we can implement the Routing in 2 ways.
+
+        1. ngRoute module
+
+        2. ui.router module
+
+
+ngRoute:
+--------
+
+    - ngRoute module is the predefined module, used to implement the
+      Routing in Single Page Application.
+
+
+Steps to implement the Single Page Application by using ngRoute Module:
+-----------------------------------------------------------------------
+
+Step 1:
+    download ngRoute module by using bower.
+
+
+bower.json
+----------
+{
+    "name":"nareshit",
+    "dependencies":{
+        "angular":"~1.5.0",
+        "angular-route":"~1.5.0"
+    }
+}
+
+[Note : "angular-route" is the key in bower, used to download the
+        "ngRoute" module dependency]
+
+
+
+Step 2:
+    add the dependency
+
+app.js
+------
+var app = angular.module("app",["ngRoute"]);
+
+
+
+Step 3:
+    create the templates(target templates)
+
+-------------
+Basic_ngRoute
+        templates
+            page_one.html
+            page_two.html
+--------------
+
+
+page_one.html
+-------------
+<h1>{{var_one}}</h1>
+
+
+
+page_two.html
+-------------
+<h1>{{var_two}}</h1>
+
+
+
+Step 4:
+    create the controllers
+
+----------
+controllers
+    page_one.js
+    page_two.js
+----------
+
+page_one.js
+-----------
+app.controller("page_one",page_one);
+function page_one($scope){
+    $scope.var_one = "I am from page one Controller !";
+}
+
+
+page_two.js
+-----------
+app.controller("page_two",page_two);
+function page_two($scope){
+    $scope.var_two = "I am from page two Controller !";
+}
+
+
+5. implement the routing in single page applications
+
+
+    Rules:
+        1. mapping should be in config phase
+
+        Ex.
+            app.config(config);
+            function config(){
+                //Business Logic (Routing Implementation)
+            }
+
+        2. Mapping should be in "key"&"value" pairs
+
+
+            [ page_one ---   page_one.html && page_one.js
+
+            page_two  --- page_two.html && page_two.js]
+
+
+        3. to meet above rules framework provided
+            "$routeProvider" object
+
+
+config.js
+---------
+
+app.config(config);
+
+function config($routeProvider){
+    $routeProvider.when("/page_one",{
+        templateUrl:"templates/page_one.html",
+        controller : "page_one"
+    })
+
+    .when("/page_two",{
+            templateUrl:"templates/page_two.html",
+            controller : "page_two"
+     })
+
+     .otherwise("/page_one",{
+             templateUrl:"templates/page_one.html",
+             controller : "page_one"
+     });
+}
+
+
+Step 6:
+  create the source template
+
+index.html
+----------
+<a href="page_one"><b>Page_One</b></a>
+<a href="page_two"><b>Page_Two</b></a>
+<div ng-view></div>
+
+
+
+[ng-view directive used to hold the
+target templates without refreshing
+the web page]
+
+
+----------------------------
+Basic_ngRoute
+        bower.json
+        app.js
+        index.html
+        templates
+            page_one.html
+            page_two.html
+        controllers
+            page_one.js
+            page_two.js
+        config.js
+---------------------------
+
+
+-passing the url parameters (route parameters)
+ by using ngRoute module
+
+index.html
+----------
+<a href="#page_one/111/emp_1/50000">
+<b>Page_One</b></a>
+
+
+config.js
+---------
+$routeProvider
+.when("/page_one/:param1/:param2/:param3",
+{
+    templateUrl : "templates/page_one.html",
+    controller : "page_one"
+});
+
+
+page_one.js
+------------
+app.controller("page_one",page_one);
+function page_one($scope,$routeParams){
+    console.log($routeParams.param1);
+    console.log($routeParams.param2);
+    console.log($routeParams.param3);
+}
+
+
+
+Single Page Applications by using ui.router module
+--------------------------------------------------
+
+- ui.router module is the 3rd party module
+
+- we can implement the nested routing by using ui.router module
+
+- we can implement the named views by using ui.router module
+
+- as a angular developer , we can pass the json objects as the url parameters
+
+Steps to create the Basic Single Page Application by using "ui.router" module
+-----------------------------------------------------------------------------
+
+Step 1:
+    download "ui.router" module by using bower
+
+["angular-ui-router" is the key in bower used to download "ui.router"
+ module dependency file]
+
+
+Step 2:
+    add the ui.router module dependency
+
+app.js
+------
+var app = angular.module("app",["ui.router"]);
+
+
+Step 3:
+    create the templates
+
+
+Step 4:
+    Create the Controllers
+
+
+Step 5:
+    Implement the Routing by using ui.router module
+
+config.js
+---------
+app.config(config);
+function config($stateProvider,
+                $urlRouterProvider){
+
+    $stateProvider.state("page_one",{
+        url:"/page_one",
+        templateUrl:"templates/page_one.html",
+        controller:"page_one"
+    })
+    .state("page_two",{
+            url:"/page_two",
+            templateUrl:"templates/page_two.html",
+            controller:"page_two"
+    });
+
+    $urlRouterProvider.otherwise("/page_one");
+
+}
+
+
+Step 6:
+    create the source template
+
+index.html
+
+<a ui-sref="page_one"><b>Page_One</b></a>
+<a ui-sref="page_two"><b>Page_Two</b></a>
+
+<div ui-view></div>
+
+
+Passing the JSON Object as URL Parameter by using ui.router module
+-------------------------------------------------------------------
+index.html
+----------
+<a ui-sref="page_one(
+{'p_id':111,'p_name':'laptop','p_cost':50000})">
+<b>Page_One</b></a>
+
+
+config.js
+---------
+.state("page_one",{
+        url:"/page_one/:p_id/:p_name/:p_cost",
+        templateUrl:"templates/page_one.html",
+        controller:"page_one"
+    })
+
+
+page_one.js
+-----------
+app.controller("page_one",page_one);
+function page_one($scope,$stateParams) {
+    $scope.var_one = $stateParams.p_id+"..."
+                     +$stateParams.p_name
+                     +"..."+$stateParams.p_cost;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
