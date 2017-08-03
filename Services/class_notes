@@ -224,6 +224,95 @@ function ctrl($scope,my_service){
 
 
 
+URL_1 : http://demosoft.highgrowth.in/test/jsonexample.php
+
+URL_2 : http://test-routes.herokuapp.com/test/hello
+
+$q:
+    - $q is the predefined service in angularjs
+
+    - by using $q, we can overcome the data redundancy.
+
+    Ex.
+        $q.all([my_service.fun_one(),my_service.fun_two()]).then(function(res){
+            $scope.var_one = res[0];
+            $scope.var_two = res[1];
+        });
+
+    - by using $q, we can make async calls
+
+    Ex.
+         var deffered_one = $q.defer();
+         this.fun_one = function () {
+             return $http.get("http://demosoft.highgrowth.in/test/jsonexample.php").then(function (posRes) {
+                   deffered_one.resolve(posRes);
+                   return deffered_one.promise;
+              },function (errRes) {
+                 deffered_one.reject(errRes);
+                 return deffered_one.promise;
+              });
+         };
+
+
+$timeout:
+---------
+    - this service used to execute a custom function with a given timer.
+
+Ex
+    $timeout(fun_one,5000);
+    function fun_one(){
+        //Business Logic
+    }
+
+[Note : fun_one will execute after 5000ms (5sec)]
+
+
+$interval:
+----------
+    - this service used to execute a custom function repetedely with a given interval of time.
+
+Ex.
+    $interval(fun_two,1000);
+    function fun_two(){
+        //Business Logic.
+    }
+
+$location:
+----------
+    - this service used to find the absolute path of web application.
+
+Ex.
+    $scope.var_one = $location.absUrl();
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
