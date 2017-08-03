@@ -1,24 +1,65 @@
-<!DOCTYPE html>
-<html ng-app="app" ng-controller="ctrl">
-
-	<h1 style="color: red;" ng-repeat="x in array">
-		<!-- <span ng-if="x!='AngularJS' && x!='MongoDB'">
-			{{x}}
-		</span> -->
-		
-		<span ng-if="$middle">
-			{{x}}
-		</span>
-		
-	</h1>
-
-	<script type="text/javascript" src="bower_components/angular/angular.min.js"></script>
-	<script type="text/javascript">
-		var app = angular.module("app",[]);
-		
-		app.controller("ctrl", ctrl);
-		function ctrl($scope) {
-			$scope.array = ["AngularJS","Angular2","NodeJS","reactJS","MongoDB"];
+<!-- 
+	ng-if:
+		this directive used to write the conditions in angular applications
+	Syntax:
+		ng-if="true" / "false"		
+ 	ng-if directive works with HTML DOM Directly.
+-->
+ 
+<!-- <!DOCTYPE html>
+ <html ng-app="app" ng-controller="ctrl">
+ 
+ 	<h1 style="color: red;" ng-repeat="x in array">
+ 		<span ng-if="$middle">
+ 			{{x}}
+ 		</span>
+ 		<span ng-if="x!='Hello_1' && x!='Hello_5'">
+ 			{{x}}
+ 		</span>
+ 	</h1>
+ 
+ 	<script type="text/javascript" src="bower_components/angular/angular.min.js"></script>	
+ 	<script type="text/javascript">
+ 		var app = angular.module("app",[]);
+ 		
+ 		app.controller("ctrl",ctrl);
+ 		function ctrl($scope) {
+			$scope.array = ["Hello_1","Hello_2","Hello_3","Hello_4","Hello_5"];
 		}
-	</script>
+ 	</script>
+ </html> -->
+
+<!DOCTYPE html>
+<html ng-app>
+	<label>Uname.</label>&emsp;&emsp;&emsp;&emsp;
+	<input type="text" ng-model="uname">
+	<br><br>
+	<span ng-if="uname!=null && uname!=''">
+		<label>Upwd.</label>&emsp;&emsp;&emsp;&emsp;
+		<input type="password" ng-model="upwd">
+	</span>
+	<script type="text/javascript" src="bower_components/angular/angular.min.js"></script>
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+ 
+ 
+ 
+ 
+ 
+ 
