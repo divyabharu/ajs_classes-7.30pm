@@ -128,6 +128,32 @@ $http:
     - this predefined service used to connect with the servers with the http protocol.
 
 
+Ex.
+
+app.service("my_service",my_service);
+function my_service($http){
+    this.getData = function(){
+        return $http.get("http://demosoft.highgrowth.in/test/jsonexample.php").then(function(posRes){
+            return posRes;
+        },function(errRes){
+            return errRes;
+        });
+    }
+}
+
+
+app.controller("ctrl",ctrl);
+function ctrl($scope,my_service){
+    my_service.getData().then(function(res){
+        $scope.result = res;
+    });
+};
+
+
+<h1>{{result}}</h1>
+
+
+
 
 
 

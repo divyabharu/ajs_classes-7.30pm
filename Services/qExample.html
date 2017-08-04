@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="app" ng-controller="ctrl">
+
+
+    <table border="2">
+        <tr>
+            <th>id</th>
+            <th>fname</th>
+            <th>fsubject</th>
+        </tr>
+
+        <tr ng-repeat="x in result">
+            <td>{{x.post.id}}</td>
+            <td>{{x.post.fname}}</td>
+            <td>{{x.post.fsubject}}</td>
+        </tr>
+    </table>
+
+    <h1>{{result_post}}</h1>
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.0/angular.min.js"></script>
+    <script>
+        var app = angular.module("app",[]);
+
+        app.service("my_service",my_service);
+        function my_service($http,$q) {
+
+            //staring the AJAX Call
+            var deffered_one = $q.defer();
+            this.fun_one = function () {
+                return $http.get("http://demosoft.highgrowth.in/test/jsonexample.php").then(function (posRes) {
+                    //Success Call back to AJAX
+                    deffered_one.resolve(posRes.data.posts);
+                    //terminating the AJAX
+                    return deffered_one.promise;
+                },function (errRes) {
+                    //negative call back to AJAX
+                    deffered_one.reject(errRes);
+                    //terminating the AJAX
+                    return deffered_one.promise;
+                });
+            };
+
+
+            var deffered_two = $q.defer();
+            this.fun_two = function () {
+                return $http.post("http://test-routes.herokuapp.com/test/uppercase",{'message':'hello'}).then(function (posRes) {
+                    deffered_two.resolve(posRes.data.message);
+                    return deffered_two.promise;
+                },function (errRes) {
+                    deffered_two.reject(errRes);
+                    return deffered_two.promise;
+                });
+            };
+
+
+        };
+
+        app.controller("ctrl",ctrl);
+        function ctrl($scope,my_service,$q) {
+
+           /* my_service.fun_one().then(function (res) {
+                $scope.result = res;
+            });
+
+            my_service.fun_two().then(function (res) {
+                $scope.result_post = res;
+            });*/
+
+
+           $q.all([my_service.fun_one(),my_service.fun_two()]).then(function (res) {
+                $scope.result = res[0];
+                $scope.result_post = res[1];
+           });
+
+
+        };
+
+    </script>
+</html>
