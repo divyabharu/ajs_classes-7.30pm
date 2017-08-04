@@ -1,8 +1,0 @@
-{
-    "name":"nareshit",
-    "version":"1.0.0",
-    "description":"Reading URL Parameters By Using AngularJS",
-    "dependencies":{
-        "express":"^4.15.3"
-    }
-}
