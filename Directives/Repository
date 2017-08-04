@@ -1,0 +1,235 @@
+Repository:
+
+	- Repositories are used to collabrate the 
+	 work in projects.
+
+	- Exmples:
+			GitHub
+			SVN
+			CVS
+			VSS
+			ClearCase
+			-- 
+			--
+
+GitHub:
+-------
+	GitHub is the Open Source Repository maintained by
+	Google
+
+
+GitHub Opearations:
+-------------------
+
+1. Installation Of GitHub
+
+2. creating the local repository
+
+3. Adding the user credentials to the Repository
+
+4. Create the files to the Repository
+
+5. commit the changes to the Repository
+
+6. Creating the branch
+
+7. Checkout the Branch
+
+8. Merge the Branches
+
+9. Integration of GitHub to IDE'S
+
+	Ex.
+		Ecilipse
+
+		Visual Studio
+
+		WebStrom
+
+10. commit the changes from IDE'S to cloud repository
+
+11. push the code to cloud repository
+
+12. pull the code from cloud repository 
+
+
+1. Installation Of GitHub
+-------------------------
+
+website : https://git-scm.com/download/win
+
+file    : Git-2.13.3-64-bit.exe
+
+
+2. creating the local repository
+--------------------------------
+
+create the folder:
+
+	Ex:
+		github demo
+
+
+execute the folowing command on "GitBash Here" terminal
+
+> git init
+
+
+[Automatically "github demo" folder converted as local 
+
+ repository]
+
+
+
+3. Adding the user credentials to the Repository
+------------------------------------------------
+user name:
+==========
+> git config --global user.name "NareshIT"
+
+
+email:
+======
+> git config --global user.email "hr@nareshit.in"
+
+
+4. Create the files to the Repository
+-------------------------------------
+> touch index.html
+
+  [Automatically index.html file created in local repository]	
+
+  knowing the status of files in repository
+  -----------------------------------------
+  > git status
+
+  [Note : red color labels indicating the untracked files in
+          repository]
+
+
+5. commit the changes to local repository
+
+
+> git add index.html
+
+> git commit
+
+> press "i"
+
+> type "initial commit"
+
+> press "ESC"
+
+> type ":wq"
+
+> press enter
+
+
+from 2nd commit onwards:
+
+> git add index.html
+
+> git commit -m "javascript code added !"
+
+knowing the github log
+----------------------
+
+> git log
+
+
+6. Creating the branch
+======================
+>git branch AngularJS_7.30PM
+
+
+7. checkout the branch
+=======================
+> git checkout AngularJS_7.30PM
+
+8. Merge the Branches
+=====================
+> git checkout master
+
+> git merge AngularJS_7.30PM
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

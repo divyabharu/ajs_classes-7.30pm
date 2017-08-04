@@ -1,0 +1,39 @@
+<!--  
+	ng-class-odd:
+		- this directive used to add the css classes to the odd rows of table.
+
+Syntax.
+	ng-class-odd="class_one"
+	
+ng-class-even:
+		- this directive used to add the css classes to the even rows of table		
+
+Syntax:
+	ng-class-even = "class_one"		
+			
+
+ng-include:
+	- this directive used to divide the view into number of subviews.
+	
+Syntax.
+	<div ng-include="sample.html"></div>				
+			
+ -->
+ 
+ 
+ <!-- 
+ 	ngClassOddngClassEven.html
+ 	table.html
+ 	app.js
+ 	ctrl.js
+ 	my_style.css
+  -->
+ 
+<!DOCTYPE html>
+<html ng-app="app" ng-controller="ctrl">
+	<div ng-include="'table.html'"></div>	
+	<link rel="stylesheet" href="my_style.css">
+	<script type="text/javascript" src="bower_components/angular/angular.min.js"></script>
+	<script type="text/javascript" src="app.js"></script>
+	<script type="text/javascript" src="ctrl.js"></script>
+</html>
