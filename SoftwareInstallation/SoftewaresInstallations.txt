@@ -83,6 +83,14 @@ VCS -->
 
 
 
+Creating the workspace for Practice:
+------------------------------------
+
+File --> New --> peoject ---> empty -->
+
+-- >D:\PracticeExamples
+
+-- > create.
 
 
 
