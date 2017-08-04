@@ -67,6 +67,18 @@ commit&push the changes to cloud repository from Webstrom IDE.
 --> select commit & push.
 
 
+pull the code from cloud repository
+-----------------------------------
+
+VCS -->
+
+    Git -->
+
+        Pull -->
+
+            Select the AngularJS_7.30PM Branch -->
+
+                Pull.
 
 
 
