@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="app" ng-controller="ctrl">
+
+    <label>Uname.</label>&emsp;&emsp;&emsp;&emsp;
+    <input type="text" ng-model="uname">
+
+    <br><br>
+    <label>Upwd.</label>&emsp;&emsp;&emsp;&emsp;
+    <input type="password" ng-model="upwd">
+
+
+    <br><br>
+    <button ng-click="save({'uname':uname,'upwd':upwd})">Save</button>&emsp;&emsp;
+    <button ng-click="read()">Read</button>&emsp;&emsp;
+    <button ng-click="remove()">Delete</button>
+
+    <br><br>
+    <h1>{{result}}</h1>
+
+    <script src="bower_components/angular/angular.min.js"></script>
+    <script src="bower_components/ngstorage/ngStorage.min.js"></script>
+    <script>
+
+        var app = angular.module("app",["ngStorage"]);
+
+
+        app.controller("ctrl",ctrl);
+        function ctrl($scope,$localStorage,$sessionStorage) {
+
+            $scope.save = function (obj) {
+                  //$localStorage.login_details = obj;
+                  //window.localStorage.setItem("login_details",obj);
+                $sessionStorage.login_details = obj;
+
+            };
+
+
+            $scope.read = function () {
+                //$scope.result = $localStorage.login_details.uname+"..."+$localStorage.login_details.upwd;
+                $scope.result = $sessionStorage.login_details.uname+"..."+$sessionStorage.login_details.upwd;
+            };
+
+
+            $scope.remove = function () {
+                //delete $localStorage.login_details;
+                delete $sessionStorage.login_details;
+                $scope.result = "";
+                $scope.uname = "";
+                $scope.upwd = "";
+
+                //window.localStorage.removeItem("login_details");
+
+            };
+        }
+    </script>
+
+
+
+</html>

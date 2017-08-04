@@ -1,0 +1,82 @@
+Angular Storages:
+
+    - AngularJS supports two types of browser storages.
+
+        1. local storage
+
+        2. session storage
+
+local storage:
+
+    - local storage is a client side storage , and will be destroy explicitly
+      by developer.
+
+session storage:
+
+    - when ever we close the browser or opens the new tab automatically
+      data will be lost from session storage.
+
+
+    - ngStorage is the predefined module and used to work with the storages.
+
+    - ngStorage module provides following predefined objects
+
+        1. $localStorage
+
+        2. $sessionStorage
+
+    - in general we will store data in the form of a "key&value" pairs.
+
+
+Ex.
+
+    //local storage
+
+    $localStorage.key1 = {'uname':'admin','upwd':'admin'};
+        //storing the data into local storage
+        // where "key1" is the 'key' to persist the data in local storage
+
+
+
+    var obj = $localStorage.key1;  //reading the data from local storage
+
+    console.log(obj.uname);   //admin
+    console.log(obj.upwd);    //admin
+
+
+
+    delete $localStorage.key1;    //deleting the data from local storage
+
+
+
+    //session storage
+
+        $sessionStorage.key1 = {'uname':'admin','upwd':'admin'};
+            //storing the data into session storage
+            // where "key1" is the 'key' to persist the data in session storage
+
+
+
+        var obj = $sessionStorage.key1;  //reading the data from session storage
+
+        console.log(obj.uname);   //admin
+        console.log(obj.upwd);    //admin
+
+
+
+        delete $sessionStorage.key1;    //deleting the data from session storage
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
