@@ -1,0 +1,297 @@
+<!--<script>
+    //Global Variable
+    let i=100;
+    if(true){
+        //local variable
+        let i = 200;
+    }
+    //display the value on browser console
+    console.log(i);
+ </script>-->
+
+
+<!--<html>
+    <h1 id="first_h1" style="color: red"></h1>
+    <h1 id="second_h1" style="color: green"></h1>
+    <h1 id="third_h1" style="color: blue"></h1>
+
+
+<script>
+    var sub_one = "AngularJS";
+    var sub_two = "NodeJS";
+    var sub_three = "MongoDB";
+
+    //display the data on brower console.
+    console.log(sub_one+"<==>"+sub_two+"<==>"+sub_three);
+    //display the data on webpage (index.html)
+    document.write("<h1 style='color:red'>"+sub_one+"<==>"+sub_two+"<==>"+sub_three+"</h1>")
+
+
+    document.getElementById("first_h1").innerHTML=sub_one;
+    document.getElementById("second_h1").innerHTML=sub_two;
+    document.getElementById("third_h1").innerHTML=sub_three;
+
+
+</script>
+
+</html>    
+
+-->
+
+
+
+<!--<script>
+    function fun_one(){
+        return "Welcome to functions !";
+    }
+
+    console.log(fun_one);  //function def calling / property calling
+
+    console.log(fun_one()); // function calling
+
+</script>-->
+
+
+<!--<script>
+
+    function fun_one(arg1,arg2){
+        document.write("<h1>"+(arg1()+arg2())+"</h1>");
+    }
+
+
+    function fun_two(){
+        return 10;
+    }
+
+
+    function fun_three(){
+        return 20;
+    }
+
+    fun_one(fun_two,fun_three);
+
+
+</script> -->
+
+<!--<script>
+    function fun_one(){
+        return fun_two;
+    }
+    function fun_two(){
+        return 100;
+    }
+    /*var def = fun_one();
+    var result = def();
+    document.write("<h1>"+result+"</h1>");*/
+    document.write("<h1>"+ fun_one()() +"</h1>");
+</script>-->
+
+<!--<script>
+
+    function fun_one(arg1){
+        console.log(arg1()());
+        }
+
+    function fun_two(){
+        return fun_three;
+    }
+
+    function fun_three(){
+        return 100;
+    }
+
+    fun_one(fun_two);
+
+</script>-->
+
+<!--<script>
+    var my_var =function(){
+        return "Welcome to Anonymous Functions !";
+    };
+
+    console.log(my_var);
+
+    console.log(my_var());
+ </script>-->
+
+ <!--<script>
+    var fun_one =function(arg1,arg2,arg3){
+        document.write("<h1>"+arg1()+"<==>"+arg2()+"<==>"+arg3()+"</h1>")
+    }
+
+    var fun_two =function(){
+        return "Angular4";
+    }
+
+    var fun_three =function(){
+        return "NodeJS";
+    }
+
+    var fun_four =function(){
+        return "Cassandra";
+    }
+
+    fun_one(fun_two,fun_three,fun_four);
+ </script>    
+
+-->
+
+
+
+<!--
+<script>
+    var array=[];
+    for(var i=0;i<10;i++){
+        array.push(i);
+    }
+    console.log(array.length);
+    for(var i=0;i<array.length;i++){
+        document.write("<h1>"+array[i]+"</h1");
+    }
+
+</script>    
+
+
+<script>
+    var array=[];
+    for(var i=0;i<10;i++){
+        array.push(function(){
+            return i;
+        });
+    }
+
+    for(var i=0;i<array.length;i++){
+        console.log(array[i]());
+    }
+
+</script>    
+
+
+-->
+
+<!--<script>
+    var data = {
+            "emps":[
+                    {'id':1,'name':'Hello_1','age':20},
+                    {'id':2,'name':'Hello_2','age':22},
+                    {'id':3,'name':'Hello_3','age':24}
+            ]
+    };
+
+    var result="";
+    for(var i=0;i<data.emps.length;i++){
+        var __id = data.emps[i].id;
+        var __name = data.emps[i].name;
+        var __age = data.emps[i].age;
+        result=result+__id+"..."+__name+"..."+__age+"<br>";
+    }
+
+    document.write("<h1>"+result+"</h1>");
+</script>    
+-->
+
+<script>
+    var var_one = {
+        "login":login,
+        "logout":logout
+    };
+
+    function login(){
+        return "Welcome to login module !";
+    }
+
+    function logout(){
+        return "Good Bye !!!";
+    }
+
+    var def = var_one.login;
+    console.log(def());
+    var def_logout = var_one.logout;
+    console.log(def_logout());
+    
+</script>    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

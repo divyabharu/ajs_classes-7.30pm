@@ -1,0 +1,258 @@
+variables:
+    - variables are used to store the data.
+
+    - we can declare the variables by using "var" keyword.
+
+    - by using javascript variables we can store all
+      categories of data.
+
+      Ex.
+        primitive data types
+
+        user defined data types
+
+    Ex.
+        var data="data from mongodb soon...";
+        var obj = {'data':"data from mysql db soon..."};
+
+
+[Note : where "data" & "obj" called as variables]
+
+
+functions:
+----------
+
+    - by using functions we can write the business logic.
+
+    - by using functions we can reuse the business logic.
+
+Syntax.
+
+    create the functions
+    --------------------
+
+    function function_name(){
+        //business logic
+    }
+
+    call the function
+    -----------------
+    function_name();
+
+
+Anonymous functions:
+--------------------
+    - the functions without name called as Anonymous functions.
+
+    - Anonymous functions are more secured compared to named functions
+
+
+Syntax.
+    //create the anonymous function
+    var anonymous_function = function(){
+        //business logic
+    }
+
+    //call the anonymous function
+    anonymous_function();
+
+
+for loop in javascript:
+-----------------------
+var i=0;
+for(let i=0;i<10;i++){
+    console.log(i);
+}
+console.log(i);   // 0  (with let keyword)
+console.log(i);  // 10 (with var keyword)
+
+push the data to array
+----------------------
+var array=[];
+for(var i=0;i<10;i++){
+    array.push(i);
+}
+console.log(array.length);  //10
+for(var i=0;i<10;i++){
+    console.log(array[i]);
+}
+
+push the anonymous functions to array
+-------------------------------------
+var array=[];
+for(var i=0;i<10;i++){
+    array.push(function(){
+        return i;
+    });
+}
+console.log(array.length);  //10
+for(var i=0;i<array.length;i++){
+    console.log( array[i]() );
+}
+
+
+JSON:
+-----
+    - JSON Stands for Java Script Object Notation.
+
+    - JSON used to transfer the data over the network.
+
+    - we can transfer the data over the network by using following
+      formats.
+
+      1. XML
+      2. JSON
+
+    - JSON is ligth weigth compared to XML.
+
+    - parsing of JSON easy compared to XML.
+
+    - in genearl we will read XML files by using following parsers
+        1. DOM parser
+        2. SAX parser
+        3. STAX parser
+        4. XML Pull parser
+
+    - In genearl either XML / JSON formats prepared by servers
+      based on DB Data.
+
+Ex.
+    View --> Controller --> Service --> Server --> DataBase
+         <--            <--         <--        <--
+
+Syntax of JSON:
+--------------
+1. objects ---> { }
+
+2. Arrays  ---> [ ]
+
+3. data   ---> "key&value"
+
+Ex_1:
+----
+{
+    "emps":[
+            {'s_code':1,'s_name':'AngularJS','s_rank':1},
+            {'s_code':2,'s_name':'NodeJS','s_rank':2},
+            {'s_code':3,'s_name':'reactJS','s_rank':3}
+    ]
+}
+
+Ex_2:
+-----
+{
+    "fun_one":fun_one,
+    "fun_two":fun_two,
+    "fun_three":fun_three
+}
+
+function fun_one(){
+    return "Hello_1";
+}
+function fun_two(){
+    return "Hello_2";
+}
+function fun_three(){
+    return "Hello_3";
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
