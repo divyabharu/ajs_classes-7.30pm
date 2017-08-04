@@ -1,0 +1,112 @@
+1. Download and Install the GIT.
+
+	- Git is the interfece tool, used to interact with the GitHub.
+Website : https://git-scm.com/download/win
+file name : Git-2.13.3-64-bit.exe
+
+
+2. Download and install nodeJS.
+
+website : https://nodejs.org/en/download/
+file name : node-v6.11.2-x64.msi
+
+
+3. create the account with GitHub
+
+website : https://github.com/join
+
+
+4. Download Webstrom IDE
+
+    website : https://www.jetbrains.com/webstorm/download/#section=windows
+	
+    file name : WebStorm-2017.2.1.exe
+
+
+5. Checkout the Code from GitHub.
+Cloud URL : https://github.com/ajsnaresh/AJS_Classes.git
+
+
+6. checkout the "AngularJS_7.30PM" branch from cloud URL.
+
+	*********************
+Open the WebStrom IDE 
+select "Evaluate for free" radion button
+Ok.
+
+
+select checkout from version control
+GitHub
+click the "create new api token"
+enter the login & password (GitHub details)
+login
+
+
+enter the repository url
+Ex.
+	- https://github.com/ajsnaresh/AJS_Classes.git
+	- D:/
+	- AJS_Classes
+clone
+
+
+
+select AngularJS_7.30PM branch
+checkout as new local branch
+ok.
+
+
+commit&push the changes to cloud repository from Webstrom IDE.
+--------------------------------------------------------------
+--> ctrl + k
+
+--> enter the commit message
+
+	"deleted old files"
+
+--> select commit & push.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
+	
+
+
+
+
+
