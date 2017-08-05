@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="app" ng-controller="ctrl">
+
+    <label>Uname.</label>&emsp;&emsp;&emsp;&emsp;
+    <input type="text" ng-model="login_details.uname">
+
+    <br><br>
+    <label>Upwd.</label>&emsp;&emsp;&emsp;&emsp;
+    <input type="password" ng-model="login_details.upwd">
+
+    <br><br>
+    <!--<button ng-click="login(uname,upwd)">Login</button>-->
+    <!--<button ng-click="login({'uname':uname,'upwd':upwd})">Login</button>-->
+    <button ng-click="login()">Login</button>
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.0/angular.min.js"></script>
+    <script>
+        var app = angular.module("app",[]);
+        app.controller("ctrl",ctrl);
+        function ctrl($scope) {
+
+
+            /*$scope.login = function (arg1,arg2) {
+                if(arg1 == "admin" && arg2=="admin"){
+                    alert("Login Success !");
+                }else{
+                    alert("Login Fail !");
+                }
+            };*/
+
+
+            /*$scope.login = function (arg1) {
+                if(arg1.uname=="admin" && arg1.upwd == "admin"){
+                    alert("Login Success !");
+                }else{
+                    alert("Login Fail !");
+                }
+            };*/
+
+            $scope.login_details = {};
+            $scope.login = function () {
+              if($scope.login_details.uname == "admin" &&
+                 $scope.login_details.upwd == "admin"){
+                  alert("Login Success !");
+              }
+              else{
+                  alert("Login Fail !")
+              }
+            };
+        };
+
+    </script>
+</html>

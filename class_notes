@@ -262,6 +262,27 @@ Ex.
 
 
 
+ng-click:
+--------
+    - when ever we click the user interface elements, automatically
+      ng-click directive executed by angular framework.
+
+
+Syntax:
+    ng-click = "Expression" /
+               "user defined function" /
+               "user defined function with parameters"
+
+
+
+
+
+
+
+
+
+
+
 
 
 
