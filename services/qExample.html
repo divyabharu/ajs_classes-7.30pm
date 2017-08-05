@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="app" ng-controller="ctrl">
+
+    <h1>{{var_one}}</h1>
+
+
+    <table class="table table-responsive">
+        <tr>
+            <th>Name</th>
+            <th>City</th>
+            <th>Country</th>
+        </tr>
+
+        <tr ng-repeat="x in result">
+            <td>{{x.Name}}</td>
+            <td>{{x.City}}</td>
+            <td>{{x.Country}}</td>
+        </tr>
+    </table>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.0/angular.min.js"></script>
+    <script>
+        var app = angular.module("app",[]);
+
+        app.service("my_service",my_service);
+        function my_service($http,$q) {
+
+            var deffered_one = $q.defer();
+            this.getData = function () {
+                return $http.get("https://www.w3schools.com/angular/customers.php").then(function (posRes) {
+                    deffered_one.resolve(posRes.data.records);
+                    return deffered_one.promise;
+                },function (errRes) {
+                    deffered_one.reject(errRes);
+                    return deffered_one.promise;
+                });
+            };
+
+
+            var deffered_two = $q.defer();
+            this.postData = function () {
+              return $http.post("http://test-routes.herokuapp.com/test/uppercase",{'message':'hello'}).then(function (posRes) {
+                  deffered_two.resolve(posRes.data.message);
+                  return deffered_two.promise;
+              },function (errRes) {
+                  deffered_two.reject(errRes);
+                  return deffered_two.promise;
+              });
+            };
+
+
+
+        };
+
+
+        app.controller("ctrl",ctrl);
+
+        function ctrl($scope,my_service,$q) {
+
+            $q.all([my_service.getData(),my_service.postData()])
+                .then(function (res) {
+                $scope.result = res[0];
+                $scope.var_one=res[1];
+            });
+
+
+        };
+    </script>
+</html>
