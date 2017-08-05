@@ -54,6 +54,322 @@
   - We are Loosing the Secuirity by UI Frameworks
 
 
+bower:
+-----
+
+    - bower is the Automation tool, used to download the
+      dependencies to develop web application
+
+    - bower based on NodeJS
+
+
+installation of bower:
+----------------------
+- we can install the bower by using following node command.
+
+>npm install -g bower
+
+[Note : before installing the bower , we must install the nodejs]
+
+
+bower components
+----------------
+bower.json
+----------
+{
+    "name":"nareshit",
+    "dependencies":{
+            "angular":"latest",
+            "bootstrap":"latest"
+    }
+}
+
+downloading the dependencies:
+----------------------------
+>bower install
+
+[Automatically dependencies will downloads to bower_components folder]
+
+
+Angular Framework path:
+-----------------------
+bower_components/angular/angular.min.js
+
+
+bootstrap path
+--------------
+bower_components/bootstrap/dist/css/bootstrap.min.css
+
+
+jQuery path
+-----------
+bower_components/jquery/dist/jquery.min.js
+
+
+Angular Applications:
+---------------------
+
+    - by using angularjs, we can create two types of applications.
+
+1. static angular application
+
+2. dynamic angular application
+
+
+static angular application:
+    - if view won't interacts with the controller for dynamic data then such type of
+      angular application called as static angular application.
+
+
+steps to create the static angular application:
+-----------------------------------------------
+
+step 1:
+    download angular framework by using bower.
+
+step 2:
+    create the view with following directives.
+
+    1. ng-app
+    2. ng-model
+    3. ng-bind
+
+    [directives in angularjs enhances the features of view]
+
+
+index.html
+----------
+<!DOCTYPE html>
+
+<html ng-app>
+
+    <input type="number" ng-model="model_one"> <br><br>
+    <input type="number" ng-model="model_two"> <br><br>
+
+    <h1 style="color:red" ng-bind="model_one+model_two"></h1>
+
+    <script src="bower_components/angular/angular.min.js"></script>
+</html>
+
+- angular framework starts the execution from ng-app directive.
+
+- ng-app directive takes the logical name of web application
+
+- logical name of web application is optional for static web applications
+
+- logical name of web application mandatory for dynamic web applications.
+
+- ng-model directive creates the object in heap memory with application data.
+
+- ng-bind directive binds the model data to the view.
+
+dynamic angular application:
+----------------------------
+ - if view interacts with the controller for dynamic data then such type of angular application
+   called as dynamic angular application
+
+
+steps to create the dynamic angular application
+------------------------------------------------
+
+step 1:
+    download angular framework by using bower.
+
+step 2:
+    load the angular framework.
+
+step 3:
+    declare the root directive with logical name
+
+step 4:
+    declare the controller by using "ng-controller" directive.
+
+
+step 5:
+    Create the "application module level" object.
+    we can use "angular module level object" to implement controllers, services, filters,....
+    var app = angular.module("app",[]);
+
+step 6:
+    implement the controller.
+
+
+Declaring the variables in controller
+-------------------------------------
+Ex.
+    $scope.sub_one = "AngularJS";
+
+    {{sub_one}} //AngularJS
+
+
+
+Declaring the functions in controller
+-------------------------------------
+Ex.
+    $scope.my_fun = function(){
+        return "Rest API Data Soon....";
+    }
+    {{my_fun()}} //Rest API Data Soon....
+
+
+Declaring the Arrays in controllers
+-----------------------------------
+Ex.
+    $scope.array = [10,20,30,40,50];
+
+    <p ng-repeat="x in array" ng-bind="x"></p>  // 10 20 30 40 50
+
+
+Declaring the Objects in controllers
+------------------------------------
+
+Ex.
+    $scope.obj = {
+        "fun_one":fun_one
+    };
+
+    function fun_one(){
+        return "AngularJS";
+    }
+
+    {{obj.fun_one()}} // AngularJS
+
+
+
+            //Array of json objects
+            $scope.my_obj = [
+                {'id':1,'name':'Hello_1','age':20},
+                {'id':2,'name':'Hello_2','age':22},
+                {'id':3,'name':'Hello_3','age':24},
+                {'id':4,'name':'Hello_4','age':26},
+                {'id':5,'name':'Hello_5','age':28}
+            ];
+
+            <table border="1">
+                <tr>
+                     <th>id</th>
+                     <th>name</th>
+                     <th>age</th>
+                </tr>
+
+                <tr ng-repeat="x in my_obj">
+                      <td>{{x.id}}</td>
+                      <td>{{x.name}}</td>
+                      <td>{{x.age}}</td>
+                </tr>
+
+            </table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

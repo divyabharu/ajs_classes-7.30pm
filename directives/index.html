@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="app">
+
+    <div ng-controller="ctrl_one">
+        <h1>{{sub_one+"<==>"+sub_two+"<==>"+sub_three}}</h1>
+        <h1>{{fun_one()}}</h1>
+        <h1 ng-repeat="x in array">{{x}}</h1>
+        <h1>{{obj.key1+"...."+obj.key2+"...."+obj.key3}}</h1>
+
+        <table border="1">
+            <tr>
+                <th>id</th>
+                <th>name</th>
+                <th>age</th>
+            </tr>
+
+            <tr ng-repeat="x in my_obj">
+                <td>{{x.id}}</td>
+                <td>{{x.name}}</td>
+                <td>{{x.age}}</td>
+            </tr>
+        </table>
+
+
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.0/angular.min.js"></script>
+    <script>
+        var app = angular.module("app",[]);
+
+        app.controller("ctrl_one",ctrl_one);
+        function ctrl_one($scope) {
+            //variables
+            $scope.sub_one = "AngularJS";
+            $scope.sub_two = "NodeJS";
+            $scope.sub_three = "MongoDB";
+
+            //functions
+            $scope.fun_one = function () {
+                return "Welcome to Dynamic Application !";
+            };
+
+
+            //array
+            $scope.array = [10,20,30,40,50];
+
+
+            //objects (json)
+            $scope.obj = {
+                'key1':'Hello_1',
+                'key2':'Hello_2',
+                'key3':'Hello_3'
+            };
+
+
+            //object
+            $scope.my_obj = [
+                {'id':1,'name':'Hello_1','age':20},
+                {'id':2,'name':'Hello_2','age':22},
+                {'id':3,'name':'Hello_3','age':24},
+                {'id':4,'name':'Hello_4','age':26},
+                {'id':5,'name':'Hello_5','age':28}
+            ];
+
+
+
+        }
+
+    </script>
+
+
+
+</html>

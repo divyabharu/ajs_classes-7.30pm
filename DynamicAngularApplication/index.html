@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="app">
+    <div ng-controller="ctrl">
+        <h1 ng-bind="var_one"></h1>
+        <!--<h1>{{var_one}}</h1>-->
+    </div>
+    <script src="bower_components/angular/angular.min.js"></script>
+    <script>
+        var app = angular.module("app",[]);
+        app.controller("ctrl",ctrl);
+        function ctrl($scope){
+            $scope.var_one = "Data From DataBase Soon....";
+        }
+    </script>
+</html>
