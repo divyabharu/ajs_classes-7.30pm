@@ -1,0 +1,90 @@
+1. Introduction
+
+    What is AngularJS ??
+    Why AngularJS ??
+
+
+2. Environmental Setup
+
+    1. bower
+
+    2. IDE'S - WebStrom , Ecilipse , Visual Studio
+
+    3. GitHub
+
+
+3. Angular Applications
+    1. Static Angular Application
+    2. Dynamic Angular Application
+
+
+4. Directives
+
+
+5. Single Page Applications
+
+
+6. Services
+
+
+7. NodeJS Interaction with AngularJS
+
+
+    AngularJS - NodeJS - MySQL
+
+    AngularJS - NodeJS - MongoDB
+
+
+
+
+ - AngularJS is the Client Side JavaScript Framework.
+
+ - AngularJS Follows the MVC Design pattern
+
+    M - Model
+
+    V - View
+
+    C - Controller
+
+
+  - AngularJS Reduces the Burden on the Server by implementing the Business Components
+    at client side by using MVC
+
+  - We are Loosing the Secuirity by UI Frameworks
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
