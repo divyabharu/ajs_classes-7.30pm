@@ -1,0 +1,78 @@
+Single Page Applications:
+
+	- Loading the target templates to source template without refreshing the whole web page called as Single Page Application.
+
+	- Loading the Target Template to Source Template in single page application called as Routing.
+
+	- In angularJS we can implement the Routing in 2 ways.
+
+		1. ngRoute module
+
+		2. ui.router module
+
+
+Steps to design the Single Page Application by using ngRoute Module:
+--------------------------------------------------------------------
+
+1. Add the dependencies to the .Net application.
+
+
+[Note : angular-route.min.js file representing the ngRoute module dependency]
+
+
+
+2. Add the ngRoute Module Dependency.
+
+app.js
+------
+
+var app = angular.module("app",["ngRoute"]);
+
+
+3. create the target templates
+
+
+----------------------
+template_s
+	page_one.html
+	page_two.html
+---------------------	
+
+
+4. create the controllers
+
+---------------------
+controllers
+	page_one.js
+	page_two.js
+---------------------
+
+
+5. implement the routing in single page application.
+
+
+6. create the source template
+
+index.html
+
+UI.Router Module:
+1. UI.Router module is the 3rd party module
+2. We can implement the nested routing.
+3. We can implement the named Views.
+4. We can pass json as the parameters.
+
+
+
+Single Page Application by using ui.router module:
+--------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
