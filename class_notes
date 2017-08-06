@@ -651,6 +651,13 @@ $stateProvider.state("page_one",{
 Named Views in Single Page Application by using ui.router Module
 -----------------------------------------------------------------
 
+page_one.html
+-------------
+<h1>{{var_one}}</h1>
+<div ui-view="calc"></div>
+<div ui-view="summary"></div>
+
+
 
 
 
