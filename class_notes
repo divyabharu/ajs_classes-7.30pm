@@ -526,6 +526,171 @@ Step 6:
 
 
 
+single page applications by using ui.router module
+--------------------------------------------------
+1. ui.router module is the 3rd party module
+
+2. by using ui.router module , we can pass json objects as URL Parameters
+
+3. we can implement the Nested Routing by using ui.router module.
+
+4. we can implement the Named Views by using ui.router module.
+
+
+Basic Single Page Application implementation by using ui.router module
+-----------------------------------------------------------------------
+
+1. download the ui.router module dependency file by using bower.
+
+["angular-ui-router":"latest" is the key used to download dependency file]
+
+
+2. add the ui.router dependency
+
+app.js
+------
+var app = angular.module("app",["ui.router"]);
+
+3.create the templates
+
+4.create the controllers
+
+5.implement the routing by using ui.router module
+
+config.js
+---------
+app.config(config);
+function config($stateProvider,$urlRouterProvider){
+    $stateProvider.state("page_one",{
+        url:"/page_one",
+        templateUrl:"templates/page_one.html",
+        controller:"page_one"
+    })
+
+    .state("page_two",{
+            url:"/page_two",
+            templateUrl:"templates/page_two.html",
+            controller:"page_two"
+    });
+
+    $urlRouterProvider.otherwise("/page_one");
+};
+
+
+Step 6:
+    create the source template
+
+index.html
+----------
+<a ui-sref="page_one"><b>Page_One</b></a>
+<a ui-sref="page_two"><b>Page_Two</b></a>
+
+<div ui-view></div>
+
+
+Passing the JSON Objects as the URL Parameter in ui.router module
+-----------------------------------------------------------------
+
+Nested Routing in Single Page Applications by using ui.router module
+--------------------------------------------------------------------
+
+        *****************
+templates
+    page_one.html
+    page_two.html
+    child_one.html
+    child_two.html
+        *****************
+
+
+page_one.html
+-------------
+<h1>{{var_one}}</h1>
+<a ui-sref=".child_one">Child_One</a>
+<div ui-view></div>
+
+page_two.html
+-------------
+<h1>{{var_two}}</h1>
+<a ui-sref=".child_two">Child_Two</a>
+<div ui-view></div>
+
+child_one.html
+--------------
+<h1>{{child_one}}</h1>
+
+child_two.html
+--------------
+<h1>{{child_two}}</h1>
+
+
+****************
+controllers
+    page_one.js
+    page_two.js
+    child_one.js
+    child_two.js
+*****************
+
+config.js
+---------
+
+$stateProvider.state("page_one",{
+    url:"/page_one",
+    templateUrl:"templates/page_one.html",
+    controller:"page_one"
+})
+
+.state("page_one.child_one",{
+    url:"/child_one",
+    templateUrl:"templates/child_one.html",
+    controller:"child_one"
+});
+
+
+Named Views in Single Page Application by using ui.router Module
+-----------------------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
