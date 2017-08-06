@@ -658,6 +658,230 @@ page_one.html
 <div ui-view="summary"></div>
 
 
+NodeJS:
+-------
+    - NodeJS is the server side scripting language.
+    - By using NodeJS, we can create the http & tcp servers.
+    - In general we will develop the node applications by using javascript.
+    - nodejs supports predefined and custom modules.
+
+modules in nodejs
+-----------------
+1. express
+    - used to develop the REST API.
+
+2. mysql
+    - used to interact with the mysql database.
+
+3. mongodb
+    - used to interact with the mongodb.
+
+4. http
+    - used to create the http servers.
+
+5.body-parser
+    - used to set the MIME Type.
+
+6.fs
+    - used to interact with the flat files.
+    Ex.
+        text files
+        json files
+        xml files
+            --
+            --
+            --
+7. multer
+    - used to handle the mutlimedia files.
+
+8.query-string
+    - used to implement the ORM in Node Applications
+
+
+- in general we will download the required modules by using "package.json" file.
+
+- we can download the modules by using following node command.
+
+> npm install
+
+Steps to develop the first Node Application with Angular Interaction:
+---------------------------------------------------------------------
+Step 1:
+    download the express module by using package.json file with "npm install" command.
+
+Step 2:
+    create the angular application
+Ex.
+    index.html
+
+step 3:
+    create the node server.
+
+Ex.
+    server.js
+
+Step 4:
+    start the server.
+
+>npm start
+
+Step 5:
+    launch the application by using browser
+
+
+MySQL DB Interaction with NodeJS
+---------------------------------
+
+
+MongoDB Interaction with NodeJS:
+--------------------------------
+
+    - MongoDB is the ligth weigth database comapared to traditional databases.
+        Ex.
+            oracle
+            mysql
+
+    - MongoDB supports the JSON
+
+    - MongoDB Follows the client server archirecture.
+
+
+MongoDB Queries:
+---------------
+
+1. start the server
+>mongod
+    by default mongo server listening the following port no.
+    mongodb://localhost:27017
+
+2. connect to server
+>mongo
+
+3.create and switch to database.
+>use workshop;
+
+4.create the collection
+>db.createCollection("registration");
+
+5.insert the data.
+>db.registration.insert({'uname':'admin','upwd':'admin'});
+
+6.query the collection
+>db.registration.find();
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
