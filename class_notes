@@ -434,6 +434,117 @@ function ctrl($scope,my_service){
 
 
 
+Single Page Applications:
+
+    - loading the target web pages to source web page without refreshing
+      the whole web page called as single page application.
+
+    - loading the target webpage to source webpage in single page application
+      called as routing.
+
+    - we can implement the routing in single page application by using
+      following modules.
+
+        1.ngRoute
+
+        2.ui.router
+
+implementation of single page application by using ngRoute Module
+-----------------------------------------------------------------
+
+Step 1:
+    download the ngRoute module dependency by using bower.
+
+[Note : "angular-route":"~1.5.0" used to download the ngRoute Module
+        dependency file]
+
+
+[Note : angular-route.min.js file representing the ngRoute Module
+        dependency]
+
+
+step 2:
+    add the ngRoute Module Dependency.
+
+
+step 3:
+    create the target templates
+
+-----------
+templates
+    page_one.html
+    page_two.html
+-----------
+
+
+step 4:
+    create the controllers
+
+---------------
+controllers
+    page_two.js
+    page_two.js
+---------------
+
+
+Step 5:
+    implement the routing in single page application
+
+Rules for routing:
+-----------------
+
+1. Routing must be in config phase
+
+Ex.
+    app.config(config);
+    function config(){
+        //Routing Implementation
+    }
+
+
+2. Routing should be in "key & value pairs"
+    - keys are user defined keys
+        Ex.
+            page_one
+            page_two
+
+    - values must be json objects with the following json keys(predefined keys)
+            1.templateUrl
+            2. controller
+
+
+3. use the "$routeProvider" object for routing implementation
+
+
+
+Step 6:
+    create the source template.
+
+    Ex.
+        index.html
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
