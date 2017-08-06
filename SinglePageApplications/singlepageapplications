@@ -66,8 +66,25 @@ UI.Router Module:
 Single Page Application by using ui.router module:
 --------------------------------------------------
 
+Step 1:
+    download the ui.router module
 
 
+Step 2:
+    add the ui.router dependency
+
+
+step 3:
+       create the templates
+
+step 4:
+       create the controllers
+
+step 5:
+        create the routing file.
+
+step 6:
+         create the source template.
 
 
 
