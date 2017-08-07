@@ -17,6 +17,250 @@ Introduction:
 
 
 
+Automation Tools:
+-----------------
+    - we can build the ui applications by using automation tools.
+
+    - automation tools decreases the development time and improves the
+      productivity.
+
+
+1. bower
+    - bower is the automation tool used to download the required
+      dependencies to develop web application.
+
+    - bower based on nodejs.
+
+installation of bower:
+----------------------
+    - we can install the bower by using following nodejs command.
+
+> npm install -g bower
+
+
+bower components:
+-----------------
+    - we have following bower component.
+
+1. bower.json
+-------------
+{
+    "name":"nareshit",
+    "dependencies":{
+        "angular":"latest",
+        "bootstrap":"latest",
+        "d3":"latest",
+        "spark":"latest"
+            --
+            --
+            --
+    }
+}
+
+execution of bower component
+----------------------------
+
+>bower install
+
+[Note : when ever we execute bower component(bower.json), automatically
+        dependencies downloads to "bower_components" folder]
+
+
+    *******************
+Introduction
+        bowerdemo
+            bower.json
+    ********************
+
+Angular Framework path given by bower:
+--------------------------------------
+    - bower_components/angular/angular.min.js
+
+Bootstrap framework path given by bower:
+----------------------------------------
+    - bower_components / bootstrap / dist / css / bootstrap.min.css
+
+
+jQuery library path given by bower:
+-----------------------------------
+    - bower_components / jquery / dist / jquery.min.js
+
+
+bower commands:
+---------------
+1. bower list
+    it will show the available dependencies with versions in project
+
+O/P:
+
+├── angular#1.6.5
+└─┬ bootstrap#3.3.7
+  └── jquery#3.2.1
+
+
+2. bower uninstall bootstrap --save
+
+    it will remove the dependencies from application.
+
+O/p:
+
+    bower uninstall     bootstrap
+    bower uninstall     jquery
+
+
+3. bower install bootstrap --save
+
+    - it will download the required dependency dynamically
+
+
+4. bower init
+
+    - this command used to initilize the bower component
+     (bower.json)
+
+
+Gulp:
+----
+    - Gulp is the production based tool.
+
+    - Gulp used to prepare the production builds.
+
+    - Gulp Based on NodeJS.
+
+Advantages of Gulp:
+-------------------
+1. Gulp removes the comments
+
+2. Gulp Disables the log
+
+3. Gulp concat the files.
+
+4. Gulp warmup the http servers.
+
+5. Gulp launches the browsers.
+
+6. Gulp uglifies the code (compressing the code).
+
+    Ex.
+        JS Code
+        HTML Code
+        CSS Code
+
+7. Gulp will convert the LESS & SASS to CSS Files.
+
+8. Gulp installs the bower.
+
+9. Gulp will watch the front end application changes.
+
+10. Gulp will provide modules support.
+
+modules in Gulp:
+----------------
+
+1. gulp-concat
+    - used to concat the files.
+
+2. gulp-bower
+    - used to install bower.
+
+3. gulp-open
+    - used to launch the browser.
+
+4. gulp-uglify
+    - used to uglifies the js code.
+
+5. gulp-minify-html
+    - used to minify the html code
+
+6. gulp-minify-css
+    - used to minify the css files.
+
+7. gulp-watch
+    - used to watch the front end application changes.
+
+
+gulp component:
+---------------
+    - package.json file called as gulp component.
+
+{
+    "name":"nareshit",
+    "version":"1.0.0",
+    "description":"test gulp project",
+    "dependencies":{
+        "gulp-concat":"latest",
+        "gulp-uglify":"latest",
+            --
+            --
+            --
+    }
+
+}
+
+execution of gulp component:
+----------------------------
+
+> npm install
+
+[Note : when ever we execute the gulp component , automatically
+        dependencies downloads to "node_modules" folder ]
+
+
+
+installation of gulp:
+---------------------
+>npm install -g gulp
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
