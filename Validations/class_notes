@@ -1,0 +1,109 @@
+
+- AngularJS Supports form Validations.
+
+- if any error raised in form automatically corresponding errors stored
+  into "$error" object.
+
+- "$error" is the predefined object in angularjs used to store the form
+  related errors.
+
+
+Syntax.
+
+    "form_logical_name".
+    "element_logical_name".
+    $error.
+    "type of error"
+
+Ex_1: text validation
+
+<form name="myForm">
+    <label>Uname.</label>
+    <input type="text"
+           name="uname"
+           ng-minlength="3"
+           ng-maxlength="6"
+           required>
+    <div ng-if="myForm.uname.$error.minlength">***Mininum 3 characters are required***</div>
+    <div ng-if="myForm.uname.$error.maxlength">****Maximum 6 characters allowed***</div>
+    <div ng-if="myForm.uname.$error.required">****Can't Left Blank***</div>
+</form>
+
+
+Ex_2: email validation
+----------------------
+<form name="myForm">
+    <label>Email</label>
+    <input type="email"
+           name="uemail"
+           required>
+
+    <div ng-if="myForm.uemail.$error.email">****Please enter the valid email****</div>
+    <div ng-if="myForm.uemail.$error.required">***Can't Left Blank***</div>
+</form>
+
+
+Ex_3: number validation
+-----------------------
+<form name="myForm">
+
+    <label>Phone.<label>
+    <input type="text"
+           name="uphone"
+           ng-pattern="/^[0-9]{10,10}$/"
+           required>
+    <div ng-if="myForm.uphone.$error.required">***Can't Left Blank***</div>
+    <div ng-if="myForm.uphone.$error.pattern">****Please enter the valid phone number***</div>
+</form>
+
+
+validations by using ngMessages Module:
+---------------------------------------
+
+    - ngMessages is the predefined module, used to handle the form validations.
+
+    - by using ngMessages module we can overcome the data redundancy.
+
+
+Step 1:
+    download ngMessages module by using bower.
+
+[ "angular-messages" key representing ngMessages module related key in bower]
+[ "angular-messages.min.js" representing ngMessages module ]
+
+
+step 2:
+    add the ngMessages module dependency.
+
+
+step 3:
+    create the validation messages in external template by using
+    ng-message directive
+
+
+
+step 4:
+    import the validations
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
