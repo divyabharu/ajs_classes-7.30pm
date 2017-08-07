@@ -1,0 +1,146 @@
+Filters:
+    Filters are used to format the data accroding to application requirement.
+    we have two types of filters.
+
+        1. predefined filters
+        2. custom filters
+
+predefined filters:
+    - the filters given by the framework called as predefined filters.
+
+1. uppercase
+    - this filter used to convert the lowercase characters to uppercase.
+
+Ex.
+    $scope.var_one="angularjs";
+    {{var_one}} //angularjs
+    {{var_one | uppercase}} //ANGULARJS
+
+
+
+2. lowercase
+    - this filter used to convert the uppercase characters to lowercase.
+Ex.
+    $scope.var_two = "NODEJS";
+
+    {{var_two}} //NODEJS
+    {{var_two | lowercase}}   //nodejs
+
+3. currency
+    - used to append the "$" symbol to the numerical values
+
+Ex.
+    $scope.var_three = 100;
+
+    {{var_three}}  //100
+    {{var_three | currency}}  //$100.00
+    {{var_three | currency:"$":4}}   //$100.0000
+
+
+4. orderBy
+    - this filter used to arrange the data either assending or decending order.
+
+5. limitTo
+    - this filter used to display the required number of records from an array.
+
+6. filter
+    - this filter used to search the whole array based on user input.
+
+Ex.
+    $scope.var_four = [
+                        {'id':1,'name':"Hello_1",'age':20},
+                        {'id':5,'name':"Hello_5",'age':28},
+                        {'id':2,'name':"Hello_2",'age':22},
+                        {'id':4,'name':"Hello_4",'age':26},
+                        {'id':3,'name':"Hello_3",'age':24}
+    ];
+
+
+    <input type="text" ng-model="search">
+    <table border="1">
+        <tr>
+            <th>id</th>
+            <th>name</th>
+            <th>age</th>
+        </tr>
+        <tr ng-repeat="x in var_four | orderBy:'-id' | limitTo:3 | filter:search">
+            <td>{{x.id}}</td>
+            <td>{{x.name}}</td>
+            <td>{{x.age}}</td>
+        </tr>
+    </table>
+
+7.date
+    - this filter used to format the date according to application requirement
+
+Ex.
+    $scope.var_five = new Date();
+
+    {{var_five | date:'dd-MM-yy'}}
+    {{var_five | date:'MM-dd-yy'}}
+    {{var_five | date:'short'}}
+    {{var_five | date:'medium'}}
+    {{var_five | date:'fullDate'}}
+    {{var_five | date:'shortTime'}}
+        --
+        --
+        --
+
+
+custom filters:
+---------------
+    - creatig our own filters based on application requirement called as custom filters.
+
+Ex.
+    {{"hello" | reverse}}
+
+    app.filter("reverse",reverse);
+    function reverse(){
+        return function(arg1){
+            var data = "";
+            for(var i=0;i<arg1.length;i++){
+                data = arg1[i]+data;
+            }
+            return data;
+        }
+    }
+
+Ex.
+    {{100 | my_currency:"₹":true}}
+
+    app.filter("my_currency",my_currency);
+    function my_currency(){
+        return function(amount,symbol,position){
+            if(position){
+                return symbol+" "+amount;
+            }else{
+                return amount+" "+symbol;
+            }
+        }
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

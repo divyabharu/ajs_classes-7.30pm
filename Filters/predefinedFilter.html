@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="app" ng-controller="ctrl">
+    <p style="color: red;font-weight: bolder">{{var_one | uppercase}}</p>
+    <p style="color: green;font-weight: bolder">{{var_two | lowercase | uppercase}}</p>
+    <p style="color: blue;font-weight: bolder">{{var_three | currency:"$":4}}</p>
+
+    <input type="text" ng-model="search"> <br><br>
+    <table border="1">
+        <tr>
+            <th>id</th>
+            <th>name</th>
+            <th>age</th>
+        </tr>
+        <tr ng-repeat="x in var_four | orderBy:'-id' | limitTo:3 | filter:search">
+            <td>{{x.id}}</td>
+            <td>{{x.name}}</td>
+            <td>{{x.age}}</td>
+        </tr>
+    </table>
+
+    <p style="color: rebeccapurple;font-weight: bolder">{{var_five}}</p>
+    <p style="color: rebeccapurple;font-weight: bolder">{{var_five | date:'short'}}</p>
+    <p style="color: rebeccapurple;font-weight: bolder">{{var_five | date:'medium'}}</p>
+    <p style="color: rebeccapurple;font-weight: bolder">{{var_five | date:'fullDate'}}</p>
+    <p style="color: rebeccapurple;font-weight: bolder">{{var_five | date:'shortTime'}}</p>
+    <p style="color: rebeccapurple;font-weight: bolder">{{var_five | date:'dd-MM-yy'}}</p>
+    <p style="color: rebeccapurple;font-weight: bolder">{{var_five | date:'MM-dd-yyyy'}}</p>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.0/angular.min.js"></script>
+    <script>
+        var app = angular.module("app",[]);
+
+        app.controller("ctrl",ctrl);
+        function ctrl($scope) {
+            $scope.var_one = "angularjs";
+            $scope.var_two = "NODEJS";
+            $scope.var_three = 100;
+            $scope.var_four = [
+                {'id':1,'name':"Hello_1",'age':20},
+                {'id':5,'name':"Hello_5",'age':28},
+                {'id':2,'name':"Hello_2",'age':22},
+                {'id':4,'name':"Hello_4",'age':26},
+                {'id':3,'name':"Hello_3",'age':24}
+            ];
+
+            $scope.var_five = new Date();
+        }
+
+
+    </script>
+</html>
