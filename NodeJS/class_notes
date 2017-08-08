@@ -1,0 +1,94 @@
+NodeJS:
+------
+
+    - NodeJS is the server side scripting language.
+
+    - By using NodeJS, we can create http&tcp servers.
+
+    - In general we can develop Node Applications by using JavaScript.
+
+    - Node will support both predefined and user defined modules.
+
+
+Modules in NodeJS
+-----------------
+1.express
+    - this module used to develop the REST API.
+
+2.mysql
+    - this module used to interact with the mysql database.
+
+3.mongodb
+     - this module used to interact with the mongo database.
+
+4. body-parser
+      - this module used to set the MIME Type.
+
+Ex.
+        JSON
+        Text
+        XML
+        --
+        --
+        --
+
+5. fs
+      - this module used to interact with the flat files.
+
+6. jwt-simple
+        - this module used to maintain the token based authentication system.
+
+7. http
+        - this module used to develop the http servers.
+
+8. query-string
+        - this module used to prepare the ORM Queries.
+
+
+----------------------------------------
+
+in general we can download above modules (custom modules) by using package.json file.
+
+we can execute the package.json file by using following command.
+
+>npm install
+
+[Note : when ever we execute npm install , automatically modules will be downloads to node_modules folder].
+
+
+
+Ex_1:
+    Basic Communication Between AngularJS to NodeJS
+    -----------------------------------------------
+
+
+Step 1:
+        download express module.
+
+
+Step 2:
+        prepare the angular application.
+
+        Ex.
+            index.html
+
+Step 3:
+        prepare the node application
+
+        Ex.
+            server.js
+
+
+
+Step 4:
+    start the server
+
+> npm start
+
+
+Step 5:
+    launch the application with the browser
+
+    http://localhost:8080/
+
+
