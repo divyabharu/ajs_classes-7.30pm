@@ -212,10 +212,136 @@ installation of gulp:
 >npm install -g gulp
 
 
+Steps to develop the gulp project
+---------------------------------
+
+1. prepare the directory structure
+--------------
+Introduction
+        gulpdemo
+                html
+                    index_one.html
+                    index_two.html
+
+                css
+                    style_one.css
+                    style_two.css
+
+                js
+                    sample_one.js
+                    sample_two.js
+
+                bower.json
+                index.html
+---------------------------------
+
+2. download the gulp modules by using package.json file.
+
+{
+    "name":"nareshit",
+    "version":"1.0.0",
+    "description":"basic gulp project",
+    "dependencies":{
+        "gulp" : "latest",
+        "gulp-concat":"latest",
+        "gulp-minify-html":"latest",
+        "gulp-minify-css":"latest",
+        "gulp-uglify":"latest",
+        "gulp-bower":"latest",
+        "gulp-open":"latest"
+    }
+}
+
+>npm install
+
+[Automatically all the modules downloads to node_modules folder]
+
+
+Step 3:
+    prepare the Gulp script
+
+Gulpfile.js
+-----------
+//import modules(gulp modules)
+var gulp = require("gulp");
+var concat = require("gulp-concat");
+var uglify = require("gulp-uglify");
+var htmlMinify = require("gulp-minify-html");
+var cssMinify = require("gulp-minify-css");
+var bower = require("gulp-bower");
+var open = require("gulp-open");
+
+//create the task
+gulp.task("task_one",function(){
+
+    gulp.src("./gulpdemo/html/*.html")
+        .pipe(concat("final.min.html"))
+        .pipe(htmlMinify())
+        .pipe(gulp.dest("./prodEnv/html"));
+
+});
+
+
+//create the task
+gulp.task("task_two",function(){
+
+    gulp.src("./gulpdemo/css/*.css")
+        .pipe(concat("final.min.css"))
+        .pipe(cssMinify())
+        .pipe(gulp.dest("./prodEnv/css"));
+
+});
 
 
 
+//create the task
+gulp.task("task_three",function(){
 
+    gulp.src("./gulpdemo/js/*.js")
+        .pipe(concat("final.min.js"))
+        .pipe(uglify())
+        .pipe(gulp.dest("./prodEnv/js"));
+
+});
+
+
+
+//create the task
+gulp.task("bower",function(){
+    return bower();
+});
+
+
+//create the task
+gulp.task("open",function(){
+    gulp.src("./gulpdemo/index.html")
+        .pipe(open());
+});
+
+
+//create the default task
+gulp.task("default",
+          ["task_one","task_two","task_three","bower","open"],
+          function(){
+
+});
+
+
+Step 4:
+------
+Execute the Gulp Script
+
+>gulp task_one  // execures task one
+
+>gulp task_two  // executes task two
+
+>gulp task_three // executes task three
+
+>gulp bower    // executes bower
+
+>gulp open    // executes open
+
+>gulp        // default task
 
 
 
