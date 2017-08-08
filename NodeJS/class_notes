@@ -1,0 +1,52 @@
+NodeJS:
+
+    - NodeJS is the server side scripting language.
+
+    - by using NodeJS, we can create http & tcp servers.
+
+    - In general we can prepare the Node Applications by using JavaScript.
+
+    - As a Node Developer we can assign the port numbers to servers.
+
+    - Node Supports the Modules.
+
+
+Modules in NodeJS:
+------------------
+
+1. express
+    - this module used to develop the web services.
+
+2. mysql
+    - this module used to interact with the mysql database.
+
+3. mongodb
+    - this module used to interact with the mongodb.
+
+4. body-parser
+    - this module used to set the MIME Type.
+
+5. fs
+    - this module used to interact with flat files.
+    Ex.
+        text files
+        json files
+        xml files
+            --
+            --
+            --
+6. multer
+    - this module used to handle the multimedia files.
+
+7. http
+    - this module used to create the http servers.
+
+8.jwt-simple
+    - this module used to maintain the token based authentication system
+
+
+
+- in general we will download the required modules by using package.json file.
+
+
+

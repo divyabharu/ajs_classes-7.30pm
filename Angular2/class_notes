@@ -1,0 +1,107 @@
+ - Angular2 mainly for "web application" as well as "mobile application" development.
+
+ - In general we can develop angular2 applications by using "TypeScript".
+
+ - "TypeScript" is the programming language interduced by "MicroSoft".
+
+ - In general browsers may not understand TypeScript so we need to convert
+   "TypeScript" to "JavaScript" by using "tsc" compiler.
+
+ - Converting the "TypeScript" to "JavaScript" called as transpilation.
+
+ - In general we can develop angular2 applications by using "environment"
+   provided by microsoft.
+
+ - By using Angular2 we can develop only dynamic Applications.
+
+
+Environmental Setup for Angular2 Application:
+---------------------------------------------
+
+Basic_App
+
+    package.json
+
+    systemjs.config.js
+
+    tsconfig.js
+
+    src
+
+        index.html
+
+        app.component.ts
+
+        main.ts
+
+package.json
+------------
+   - this configuration file used to download the required dependencies
+     to develop angular2 application
+
+
+systemjs.config.js
+------------------
+    - this file we can call loader in angular2.
+
+    - angular2 loader will load all the required dependencies in perticular
+      order.
+
+
+tsconfig.js
+-----------
+    - this configuration file validate the external scripting file.
+
+
+
+index.html
+----------
+    - this file acting as the view in angular2.
+
+
+app.component.ts
+----------------
+
+    - angular2 application must contain at least one component.
+
+
+Ex.
+    @Component({
+        selector : "my-app",
+        template:"{{sub_one+"<==>"+sub_two+"<==>"+sub_three}}"
+
+    })
+    export class AppComponent{
+        sub_one;
+        sub_two;
+        sub_three;
+        AppComponent(){
+            this.sub_one = "Angular2";
+            this.sub_two = "NodeJS";
+            this.sub_three = "MongoDB";
+        }
+    }
+
+main.ts
+-------
+    - this configuration used to bootstrap the required component.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
