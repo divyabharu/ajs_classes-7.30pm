@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="app" ng-controller="ctrl">
+    <label>Uname.</label>&emsp;&emsp;&emsp;&emsp;
+    <input type="text" ng-model="uname">
+
+    <br><br>
+    <label>Upwd.</label>&emsp;&emsp;&emsp;&emsp;
+    <input type="password" ng-model="upwd">
+
+    <br><br>
+    <button ng-click="save({'uname':uname,'upwd':upwd})">Save</button>&emsp;&emsp;
+    <button ng-click="read()">Read</button>&emsp;&emsp;
+    <button ng-click="remove()">Delete</button>
+
+    <br><br>
+    <h1>{{result}}</h1>
+
+    <script src="bower_components/angular/angular.min.js"></script>
+    <script src="bower_components/ngstorage/ngStorage.min.js"></script>
+    <script>
+        var app = angular.module("app",["ngStorage"]);
+
+        app.controller("ctrl",ctrl);
+        function ctrl($scope,$localStorage,$sessionStorage) {
+
+                $scope.save = function (obj) {
+                    //storing the data into local storage
+                    //$localStorage.login_details = obj;
+
+                    //storing the data into local storage by using HTML5 API
+                    //window.localStorage.setItem("login_details",obj);
+
+
+                    //storing the data into session storage
+                    $sessionStorage.login_details = obj;
+
+                };
+
+                $scope.read = function () {
+                    //reading the data from local storage
+                    //$scope.result = $localStorage.login_details.uname
+                    //                +"..."+$localStorage.login_details.upwd;
+
+
+                    //reading the data from sessionStorage.
+                    $scope.result = $sessionStorage.login_details.uname+"..."
+                                    +$sessionStorage.login_details.upwd;
+
+                };
+
+                $scope.remove = function () {
+                    //deleting the data from local storage
+                    //delete $localStorage.login_details;
+                    delete $sessionStorage.login_details;
+
+                    $scope.result="";
+                    $scope.uname="";
+                    $scope.upwd="";
+
+                    //delete the data from localStorage by using HTML5 API
+                    //window.localStorage.removeItem("login_details");
+
+                };
+
+        }
+
+
+
+    </script>
+
+
+
+
+</html>
