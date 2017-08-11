@@ -50,3 +50,113 @@ Modules in NodeJS:
 
 
 
+Ex_1:
+----
+
+Steps tp create the Basic Node Example with AngularJS
+
+
+Step 1:
+    download express module by using package.json file
+
+
+Step 2:
+    create the Angular Application.
+
+Ex.
+    index.html
+
+Step 3.
+    create the node server
+
+Ex.
+    server.js
+
+
+Step 4:
+    start the server.
+>npm start
+
+
+Step 5:
+    launch the application
+
+http://localhost:8080/
+
+
+
+
+Ex_2:
+    create the node application to read data from static file.
+
+Ex.
+    sample.json
+
+
+Step 1:
+    download the express module
+
+[Note : fs module is the default module , so no need to download by using
+        package.json file]
+
+
+Step 2:
+    create the sample.json file
+
+
+Step 3:
+    create the server.
+Ex.
+    server.js
+
+Step 4:
+    create the Angular Application
+
+Ex.
+    index.html
+
+
+Ex_3:
+    Interacting with the mysql database
+
+mysql queries:
+--------------
+1. show databases
+
+>show databases;
+
+
+2.create schema(DataBase)
+
+>create schema demo;
+
+
+3. switch to schema
+
+>use demo;
+
+
+4. create the table
+
+>create table products(id integer,name varchar(20),cost integer);
+
+
+5. insert the data
+
+>insert into products values(111,'p_one',10000);
+
+
+6. query the table
+
+> select * from products;
+
+
+
+
+    ************************
+
+DataBase : demo
+
+table    : products
+
+    **************************
