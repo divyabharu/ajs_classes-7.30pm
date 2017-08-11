@@ -1,0 +1,172 @@
+Single Page Applications:
+-------------------------
+    - Loading the target web pages to source web page without refreshing the whole web page
+      called as Single Page Application.
+
+    - Loading the target web page to source webpage in single page application called as Routing.
+
+    - In AngularJS, we can implement the Routing by using following modules.
+
+        1. ngRoute    (Native Module)
+        2. ui.router  (3rd party Module)
+
+
+Steps to Design the Single Page Application by using ngRoute Module:
+--------------------------------------------------------------------
+Step 1:
+    download ngRoute module by using bower.
+
+bower.json
+----------
+{
+    "name":"nareshit",
+    "dependencies":{
+        "angular":"~1.5.0",
+        "angular-route":"~1.5.0"
+    }
+}
+
+[Note : "angular-route" key in bower used to download the ngRoute Module dependency file
+        "angular-route.min.js" indicating ngRoute Module Dependency file]
+
+
+Step 2:
+    create the target templates
+
+-----------------
+Basic_ngRoute
+        templates
+            page_one.html
+            page_two.html
+-----------------
+
+page_one.html
+-------------
+<h1>{{var_one}}</h1>
+
+
+page_two.html
+-------------
+<h1>{{var_two}}</h1>
+
+
+Step 3:
+-------
+    create the target controllers
+
+------------------
+controllers
+    page_one.js
+    page_two.js
+------------------
+
+page_one.js
+-----------
+app.controller("page_one",page_one);
+function page_one($scope){
+    $scope.var_one = "I am from page one controller !";
+}
+
+page_two.js
+-----------
+app.controller("page_two",page_two);
+function page_two($scope){
+    $scope.var_two = "I am from page two controller !";
+}
+
+
+Step 4:
+    Add the ngRoute Dependency to the Application.
+
+app.js
+------
+var app = angular.module("app",["ngRoute"]);
+
+
+Step 5:
+    implement the Routing in Single page Applications
+
+Rules:
+    1. Routing should done in config phase
+
+    Ex.
+
+        app.config(config)
+        function config(){
+            //Routing Implementation
+        }
+
+    2. Routing should be in "key&value" pairs
+
+        - keys are user defined keys.
+          Ex.
+            page_one
+            page_two
+
+        - values should be JSON Objects with following JSON Keys
+            1. templateUrl
+            2. controller
+
+    3. use the "$routeProvider" object to implement the Routing
+
+config.js
+---------
+app.config(config);
+function config($routeProvider){
+    $routeProvider.when("/page_one",{
+        templateUrl:"templates/page_one.html",
+        controller:"page_one"
+    })
+    .when("/page_two",{
+            templateUrl:"templates/page_two.html",
+            controller:"page_two"
+    })
+    .otherwise("/page_one",{
+            templateUrl:"templates/page_one.html",
+            controller:"page_one"
+    });
+}
+
+step 6:
+    create the source template
+
+index.html
+----------
+
+<a href="#page_one"><b>Page_One</b></a>
+<a href="#page_two"><b>Page_Two</b></a>
+<div ng-view></div>
+
+Passing the URL Parameters(Route Parameters) by using ngRoute Module:
+---------------------------------------------------------------------
+index.html
+----------
+<a href="#page_one/111/emp_1/50000"><b>Page_One</b></a>
+
+config.js
+---------
+$routeProvider.when("/page_one/:param1/:param2/:param3",{
+    templateUrl:"templates/page_one.html",
+    controller:"page_one"
+});
+
+page_one.js
+-----------
+app.controller("page_one",page_one);
+function page_one($scope,$routeParams){
+    console.log($routeParams.param1);
+    console.log($routeParams.param2);
+    console.log($routeParams.param3);
+}
+
+
+
+
+
+
+
+
+
+
+
+
