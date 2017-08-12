@@ -9,7 +9,7 @@ Introduction:
 3. Advantages Of AngularJS ??
 4. Disadvantages Of AngularJS ??
 5. key features of AngularJS ??
-6. Comparision Of AngularJS - Angular2
+6. Comparision Of AngularJS - Angular5
                   AngularJS - reactJS
                   AngularJS - NodeJS
 
@@ -521,6 +521,142 @@ index.html
 
 [Note : As a Angular Developer, we can directly manipulate the DOM
         without depending on JavaScript]
+
+
+3. AngularJS Supports Two Way Data Binding
+
+    - Automatic Data Synchronization Between "Model and View" with the
+      Super Vision Of "Controller" called as Two Way data binding
+
+
+in the above diagram we have following server calls
+
+1. http get request
+
+2. http delete request
+
+3. AJAX call
+
+1. http get request
+-------------------
+    - used to fetch the data from database.
+
+2. http delete request
+----------------------
+    - used to delete a particular resource from database.
+
+3. AJAX call
+------------
+    - used to sync the data between view and database.
+
+
+[Note : As a programming languages developer we must make
+        above three server calls to application requirement ]
+
+
+[Note : As a AngularJS/Angular2/Angular4 developer , we can make
+        only two server calls to meet application requirement because
+        of two way data binding]
+
+
+[Note : "Two Way Data Binding" Reduces the Burden on Server]
+
+
+
+4. AngularJS Reduces the Burden On Server
+
+    [ As a Angular Developer, we are implementing business components
+      At client side Automatically we are able reduce the Burden on Server]
+
+
+
+5. Open Source Code
+    - As a Angular Developer we can customize the framework accroding
+      to Application requirement.
+
+
+
+Disadvantages of AngularJS:
+---------------------------
+1. Understanding the Angular Applications are difficult because of
+   no coding standards given by vendors.
+
+
+2. Security
+    we are implementing business components at client side, so we
+    are missing the secuirity by using ui technologies.
+
+3. browser should enable the javascript.
+
+
+Features Of AngularJS
+---------------------
+1. single page applications
+    - loading "one template" to "another template" with out refreshing the
+      "whole web page" called as "Single Page Application".
+
+
+2. Routing
+    - Loading "Target Template" to "Source Template" in single page application
+      called as Routing.
+
+    - AngularJS Supports Routing
+
+    - We can Implement the Routing by using following Modules.
+        1. ngRoute
+        2. ui.router
+
+
+3. Directives
+    - Directives in AngularJS Enhances the HTML Capabilities.
+    - We have two types of Directives
+        1. predefined directives
+        2. custom directives
+
+
+4. services
+
+    - Services can share the common business logic to multiple number
+      of controllers
+
+    - By using Services we can reuse the business logic
+
+    - By using Services we can overcome the Data Redundancy.
+
+    - we have two types of services.
+
+        1. predefined services
+
+        2. custom services
+
+
+5. filters
+
+    - filters are used to format the application data accroding to Application
+      Requirement.
+
+    - we have two types of filters
+
+        1. predefined filters
+
+        2. custom filters
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
