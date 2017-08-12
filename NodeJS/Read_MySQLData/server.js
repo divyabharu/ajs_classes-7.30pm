@@ -8,6 +8,7 @@ var connection = mysql.createConnection({
    password:"root",
    database:"demo"
 });
+
 connection.connect();
 app.get("/products",function (req,res) {
     connection.query("select * from products",
