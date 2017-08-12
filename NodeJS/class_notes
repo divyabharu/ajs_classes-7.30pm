@@ -160,3 +160,71 @@ DataBase : demo
 table    : products
 
     **************************
+
+
+
+Ex_4:
+    Interacting with the MongoDB
+
+- MongoDB is the ligth weigth database compared to traditional databases
+  like Oracle, Mysql...
+
+- MongoDB Follows the Client Server Architecture.
+
+- MongoDB Supports JSON Objects.
+
+Installation Of MongoDB
+-----------------------
+
+Website : https://www.mongodb.com/dr/fastdl.mongodb.org/win32/
+          mongodb-win32-x86_64-2008plus-ssl-3.4.7-signed.msi/
+          download
+file name : mongodb-win32-x86_64-2008plus-ssl-3.4.7-signed.msi
+
+create the following folder structure:
+--------------------------------------
+C:/data/db
+
+set the path in environmental variables
+---------------------------------------
+path = C:\Program Files\MongoDB\Server\3.4\bin
+
+
+MongoDB Queries:
+----------------
+1. start the server
+>mongod
+
+[Note : by default mongo server listening the following path
+
+    "mongodb://localhost:27017"
+
+]
+
+2. connect to server
+>mongo
+
+
+3. create and switch to database
+>use demo;
+
+4. create collection
+> db.createCollection("products");
+
+5. insert the json objects into products collection.
+> db.products.insert({'p_id':111,'p_name':'p_one','p_cost':10000});
+
+6. fetch the data.
+>db.products.find();
+
+
+
+
+
+
+
+
+
+
+
+

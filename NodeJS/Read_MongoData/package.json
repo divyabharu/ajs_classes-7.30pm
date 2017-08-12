@@ -1,0 +1,8 @@
+{
+  "name": "Read_MongoData",
+  "version": "0.0.1",
+  "dependencies": {
+    "express": "^4.15.4",
+    "mongodb": "^2.2.31"
+  }
+}
