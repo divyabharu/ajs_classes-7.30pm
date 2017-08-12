@@ -6,7 +6,7 @@ var app = express();
 app.use(express.static(__dirname+"/../POC"));
 app.use(bodyparser.json());
 var jwt = require("jwt-simple");
-
+var fs = require("fs");
 
 var connection = mysql.createConnection({
     host:"localhost",
@@ -34,6 +34,46 @@ app.post("/login",function (req,res) {
             res.send({"login":"fail !"});
         }
     });
+});
+
+
+app.post("/about",function (req,res) {
+    var token = req.body.token;
+    if(tokens[0] == token){
+        fs.readFile(__dirname+"/sample.json",function (err,data) {
+            res.send(data);
+        });
+    }else{
+        res.send({"401":"Authentication Failed !"});
+    }
+});
+
+
+app.post("/portfolio",function (req,res) {
+    var token = req.body.token;
+    if(tokens[0] == token){
+        connection.query("select * from products",function (err,recordsArray,fields) {
+            res.send(recordsArray);
+        });
+    }else{
+        res.send({"401":"Authentication Failed !"});
+    }
+});
+
+
+var nareshIT = mongodb.MongoClient;
+app.post("/contact",function (req,res) {
+    var token = req.body.token;
+    if(tokens[0] == token){
+        nareshIT.connect("mongodb://localhost:27017/poc",function (err,db) {
+            db.collection("products").find().toArray(function (mongoError,array) {
+                res.send(array);
+            });
+        });
+
+    }else{
+        res.send({"401":"Authentication Failed !"});
+    }
 });
 
 
