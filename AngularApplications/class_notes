@@ -1,0 +1,108 @@
+- By using AngularJS, we can create two types of applications.
+
+    1. Static Angular Application
+
+    2. Dynamic Angular Application
+
+
+Static Angular Application:
+
+    - if view won't interacts with the controller for dynamic data,
+      then such type of angular application called as static angular
+      application.
+
+
+
+Dynamic Angular Application:
+
+    - If view interacts with the controller for dynamic data, then such type
+      of angular application called as Dynamic Angular Application.
+
+
+
+Steps to create the Static Angular Application:
+-----------------------------------------------
+
+Step 1:
+    create the bower component.
+
+bower.json
+----------
+{
+    "name":"nareshit",
+    "dependencies":{
+        "angular":"latest"
+    }
+}
+
+
+Step 2:
+    create the view
+
+Ex.
+    index.html
+
+<!DOCTYPE html>
+<html ng-app>
+    <input type="number" ng-model="number_one"> <br>br>
+    <input type="number" ng-model="number_two"> <br><br>
+    <h1 style="color:red" ng-bind="number_one+number_two"></h1>
+    <script src="bower_components/angular/angular.min.js"></script>
+</html>
+
+- angular framework (angular.min.js) file starts the execution from
+  ng-app directive
+
+- logical name of web application optional for static applications.
+
+- "ng-model" directive creates the object in heap memory with application
+  data.
+
+- ng-bind directive "binds" the the model data to the view.
+
+
+Dynamic Angular Application:
+----------------------------
+
+Step 1:
+    Download angular framework by using bower.
+
+Step 2:
+    load the angular framework.
+
+Step 3:
+    declare the logical name of web application
+
+   Ex.
+        ng-app="app"
+
+   [Note : where "app" is the logical name of web application]
+
+
+Step 4:
+    declare the controller by using "ng-controller" directive.
+
+Ex.
+
+    <div ng-controller="ctrl">
+
+    </div>
+
+[Note : where "ctrl" is the logical name of controller]
+
+
+Step 5:
+    Create the app module.
+
+
+    var app = angular.module("app",[]);
+        (object)             (logical name)
+
+    [Note : with the help of "app" object we can implement the
+            controllers, services, filters,...]
+
+
+Step 6:
+    implement the controller.
+
+
