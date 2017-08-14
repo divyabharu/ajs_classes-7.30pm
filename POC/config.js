@@ -1,6 +1,6 @@
 app.run(run).config(config);
 function run($rootScope){
-    $transitions.$on("$stateChangeStart",function (event,fromState,toState,fromParams,toParams) {
+    $rootScope.$on("$stateChangeStart",function (event,fromState,toState,fromParams,toParams) {
         console.log("***********Hello***********");
     });
 };

@@ -5,6 +5,7 @@
     "angular-ui-router": "latest",
     "ngstorage":"latest",
     "angular-messages":"latest",
-    "bootstrap": "latest"
+    "bootstrap": "latest",
+    "angular-ui-event": "latest"
   }
 }
