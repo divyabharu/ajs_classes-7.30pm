@@ -325,6 +325,58 @@ $stateProvider.state("page_one",{
 
 
 
+Named Views in Single Page Application:
+---------------------------------------
+    - dividing the target template to number of sub templates called as Named Views in Single
+      Page Application.
+
+
+----------------
+templates
+    page_one.html
+    page_two.html
+    calc.html
+    summary.html
+----------------
+
+page_one.html
+-------------
+<h1>{{var_one}}</h1>
+<div ui-view="calc"></div>
+<div ui-view="summary"></div>
+
+
+
+----------------------
+controllers
+    page_one.js
+    page_two.js
+    calcController.js
+    summaryController.js
+----------------------
+
+config.js
+---------
+
+$stateProvider.state("page_one",{
+    url:"/page_one",
+    views:{
+        '':{
+            templateUrl:"templates/page_one.html",
+            controller:"page_one"
+        },
+        'calc@page_one':{
+            templateUrl:"templates/calc.html",
+            controller:"calcController"
+        },
+        'summary@page_one':{
+            templateUrl:"templates/summary.html",
+            controller:"summaryController"
+        }
+    }
+});
+
+
 
 
 
