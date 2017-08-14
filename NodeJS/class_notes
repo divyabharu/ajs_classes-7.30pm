@@ -92,3 +92,85 @@ Step 5:
     http://localhost:8080/
 
 
+
+Ex_4:
+    Interacting with the MongoDB
+
+
+    - MongoDB Supports JSON
+
+    - MongoDB Follows Client Server Architecture
+
+    - MongoDB is ligth weigth DataBase Compared to other DataBases.
+
+    - As a MongoDB Developer , we can Perform CRUD Operations On MongoDB.
+
+Installation Of MongoDB:
+-----------------------
+
+Website : https://www.mongodb.com/download-center#community
+
+Create the following folder Structure:
+
+"C:/data/db"
+
+Set the path environmental Variable
+
+path = C:\Program Files\MongoDB\Server\3.4\bin
+
+
+
+MongoDB Queries:
+---------------
+
+1. start the server
+
+>mongod
+
+
+2. connect to server
+
+>mongo
+
+
+3. show databases
+
+> show dbs;
+
+
+4. create and switch to database
+
+>use online_classes;
+
+
+5. create the collection
+
+>db.createCollection("products");
+
+
+6. insert the JSON Object to Collection.
+
+> db.products.insert({'id':1,'name':'p_one',cost:10000});
+
+
+7. query the collection
+
+> db.products.find();
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
