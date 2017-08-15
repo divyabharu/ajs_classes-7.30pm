@@ -1,0 +1,8 @@
+{
+  "name":"online_classes",
+  "dependencies":{
+    "angular":"latest",
+    "angular-ui-router": "latest",
+    "ngstorage":"latest"
+  }
+}
