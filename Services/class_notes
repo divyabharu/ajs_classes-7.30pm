@@ -156,6 +156,34 @@ Ex.
 
 
 
+Predefined Services:
+--------------------
+1. $timeout
+    - this predefined service used to execute a "custom function" with a given time.
+
+Syntax:
+    $timeout(fun_one,5000);
+
+[Note : fun_one will execute after 5000 ms]
+
+
+2. $interval
+    - this predefined service used to execute a "custom function" repetadely with a given interval
+      of time.
+
+Syntax:
+    $interval(fun_two,5000);
+
+[Note : fun_two will execute repetedely for every 5000ms]
+
+
+3.$location
+    - this predefined service used to find the absolute path of web application.
+
+Ex.
+    console.log($location.absUrl());
+
+
 
 
 
