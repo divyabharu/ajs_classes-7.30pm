@@ -88,7 +88,70 @@ function my_service(){
 
 creating the custom service by using value()
 --------------------------------------------
+    - by using value() we can create the custom services in the form of a "key&value" pairs.
 
+Ex.
+    app.value("my_service","First Value");
+
+    app.controller("ctrl_one",ctrl_one);
+    function ctrl_one($scope,my_service){
+        $scope.var_one = my_service;
+    }
+
+    app.controller("ctrl_two",ctrl_two);
+    function ctrl_two($scope,my_service){
+         $scope.var_two = my_service;
+    }
+
+    O/P:
+        First value
+        First Value
+
+    Ex.
+        app.value("my_service","First Value");
+        app.value("my_service","Second Value");
+    O/P:
+        Second Value
+        Second Value
+
+[Note : overriding will be happen in value()]
+
+
+
+Creating the Custom Service by using constant()
+-----------------------------------------------
+
+app.constant("my_service","First Value");
+app.constant("my_service","Second Value");
+
+
+O/P:
+    First Value
+
+[Note : overriding won't be happen in constant()]
+
+
+Creating the Custom Service by using provider()
+-----------------------------------------------
+    - $get is the predefined function in angular framework.
+
+    - provider() depending on "$get" function to provide the services to controllers.
+
+Ex.
+
+    app.provider("my_service",my_service);
+    function my_service(){
+        this.var_one="Hello...!";
+        this.$get = function(){
+            return  this.var_one;
+        }
+    }
+
+
+    app.config(config);
+    function config(my_serviceProvider){
+        my_serviceProvider.var_one = "Hi.....!";
+    }
 
 
 
