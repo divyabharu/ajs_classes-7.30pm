@@ -105,4 +105,78 @@ Step 5:
 Step 6:
     implement the controller.
 
+    app.controller("ctrl",ctrl);
+    function ctrl($scope){
+        $scope.var_one = "Data From DataBase Soon...!";
+    }
+
+
+variables declaration in controller.
+-----------------------------------
+
+    - we can declare the variables by using either "$scope" or "$rootScope" Object.
+
+
+Ex.
+    $scope.sub_one = "AngularJS";
+    $scope.sub_two = "NodeJS";
+    $scope.sub_three="MongoDB";
+
+    <p ng-bind="sub_one+'<==>'+sub_two+'<==>'+sub_three"></p>
+    <p>{{sub_one+"<==>"+sub_two+"<==>"+sub_three}}</p>
+
+
+
+
+functions declaration in controller:
+------------------------------------
+
+Ex.
+
+    $scope.fun_one = function(){
+        return "Welcome to function !";
+    };
+
+    <p ng-bind="fun_one()"></p>
+    <p>{{fun_one()}}</p>
+
+
+Ex.
+
+    $scope.var_one = "Data From DataBase Soon....!";
+    $scope.fun_one = function(){
+        return $scope.var_one;
+    }
+
+    <p>{{fun_one()}}
+
+
+
+json objects declaration in controller:
+---------------------------------------
+
+Ex.
+    $scope.var_one = {'p_id':1,
+                      'p_name':'p_one',
+                      'p_cost':10000};
+
+    <h1>{{var_one.p_id+"...."+var_one.p_name+"..."+var_one.p_cost}}</h1>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 

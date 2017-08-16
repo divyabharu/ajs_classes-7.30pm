@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="app" ng-controller="ctrl">
+
+    <!--<h1 style="color: red" ng-bind="var_one+'<==>'+var_two+'<==>'+var_three"></h1>-->
+    <h1>{{var_one+"<==>"+var_two+"<==>"+var_three}}</h1>
+    <h1 style="color: red">{{fun_one()}}</h1>
+    <h1 style="color: green">{{fun_two()}}</h1>
+    <h1 style="color: gray">{{obj.p_id+"..."+obj.p_name+"..."+obj.p_cost}}</h1>
+
+    <h1>{{my_fun().sub_one()+"..."+my_fun().sub_two()+"..."+my_fun().sub_three()}}</h1>
+
+    <h1>{{first_fun('Hello...!')}}</h1>
+
+    <script src="bower_components/angular/angular.min.js"></script>
+    <script>
+        var app = angular.module("app",[]);
+
+        app.controller("ctrl",ctrl);
+        function ctrl($scope){
+
+            //declare the variables
+            $scope.var_one = "AngularJS";
+            $scope.var_two = "NodeJS";
+            $scope.var_three = "MongoDB";
+
+
+            //declare the functions
+            $scope.fun_one = function () {
+              return "Data From MongoDB Soon...!";
+            };
+
+            $scope.fun_two = function () {
+                return $scope.var_one+"<==>"+$scope.var_two+"<==>"+$scope.var_three;
+            };
+
+
+            //json object
+            $scope.obj = {'p_id':1,'p_name':'p_one','p_cost':10000};
+
+
+            $scope.my_fun = function () {
+              return{
+                'sub_one':f_one,
+                'sub_two':f_two,
+                'sub_three':f_three
+              }
+            };
+
+            function f_one() {
+                return "AngularJS";
+            }
+
+            function f_two() {
+                return "NodeJS";
+            }
+
+            function f_three() {
+                return "MongoDB";
+            }
+
+            $scope.first_fun = function (arg1) {
+                return $scope.second_fun(arg1);
+            };
+
+            $scope.second_fun =function (arg1) {
+                return arg1;
+            };
+
+        }
+    </script>
+</html>
