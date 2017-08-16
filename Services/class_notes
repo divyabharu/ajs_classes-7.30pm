@@ -197,7 +197,108 @@ function ctrl($scope,my_service){
 Ex_2:
     POST URL: http://test-routes.herokuapp.com/test/uppercase
 
+app.service("my_service",my_service);
+function my_service($http){
+    this.getData = function(obj){
+        return $http.post("http://test-routes.herokuapp.com/test/uppercase",obj)
+            .then(function(posRes){
+                return posRes;
+        },function(errRes){
+              return errRes;
+        });
+    };
+}
 
+app.controller("ctrl",ctrl);
+function ctrl($scope,my_service){
+    $scope.clickMe = function(obj){
+        my_service.getData(obj).then(function(res){
+            $scope.result = res;
+        });
+    };
+};
+
+<input type="text" ng-model="my_model">
+<button ng-click="clickMe({'message':my_model})">ClickMe</button>
+<h1>{{result}}</h1>
+
+
+
+Ex_3:
+
+app.service("my_service",my_service);
+function my_service($http){
+    this.fun_one = function(){
+        return $http.get("http://demosoft.highgrowth.in/test/jsonexample.php")
+            .then(function(posRes){
+                return posRes;
+        },function(errRes){
+                return errRes;
+        });
+    }
+
+    this.fun_two = function(){
+        return $http.get("http://test-routes.herokuapp.com/test/hello")
+            .then(function(posRes){
+                return posRes;
+            },function(errRes){
+                return errRes;
+            });
+    };
+}
+
+
+app.controller("ctrl",ctrl);
+function ctrl($scope,my_service){
+
+    my_service.fun_one().then(function(res){
+        $scope.var_one = res;
+    });
+
+    my_service.fun_two().then(function(res){
+        $scope.var_two = res;
+    });
+
+}
+
+
+$q:
+--
+    - $q is the predefined service in angularjs.
+
+    - $q used to overcome the data redundancy.
+
+    Ex.
+
+    $q.all([my_service.fun_one(),my_service.fun_two()])
+                    .then(function (res) {
+                $scope.var_one = res[0];
+                $scope.var_two = res[1];
+    });
+
+    - $q used to make the async calls.
+
+    //starting async call
+    var deffered_one = $q.defer();
+    this.fun_one = function () {
+
+       return $http.get("http://demosoft.highgrowth.in/test/jsonexample.php")
+                .then(function (posRes) {
+
+            //success call back to async call
+            deffered_one.resolve(posRes);
+
+            //terminating async call
+            return deffered_one.promise;
+       },function (errRes) {
+
+            //failure call back to async call
+            deffered_one.reject(errRes);
+
+            //terminating async call
+            return deffered_one.promise;
+       });
+    };
 
 
 
