@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="app" ng-controller="ctrl">
+
+    <h1 style="color: red">{{var_one}}</h1>
+
+    <h1 style="color: green">{{var_two}}</h1>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.0/angular.min.js"></script>
+    <script>
+        var app = angular.module("app",[]);
+
+        app.service("my_service",my_service);
+        function my_service($http) {
+
+            this.fun_one = function () {
+                return $http.get("http://test-routes.herokuapp.com/test/hello").then(function (posRes) {
+                   return posRes;
+                },function (errRes) {
+                    return errRes;
+                });
+            };
+
+            this.fun_two = function () {
+              return $http.get("http://demosoft.highgrowth.in/test/jsonexample.php").then(function (posRes) {
+                    return posRes;
+              },function (errRes) {
+                  return errRes;
+              });
+            };
+        };
+
+        app.controller("ctrl",ctrl);
+        function ctrl($scope,my_service) {
+
+            my_service.fun_one().then(function (res) {
+                $scope.var_one = res;
+            });
+
+            my_service.fun_two().then(function (res) {
+               $scope.var_two = res;
+            });
+        };
+
+
+    </script>
+</html>
