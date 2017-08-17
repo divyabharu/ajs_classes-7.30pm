@@ -1,0 +1,141 @@
+NodeJS:
+------
+    - NodeJS is the Server Side Scripting Language.
+    - By using NodeJS, we can create the http & tcp servers.
+    - In genaral we will develop Node Applications by using JavaScript.
+    - Node will support Modules (predefined modules & custom modules).
+
+Modules in NodeJS
+-----------------
+
+1. express
+    - this module used to develop the web services.
+
+
+2. body-parser
+    - this module used to set the MIME Type.
+
+    Ex.
+           json
+           xml
+           text
+           doc
+           --
+           --
+           --
+3.mysql
+    - this module used to interact with the mysql database.
+
+4.mongodb
+    - this module used to interact with the mongodb.
+
+5.http
+    - this module used to create the http servers.
+
+6.fs
+    - this module used to interact with the flat files.
+    Ex.
+        static json files
+        static xml files
+        static text files
+            --
+            --
+            --
+7.jwt-simple
+    - this module used to maintain the token based authentication system
+
+
+8.query-string
+    - this module used to implement the common queries for databases.
+
+
+9. multer
+    - this module used to handle the multimedia files.
+
+
+[Note : we can download required modules by using "package.json" file]
+
+[Note : we can install the package.json file by using "npm install"]
+
+[Note : we can start the Node Server by using "npm start"]
+
+
+Ex_1:
+    launch the angular application(index.html)
+    by using node server(server.js)
+
+
+Step 1:
+    download the express module by using package.json file.
+
+package.json
+------------
+{
+    "name":"nareshit",
+    "version":"1.0.0",
+    "dependencies":{
+        "express":"latest"
+    }
+}
+
+
+Step 2:
+    install the package.json file by using following command.
+
+>npm install
+
+Step 3:
+    Create the Angular Application.
+
+-----------
+NodeJS
+    Basic_NodeEx
+            index.html
+            package.json
+            server.js
+------------
+
+
+Step 4:
+    Prepare the node script
+
+
+server.js
+---------
+
+//importing the express
+var express = require("express");
+
+
+//create the deployement interface (Node Server Instance)
+var app = express();
+
+
+//deploy the application(Client Application)
+app.use(express.static("D:/AJS_Classes/NodeJS/Basic_NodeEx"));
+
+[ when ever we deploy the application, automatically server
+  will execute default html (index.html) ]
+
+
+
+//assign the port no.
+app.listen(8080);
+console.log("Server Listening the Port No.8080");
+
+
+
+Step 5:
+    Start the Server
+
+>npm start
+
+
+Step 6:
+    Launch the Application by using following URL
+
+http://localhost:8080/
+
+
+
+

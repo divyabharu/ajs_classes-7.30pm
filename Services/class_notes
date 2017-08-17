@@ -302,6 +302,42 @@ $q:
 
 
 
+$timeout
+--------
+    - this predefined service used to execute a custom function
+      with a given time.
+
+Syntax.
+    $timeout(fun_one,5000);
+
+[Note : fun_one will execute after 5000ms automatically]
+
+
+$interval
+---------
+    - this predefined service used to execute a custom function
+      repetedaly with a given interval of time.
+
+
+Syntax:
+    $interval(fun_two,1000);
+
+[Note : fun_two will execute for every 1 sec]
+
+
+$location:
+----------
+    - this predefined service used to find the absolute path of web
+      application.
+
+Syntax.
+    console.log($location.absUrl());
+
+
+
+
+
+
 
 
 
