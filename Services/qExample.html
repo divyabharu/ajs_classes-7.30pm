@@ -10,34 +10,41 @@
         var app = angular.module("app",[]);
 
         app.service("my_service",my_service);
-        function my_service($http) {
+        function my_service($http,$q) {
 
+            //Starting the Async Call
+            var deffered_one = $q.defer();
             this.fun_one = function () {
                 return $http.get("http://test-routes.herokuapp.com/test/hello").then(function (posRes) {
-                   return posRes;
+                    //suuccss call back to async call
+                    deffered_one.resolve(posRes);
+                   //terminating the async call
+                    return deffered_one.promise;
                 },function (errRes) {
-                    return errRes;
+                    //err callback to async call
+                    deffered_one.reject(errRes);
+                    //terminating the async call
+                    return deffered_one.promise;
                 });
             };
 
+            var deffered_two = $q.defer();
             this.fun_two = function () {
               return $http.get("http://demosoft.highgrowth.in/test/jsonexample.php").then(function (posRes) {
-                    return posRes;
+                  deffered_two.resolve(posRes);
+                  return deffered_two.promise;
               },function (errRes) {
-                  return errRes;
+                  deffered_two.reject(errRes);
+                  return deffered_two.promise;
               });
             };
         };
 
         app.controller("ctrl",ctrl);
-        function ctrl($scope,my_service) {
-
-            my_service.fun_one().then(function (res) {
-                $scope.var_one = res;
-            });
-
-            my_service.fun_two().then(function (res) {
-               $scope.var_two = res;
+        function ctrl($scope,my_service,$q) {
+            $q.all([my_service.fun_one(),my_service.fun_two()]).then(function (res) {
+                $scope.var_one = res[0];
+                $scope.var_two = res[1];
             });
         };
 
