@@ -42,8 +42,25 @@ Predefined directive:
 
 
 
+ng-controller:
+--------------
+
+    -
 
 
+
+
+Ex.
+
+    <div ng-controller="ctrl">
+        //Binding the Variables
+    </div>
+
+
+    app.controller("ctrl",ctrl);
+    function ctrl($scope){
+        //Busniess Logic
+    }
 
 
 

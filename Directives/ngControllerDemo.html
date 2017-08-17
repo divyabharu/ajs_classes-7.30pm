@@ -1,0 +1,126 @@
+<!--
+<!DOCTYPE html>
+<html lang="en" ng-app="app">
+
+    <h1 style="color: red">{{var_two}}</h1>
+    <div ng-controller="ctrl_one">
+        <h1 style="color: red">{{var_two}}</h1>
+    </div>
+
+    <div ng-controller="ctrl_two">
+        <h1 style="color: green">{{var_one}}</h1>
+    </div>
+    <h1 style="color: green">{{var_one}}</h1>
+
+    <script src="bower_components/angular/angular.min.js"></script>
+
+    <script>
+        var app = angular.module("app",[]);
+
+        app.controller("ctrl_one",ctrl_one);
+        function ctrl_one($rootScope) {
+            $rootScope.var_one = "I am from controller one !";
+        }
+
+        app.controller("ctrl_two",ctrl_two);
+        function ctrl_two($rootScope) {
+            $rootScope.var_two = "I am from controller two !";
+        }
+    </script>
+
+</html>-->
+
+
+<!--<!DOCTYPE html>
+<html ng-app="app">
+    {{my_fun()}}
+    <div ng-controller="ctrl">
+        {{my_fun()}}
+    </div>
+    <script src="bower_components/angular/angular.min.js"></script>
+    <script>
+        var app = angular.module("app",[]);
+
+        app.controller("ctrl",ctrl);
+        function ctrl($rootScope,$scope) {
+
+            $scope.sub_one = "AngularJS";
+            $scope.sub_two = "FireBase";
+            $scope.sub_three="MongoDB";
+
+            $rootScope.my_fun = function () {
+                return $scope.sub_one+"<==>"+$scope.sub_two+"<==>"+$scope.sub_three;
+            };
+        };
+    </script>
+</html>-->
+
+
+<!DOCTYPE html>
+<html ng-app="app">
+
+<div class="my_class">
+    <div ng-controller="parent_controller">
+        {{parent}}
+        <div ng-controller="child_controller">
+            {{child}}
+            <div ng-controller="sub_controller">
+                {{sub}}
+            </div>
+        </div>
+    </div>
+</div>
+
+    <style>
+        div.my_class div{
+            border: 1px solid red;
+            color: grey;
+            padding: 10px;
+            text-align: center;
+            font-weight: bolder;
+        }
+    </style>
+
+    <script src="bower_components/angular/angular.min.js"></script>
+    <script>
+        angular.module("app",[])
+            .controller("parent_controller",function ($scope) {
+            $scope.parent = "Parent Controller !";
+        }).controller("child_controller",function ($scope) {
+            $scope.child = "Child Controller !";
+        }).controller("sub_controller",function ($scope) {
+            $scope.sub = "Sub Controller !";
+        });
+    </script>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
