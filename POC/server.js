@@ -33,6 +33,42 @@ app.post("/login",function (req,res) {
     });
 });
 
+app.post("about",function (req,res) {
+
+        var token = req.body.token;
+
+        console.log("*********"+token);
+
+        if(tokens[0]==token){
+            res.send({'message':'static data soon....!'});
+        }else{
+            res.send({'message':'Authentication Error...!'});
+        }
+
+});
+
+app.post("portfolio",function (req,res) {
+
+    var token = req.body.token;
+
+    if(tokens[0]==token){
+        res.send({'message':'mysql data soon....!'});
+    }else{
+        res.send({'message':'Authentication Error...!'});
+    }
+});
+
+app.post("feedback",function (req,res) {
+
+    var token = req.body.token;
+
+    if(tokens[0]==token){
+        res.send({'message':'mongodb data soon....!'});
+    }else{
+        res.send({'message':'Authentication Error...!'});
+    }
+});
+
 
 app.listen(8080);
 console.log("Server Listening the Port No.8080");

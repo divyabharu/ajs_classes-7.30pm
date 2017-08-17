@@ -9,6 +9,21 @@ function config($stateProvider,$urlRouterProvider) {
             url:"/home",
             templateUrl:"templates/home.html",
             controller:"homeController"
+        })
+        .state("home.about",{
+            url:"/about",
+            templateUrl:"templates/about.html",
+            controller:"aboutController"
+        })
+        .state("home.portfolio",{
+            url:"/portfolio",
+            templateUrl:"templates/portfolio.html",
+            controller:"portfolioController"
+        })
+        .state("home.feedback",{
+            url:"/feedback",
+            templateUrl:"templates/feedback.html",
+            controller:"feedbackController"
         });
 
     $urlRouterProvider.otherwise("/login");
