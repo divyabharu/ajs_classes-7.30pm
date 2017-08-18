@@ -33,41 +33,51 @@ app.post("/login",function (req,res) {
     });
 });
 
-app.post("about",function (req,res) {
 
-        var token = req.body.token;
-
-        console.log("*********"+token);
-
-        if(tokens[0]==token){
-            res.send({'message':'static data soon....!'});
-        }else{
-            res.send({'message':'Authentication Error...!'});
-        }
-
-});
-
-app.post("portfolio",function (req,res) {
-
+app.post("/about",function (req,res) {
     var token = req.body.token;
 
     if(tokens[0]==token){
-        res.send({'message':'mysql data soon....!'});
+        fs.readFile(__dirname+"/sample.json",function (err,data) {
+            res.send(data);
+        });
     }else{
         res.send({'message':'Authentication Error...!'});
     }
 });
 
-app.post("feedback",function (req,res) {
+
+
+app.post("/portfolio",function (req,res) {
 
     var token = req.body.token;
 
     if(tokens[0]==token){
-        res.send({'message':'mongodb data soon....!'});
+        connection.query("select * from products",function (err,recordsArray,fields) {
+            res.send(recordsArray);
+        });
     }else{
         res.send({'message':'Authentication Error...!'});
     }
 });
+
+var mongoClient = mongodb.MongoClient;
+
+app.post("/feedback",function (req,res) {
+
+    var token = req.body.token;
+
+    if(tokens[0]==token){
+        mongoClient.connect("mongodb://localhost:27017/poc",function (err,db) {
+            db.collection("products").find().toArray(function (mongoError,data) {
+               res.send(data);
+            });
+        });
+    }else{
+        res.send({'message':'Authentication Error...!'});
+    }
+});
+
 
 
 app.listen(8080);
