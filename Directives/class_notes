@@ -64,5 +64,161 @@ Ex.
 
 
 
+3. ng-click:
+------------
+    - when ever we click the user interface elements automatically
+      ng-click directive will be executed by angular framework.
+
+
+Syntax.
+    ng-click="expression"/
+             "user defined function"/
+             "user defined function with optional parameters"
+
+
+Ex.
+    ng-click="count=count+1"
+
+    ng-click="login()"
+
+    ng-click="login('admin','admin')"
+
+
+        *************************
+    <label>Uname.</label>
+    <input type="text" ng-model="uname">
+
+    <label>Upwd.</label>
+    <input type="password" ng-model="upwd">
+
+    <button ng-click="login(uname,upwd)">Login</button>
+
+    app.controller("ctrl",ctrl);
+    function ctrl($scope){
+        $scope.login = function(arg1,arg2){
+            if(arg1 == "admin" && arg2 == "admin"){
+                alert("Login Success !");
+            }else{
+                alert("Login Fail !");
+            }
+        }
+    }
+        ***************************
+
+
+4. ng-repeat:
+
+    - this directive used to iterate the list of elements from an array.
+
+
+Syntax.
+    ng-repeat = "variable in array"
+    {{variable}}
+
+
+Ex.
+    ng-repeat = "x in [10,20,30,40,50]"
+
+    {{x}}...{{$first}}...{{$last}}...{{$middle}}...{{$even}}...{{$odd}}
+
+
+$first - it will return the first index of an array as true.
+$last  -  it will return the last index of an array as true.
+$middle - it will return the middle indexes of an array as true.
+$even  - it will return even indexes of an array as true.
+$odd   - it will return odd indexes of an array as true.
+$index - it will return indexes of an elements from an array
+
+
+
+Ex.
+
+app.controller("ctrl",ctrl);
+function ctrl($scope){
+    $scope.array_one = [
+                        "AngularJS",
+                        "Angular4",
+                        "NodeJS",
+                        "reactJS",
+                        "MongoDB"
+                       ];
+
+    $scope.array_two = {
+                          "products":[
+                                        {"p_id":1,"p_name":"p_one","p_cost":10000},
+                                        {"p_id":2,"p_name":"p_two","p_cost":20000},
+                                        {"p_id":3,"p_name":"p_three","p_cost":30000},
+                                        {"p_id":4,"p_name":"p_four","p_cost":40000},
+                                        {"p_id":5,"p_name":"p_five","p_cost":50000}
+                            ]
+                       };
+
+
+}
+
+<h1 ng-repeat="x in array_one" ng-bind="x"></h1>
+
+<table class="table table-responsive">
+    <tr>
+        <th>id</th>
+        <th>name</th>
+        <th>cost</th>
+    <tr>
+
+    <tr ng-repeat="x in array_two.products">
+        <td>{{x.p_id}}</td>
+        <td>{{x.p_name</td>
+        <td>{{x.p_cost}}</td>
+    </tr>
+
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
