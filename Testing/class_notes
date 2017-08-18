@@ -84,30 +84,22 @@ function my_service(){
 }
 
 
-karma.conf.js
--------------
-describe("testing service",function(){
+describe("testing of service",function(){
     var testService;
-    @injector(function(){
-
+    module("app");
+    inject(function($injector){
+        testService = $injector.get("my_service");
     });
 });
 
+it("unit testing",function(){
+    var result = testService.getData();
+    expect(result).contains("AngularJS");
+    expect(result).contains("Angular4");
+    expect(result).contains("NodeJS");
+    expect(result).contains("MongoDB");
+    expect(result).equalsTo(4);
+});
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+>karma start
