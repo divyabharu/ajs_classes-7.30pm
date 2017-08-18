@@ -1,0 +1,113 @@
+Testing:
+    - As a Developer we must test the applications before moving to
+      Production Environment.
+
+    - In General Testing Divided into two Categories.
+
+        1. Manual Testing
+
+        2. Automation Testing
+
+    - Now a days all projects using Automation Testing while Testing the
+      Application.
+
+    - Automation Testing Classified into 3 categories.
+        1. Unit Testing
+        2. Integration Testing
+        3. End To End Testing
+
+Unit Testing:
+
+    - Checking the Perticular Functionality with dummy scenarioes
+      called as Unit Testing.
+
+
+Integration Testing:
+
+    - Testing the Perticular Functionality with Actual Scenarioes
+      called as Integration Testing.
+
+End to End Testing:
+
+    - Testing the Application with Different States(End Point States)
+      called as e2e testing.
+
+
+
+- we can write the Test Cases by using karma.
+
+
+Installation of karma
+---------------------
+>npm install -g karma
+
+
+Testing the Controller:
+-----------------------
+
+var app = angular.module("app",[]);
+
+app.controller("ctrl",ctrl);
+function ctrl($scope){
+    $scope.title = "Hello";
+}
+
+
+karma.conf.js
+-------------
+describe("testing ctrl",function(){
+  var $controller;
+  inject("test case one",function(_$controller_){
+        module("app");
+        $controller = _$controller_;
+  };
+});
+
+it("first test case",function(){
+    var result = $controller.get("ctrl",{$scope});
+    expect(result).equlasTo("Hello");
+});
+
+> start karma
+
+
+
+Testing Services:
+-----------------
+
+var app = angular.module("app",[]);
+app.service("my_service",my_service);
+function my_service(){
+    this.getData = function(){
+        return ["AngularJS","Angular4","NodeJS","MongoDB"];
+    }
+}
+
+
+karma.conf.js
+-------------
+describe("testing service",function(){
+    var testService;
+    @injector(function(){
+
+    });
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
