@@ -1,0 +1,115 @@
+Project Implementation:
+-----------------------
+1. create the following table in mysql database.
+
+----------------
+database : poc
+table    : login_details
+-----------------
+
+>create schema poc;
+>use poc;
+>create table login_details(uname varchar(20),upwd varchar(20))
+>insert into login_details values('admin','admin');
+
+
+
+2. create the server
+
+server.js
+---------
+
+var jwt = require(jwt-simple);
+
+var connection = mysql.createConnection({
+    host:"localhost",
+    user:"root",
+    password:"root",
+    database:"poc"
+});
+
+connection.connect();
+
+app.post("/login",function(req,res){
+    //read post parameters from req object.
+    var uname = req.body.uname;
+    var upwd = req.body.upwd;
+
+    connection.query("select uname from login_deatils where
+                        uname='"+uname+"'",
+
+                function(err,recordsArray,fields){
+
+        if(recordsArray.length>0){
+            var token = jwt.encode({'uname':uname},'hr@nareshit.in');
+            res.send({'login':'success','token':token});
+        }else{
+            res.send({'login':'fail'});
+        }
+    });
+});
+
+
+
+
+3.create loginService
+
+app.service("loginService",loginService);
+function loginService($http){
+ this.authenticate = function(obj){
+        return $http.post("http://localhost:8080/login",obj)
+                .then(function(posRes){
+            return posRes;
+        },function(errRes){
+            return errRes;
+        });
+    }
+}
+
+
+
+4. Implement the Single Page Application
+
+
+    ************************
+POC
+    templates
+        login.html
+        home.html
+
+    controllers
+        loginController.js
+        homeController.js
+
+    app.js
+
+    config.js
+
+    index.html
+
+    bower.json
+        ********************
+
+
+
+5. store the response into localStorage.
+
+app.controller("loginController",loginController);
+function loginController($scope,loginService,$localStorage,
+                                            $location) {
+    $scope.obj={};
+    $scope.login_details = function () {
+        loginService.authenticate($scope.obj).then(function (res) {
+           if(res.data.login == "success"){
+               $localStorage.poc = res;
+               $location.path("/home");
+           }else{
+               alert("Invalid Details !");
+           }
+        });
+    };
+};
+
+
+
+
