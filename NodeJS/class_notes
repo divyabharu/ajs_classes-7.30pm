@@ -219,6 +219,104 @@ app.get("/products",function(req,res){
 });
 
 
+Ex_4:
+    Interacting with the MongoDB
+    ----------------------------
+
+- MongoDB is ligth weigth Data Base compared to Traditional DataBases like
+  Oracle,MySQL,....
+
+- MongoDB Follows Client Server Architecture.
+
+- MongoDB Supports JSON.
+
+- As a MongoDB Developer we can perform the CRUD Operations on JSON.
+
+
+Installation Of MongoDB
+-----------------------
+
+1. download the software.
+
+    website : https://www.mongodb.com/
+    file name : mongodb-win32-x86_64-2008plus-ssl-3.4.7-signed.msi
+
+
+2. create the following folder structure in c drive.
+
+    C:/data/db
+
+
+3. set the path environmental variable
+
+    path = C:\Program Files\MongoDB\Server\3.4\bin
+
+MongoDB Queries:
+----------------
+
+1. start the server
+>mongod
+
+2. connect to server
+>mongo
+
+3. create and switch to database
+>use test;
+[Note : automatically test database will be created and switched to database]
+
+4.create the collection.
+>db.createCollection("products");
+
+5.insert data into collection
+>db.products.insert({'p_id':1,'p_name':'p_one','p_cost':10000});
+
+6.query the collection
+>db.products.find();
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
