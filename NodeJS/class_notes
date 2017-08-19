@@ -227,33 +227,119 @@ app.get("/products",function(req,res){
 
 
 
-Ex_4:
-    Interacting with MongoDB
+Interacting with MongoDB
+------------------------
+    - MongoDB is ligth weigth DataBase Compared to Traditional DataBases.
+    Ex.
+        Oracle
+        MySQL
+        MemSQL
+        NoSQL
+          --
+          --
+          --
 
-- MongoDB is the ligth Weigth DataBase Compared to Traditional Databases
-  like oracle,mysql,memsql,....
+    - MongoDB Follows the Client Server Architecture.
 
-- MongoDB Supports JSON.
+    - MongoDB Supports JSON.
 
-- As a MongoDB Developer we can perform the CRUD Operations on JSON.
-
-- MongoDB Follows Client Server Architecture.
-
-Installation Of MongoDB
------------------------
-
-website   : https://www.mongodb.com/
-file name :
+    - As a MongoDB Developer, we can perform the CRUD Operations on JSON.
 
 
+Installation Of MongoDB:
+------------------------
 
-Create the Following Folder Structure in C Drive
-------------------------------------------------
-c:/data/db
+1. download mongodb.
+    website : https://www.mongodb.com/
+    file name : mongodb-win32-x86_64-2008plus-ssl-3.4.7-signed.msi
 
-Set the Path Environmental variable
------------------------------------
-path = C:\Program Files\MongoDB\Server\3.4\bin
+
+2. create the following directory structure
+    C:/data/db
+
+
+3. set the path environmental variable
+    path = "C:\Program Files\MongoDB\Server\3.4\bin"
+
+
+MongoDB Queries:
+----------------
+1. start the server
+
+>mongod
+    [Note : by default mongodb follows the mongodb protocol
+
+        Ex:
+            mongodb://127.0.0.1:27017/
+    ]
+
+2. connect to server
+>mongo
+
+3. create and switch to database.
+>use test;
+
+
+4.create collection.
+>db.createCollection("products");
+
+
+5.insert the JSON into Collection.
+>db.products.insert({'p_id':111,'p_name':'p_one','p_cost':10000});
+
+
+6.query the collection.
+>db.products.find();
+
+7. show databases
+>show dbs;
+
+8. drop database
+>db.dropDataBase();
+
+
+
+server.js
+---------
+//import express
+//@express - develop the REST API
+var express = require("express");
+
+//import mongodb
+//@mongodb - interact with mongodb.
+var mongodb = require("mongodb");
+
+//create the server instance (node server instance)
+// "app" used to deploy the client applications
+var app = express();
+
+
+//deploy the client application.
+//@"Read_MongoDB" is our client application
+//server will launch the index.html file by default
+app.use(express.static(__dirname+"/../Read_MongoDB"));
+
+
+//create the mongodb client.
+var nareshIT = mongodb.MongoClient;
+
+
+//create the REST API (get request)
+app.get("/test" , function(req,res){
+    nareshIT.connect("mongodb://localhost:27017/test" ,
+                                            function(err,db){
+        db.collection("products").find().toArray(
+                                            function(err,array){
+            res.send(array);
+        });
+    });
+});
+
+
+//assign the port no.
+app.listen(8080);
+console.log("Server Listening the Port No.8080");
+
 
 
 
