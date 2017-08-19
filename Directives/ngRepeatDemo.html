@@ -1,7 +1,56 @@
+<!--
 <!DOCTYPE html>
 <html lang="en" ng-app>
     <h1 ng-repeat="x in [10,20,30,40,50]">
         {{x}}...{{$index}}...{{$first}}...{{$last}}...{{$middle}}...{{$even}}...{{$odd}}
     </h1>
     <script src="bower_components/angular/angular.min.js"></script>
+</html>-->
+
+
+<!DOCTYPE html>
+<html ng-app="app" ng-controller="ctrl">
+
+    <p style="color: red" ng-repeat="x in array_one" ng-bind="x"></p>
+
+    <table class="table table-responsive">
+        <tr>
+            <th>id</th>
+            <th>name</th>
+            <th>cost</th>
+        </tr>
+
+        <tr ng-repeat="x in array_two.products">
+            <td>{{x.p_id}}</td>
+            <td>{{x.p_name}}</td>
+            <td>{{x.p_cost}}</td>
+        </tr>
+    </table>
+
+
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
+    <script src="bower_components/angular/angular.min.js"></script>
+    <script>
+        var app = angular.module("app",[]);
+
+        app.controller("ctrl",ctrl);
+        function ctrl($scope) {
+            $scope.array_one = ["AngularJS",
+                                "Angular4",
+                                "NodeJS",
+                                "reactJS",
+                                "MongoDB"];
+
+
+            $scope.array_two = {
+                "products":[
+                    {'p_id':1,'p_name':'p_one','p_cost':10000},
+                    {'p_id':2,'p_name':'p_two','p_cost':20000},
+                    {'p_id':3,'p_name':'p_three','p_cost':30000},
+                    {'p_id':4,'p_name':'p_four','p_cost':40000},
+                    {'p_id':5,'p_name':'p_five','p_cost':50000}
+                ]
+            };
+        }
+    </script>
 </html>

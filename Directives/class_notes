@@ -174,16 +174,106 @@ function ctrl($scope){
 </table>
 
 
+5. ng-options:
+    - this directive used to populate the values to the dropdown.
+
+
+Syntax.
+    ng-options = "model_values as
+                  dropdown_values for
+                  iteration_variable in
+                  array"
+
+Ex_1:
+    $scope.array_one = [
+            {'id':1,'sub':'AngularJS'},
+            {'id':2,'sub':'Angular4'},
+            {'id':3,'sub':'reactJS'},
+            {'id':4,'sub':'NodeJS'},
+            {'id':5,'sub':'MongoDB'}
+    ];
+
+Use Case:1
+        dropdown - sub's
+        model    - id's
+
+<select ng-model="model_one" ng-options="x.id as x.sub for x in array_one">
+    <option value="">--Select Sub--</option>
+</select>
+
+Use Case : 2
+
+    dropdown - sub's
+    model    - sub's
+
+<select ng-model="model_two" ng-options="x.sub as x.sub for x in array_one">
+    <option value="">--Select Sub--</option>
+</select>
+<h1>{{model_two</h1>
+
+
+Use Case : 3
+
+    dropdown - id's
+    model    - id's
+
+
+<select ng-model="model_three" ng-options="x.id as x.id for x in array_one">
+    <option value="">--Select ID--</option>
+</select>
+<h1>{{model_three}}</h1>
+
+Use Case : 4
+
+    dropdown - id's
+    model    - sub's
+
+<select ng-model="model_four" ng-options="x.sub as x.id for x in array_one">
+    <option value="">--Select ID--</option>
+</select>
+<h1>{{model_four}}</h1>
+
+
+
+Ex.
+
+$scope.array_two = ["AngularJS","Angular4","reactJS","NodeJS","MongoDB];
+
+<select ng-model="model_five" ng-options="x as x for x in array_two">
+    <option value="">--Select Sub--</option>
+</select>
+<h1>{{model_five}}</h1>
 
 
 
 
 
+6. ng-init
+
+    - this directive used to initilize the members in configuration phase
+      (constructor)
+
+    - we can initilize the members in the form of a "key&value" pairs.
+
+    - ng-init initilised members are available to application scope.
+
+
+Ex.
+    ng-init = "db_user='root'"
+    {{db_user}} //root
 
 
 
+7. ng-dblclick
+    - when ever we double click the user interface elements
+      automatically ng-dblclick directive will be executed
+      by angular framework.
 
 
+Syntax.
+    ng-dblclick = "expression"/
+                  "user defined function"/
+                  "user defined function with parameters"
 
 
 

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="app" ng-controller="ctrl">
+
+    <select ng-model="model_one" ng-options="x.id as x.sub for x in array_one">
+        <option value="">--Select Sub--</option>
+    </select>
+    <h1>{{model_one}}</h1>
+
+    <select ng-model="model_two" ng-options="x.sub as x.sub for x in array_one">
+        <option value="">--Select Sub--</option>
+    </select>
+    <h1>{{model_two}}</h1>
+
+    <select ng-model="model_three" ng-options="x.id as x.id for x in array_one">
+        <option value="">--Select ID--</option>
+    </select>
+    <h1>{{model_three}}</h1>
+
+    <select ng-model="model_four" ng-options="x.sub as x.id for x in array_one">
+        <option value="">--Select ID--</option>
+    </select>
+    <h1>{{model_four}}</h1>
+
+    <select ng-model="model_five" ng-options="x as x for x in array_two">
+        <option value="">--Select Sub--</option>
+    </select>
+    <h1>{{model_five}}</h1>
+
+    <script src="bower_components/angular/angular.min.js"></script>
+    <script>
+        var app = angular.module("app",[]);
+
+        app.controller("ctrl",ctrl);
+        function ctrl($scope) {
+            $scope.array_one = [
+                {'id':1,'sub':'AngularJS'},
+                {'id':2,'sub':'Angular4'},
+                {'id':3,'sub':'reactJS'},
+                {'id':4,'sub':'NodeJS'},
+                {'id':5,'sub':'MongoDB'}
+            ];
+
+            $scope.array_two = ["AngularJS","Angular4","reactJS","NodeJS","MongoDB"];
+
+        }
+    </script>
+</html>
