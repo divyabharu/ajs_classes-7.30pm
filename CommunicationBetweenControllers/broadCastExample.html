@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="app">
+
+    <div ng-controller="parent_controller">
+        <input type="text" ng-model="model_one">
+        <br><br>
+        <input type="text" ng-model="model_two">
+        <br><br>
+        <button ng-click="clickMe({'model_one':model_one,'model_two':model_two})">BroadCast</button>
+
+        <br><br>
+        <div ng-controller="child_controller">
+            <h1>{{var_one}}</h1>
+            <div ng-controller="sub_controller">
+                <h1>{{var_two}}</h1>
+            </div>
+        </div>
+
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.0/angular.min.js"></script>
+    <script>
+        var app = angular.module("app",[]);
+
+        app.controller("parent_controller",parent_controller);
+        function parent_controller($scope) {
+            $scope.clickMe = function (arg1) {
+                $scope.$broadcast("demo",arg1);
+            };
+        };
+
+
+        app.controller("child_controller",child_controller);
+        function child_controller($scope) {
+            $scope.$on("demo",function (event,res) {
+                $scope.var_one = res.model_one;
+            });
+        };
+
+        app.controller("sub_controller",sub_controller);
+        function sub_controller($scope) {
+            $scope.$on("demo",function (event,res) {
+                $scope.var_two = res.model_two;
+            });
+        };
+
+
+    </script>
+
+
+</html>
