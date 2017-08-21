@@ -278,6 +278,102 @@ Syntax.
 
 
 
+8. ng-class-odd
+    - this directive used to apply the css classes to the odd rows of table
+
+Syntax.
+    ng-class-odd="my_class"
+
+
+9. ng-class-even
+    - this directive used to apply the css classes to the even rows of table.
+
+Syntax.
+    ng-class-even = "my_class"
+
+
+10. ng-include
+
+    - this directive used to include one template to another template.
+    - by using ng-include directive we are able to achieve loosely
+      coupled application.
+
+
+Syntax.
+    ng-include="sample.html"
+
+
+        **********************
+Directives
+    ngIncludeDemo.html
+    app.js
+    ctrl.js
+    table.js
+    my_style.css
+        ***********************
+
+
+11. ng-if
+    - this directive used to write the conditions.
+
+
+Syntax.
+
+    ng-if="true" / "false"
+
+
+[Note : ng-if directive will directly works with the HTML DOM]
+
+
+12. ng-switch
+    - this directive used to write the switch cases in angular application
+
+
+Syntax.
+
+    <div ng-switch="expression">
+
+        <div ng-switch-when="value_one">
+            //Business Logic
+        </div>
+
+        <div ng-switch-when="value_two">
+            //Business Logic
+        </div>
+
+        <div ng-switch-when="value_three">
+            //Business Logic
+        </div>
+        --
+        --
+        --
+        <div ng-switch-default>
+            //Business Logic
+        </div>
+    </div>
+
+
+13. ng-submit
+    - this directive used to submit the whole form at a time to the
+      controller.
+
+Syntax.
+
+    <form ng-submit="login_details()">
+
+        //Form Elements
+
+        <input type="submit"></input>
+
+    </form>
+
+
+[Note : when ever we click the submit button automatically
+        login_details() will execute in controller ]
+
+
+
+
 
 
 
