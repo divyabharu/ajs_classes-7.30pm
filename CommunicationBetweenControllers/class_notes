@@ -1,0 +1,113 @@
+- In AngularJS we can provide the communication between controllers in 4 ways.
+
+    1. broadcast
+
+    2. emit
+
+    3. rootScope
+
+    4. Custom Services
+
+
+broadcast communication:
+------------------------
+    - sharing the data from parent controllers to child controllers called as broadcast communication.
+
+
+<div ng-controller="parent_controller">
+    <input type="text" ng-model="my_model"> <br>
+    <button ng-click="clickMe(my_model)">BroadCast</button>
+
+    <div ng-controller="child_controller">
+        {{var_one}}
+    </div>
+</div>
+
+
+app.controller("parent_controller",parent_controller);
+function parent_controller($scope){
+    $scope.clickMe = function(arg1)
+    {
+        $scope.$broadcast("key1",arg1);
+    }
+}
+
+
+app.controller("child_controller",child_controller);
+function child_controller($scope){
+    $scope.$on("key1",function(event,res){
+        $scope.var_one = res;
+    });
+};
+
+
+emit communication:
+-------------------
+    - sharing the data from child controllers to parent controllers called as emit communication.
+
+
+app.controller("child_controller",child_controller);
+function child_controller($scope){
+    $scope.clickMe = function(arg1){
+        $scope.$emit("key1",arg1);
+    }
+}
+
+
+app.controller("parent_controller",parent_controller);
+function parent_controller($scope){
+    $scope.$on("key1",function(event,res){
+        $scope.var_one = res;
+    });
+};
+
+
+providing the communication between controllers by using rootScope
+-------------------------------------------------------------------
+
+<div ng-controller="ctrl_one">
+    <input type="text" ng-model="my_model">
+    <br><br>
+    <button ng-click="clickMe(my_model)">ClickMe</button>
+</div>
+
+
+<div ng-controller="ctrl_two">
+    <h1>{{var_one}}</h1>
+</div>
+
+app.controller("ctrl_one",ctrl_one);
+function ctrl_one($scope){
+    $scope.clickMe = function(arg1){
+        $scope.my_fun(arg1);
+    };
+};
+
+
+app.controller("ctrl_two",ctrl_two);
+function ctrl_two($rootScope,$scope){
+    $rootScope.my_fun = function(arg1){
+        $scope.var_one = arg1;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
