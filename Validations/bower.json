@@ -1,7 +1,0 @@
-{
-  "name":"nareshit",
-  "dependencies":{
-    "angular":"latest",
-    "angular-messages":"latest"
-  }
-}

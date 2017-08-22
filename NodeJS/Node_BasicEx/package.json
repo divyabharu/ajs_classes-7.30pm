@@ -1,7 +1,0 @@
-{
-  "name": "Node_BasicEx",
-  "version": "0.0.1",
-  "dependencies": {
-    "express": "^4.15.3"
-  }
-}

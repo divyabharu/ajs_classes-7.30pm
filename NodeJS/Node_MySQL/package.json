@@ -1,8 +1,0 @@
-{
-  "name": "Node_MySQL",
-  "version": "0.0.1",
-  "dependencies": {
-    "express": "latest",
-    "mysql": "^2.14.0"
-  }
-}

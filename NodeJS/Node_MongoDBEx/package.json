@@ -1,8 +1,0 @@
-{
-  "name": "Node_MongoDBEx",
-  "version": "0.0.1",
-  "dependencies": {
-    "express": "^4.15.3",
-    "mongodb": "^2.2.30"
-  }
-}
