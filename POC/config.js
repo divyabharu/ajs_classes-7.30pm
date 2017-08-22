@@ -1,4 +1,13 @@
-app.config(config);
+app.run(run).config(config);
+function run($rootScope,$localStorage,$location) {
+    $rootScope.$on("$stateChangeStart",function (event,fromState,toState,fromParams,toParams) {
+        if(!$localStorage.poc){
+            $location.path("/login");
+        }
+    });
+};
+
+
 
 function config($stateProvider,$urlRouterProvider) {
     $urlRouterProvider.otherwise("/login");

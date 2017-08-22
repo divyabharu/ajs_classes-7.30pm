@@ -251,8 +251,45 @@ templates
 
 
 
+Implementation Of Interceptors in POC
+-------------------------------------
+
+1. implement the logout functionality
+
+homeController.js
+-----------------
+app.controller("homeController",homeController);
+function homeController($scope,$localStorage,$location){
+    $scope.logout = function(){
+        delete $localStorage.poc;
+        $location.path("/login");
+    }
+}
 
 
+2. implement the interceptor to handle "unnecessary routings"
 
+    - "$stateChangeStart" is the interceptor and executes before each routing.
 
+    - in genaral we will implement the interceptors in "config phase" but before the
+      "routing implementation".
 
+    - interceptors must be implemented with the rootScope.
+
+    - we can implement the interceptors by using run().
+
+    - run() will execute before config()
+
+Code:
+    app.run(run);
+    function run($rootScope,$localStorage,$location){
+        $rootScope.$on("$stateChangeStart",function(event,
+                                                    fromState,
+                                                    toState,
+                                                    fromParams,
+                                                    toParams){
+            if(!$localStorage.poc){
+                $location.path("/login");
+            }
+        }
+    }

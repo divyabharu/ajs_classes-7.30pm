@@ -1,1 +1,13 @@
-<h1>{{contact}}</h1>
+<table border="1">
+    <tr>
+        <th>id</th>
+        <th>name</th>
+        <th>cost</th>
+    </tr>
+
+    <tr ng-repeat="x in contact">
+        <td>{{x.p_id}}</td>
+        <td>{{x.p_name}}</td>
+        <td>{{x.p_cost}}</td>
+    </tr>
+</table>

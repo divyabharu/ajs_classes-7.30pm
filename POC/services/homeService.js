@@ -4,7 +4,7 @@ function homeService($http,$localStorage){
         return $http.post("http://localhost:8080/about",
             {'token':$localStorage.poc.data.token})
             .then(function(posRes){
-                return posRes;
+                return posRes.data.products;
             },function(errRes){
                 return errRes;
             });
@@ -15,7 +15,7 @@ function homeService($http,$localStorage){
         return $http.post("http://localhost:8080/portfolio",
             {'token':$localStorage.poc.data.token})
             .then(function(posRes){
-                return posRes;
+                return posRes.data;
             },function(errRes){
                 return errRes;
             });
@@ -26,7 +26,7 @@ function homeService($http,$localStorage){
         return $http.post("http://localhost:8080/contact",
             {'token':$localStorage.poc.data.token})
             .then(function(posRes){
-                return posRes;
+                return posRes.data;
             },function(errRes){
                 return errRes;
             });
