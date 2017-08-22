@@ -215,6 +215,44 @@ From 2nd Commit Onwards:
 - ALT+1 used to Show the Project View.
 
 
+10. push the code to the cloud repository
+-----------------------------------------
+
+ ==> ctrl + k
+
+ ==> enter the commit message
+
+ ==> click the commit & push
+
+ ==> push
+
+
+ [Automatically code will be committed to the cloud repository]
+
+
+
+11. pull the code from cloud repository.
+
+==> VCS
+
+==> Git
+
+==> Pull
+
+==> select AngularJS_11AM
+
+==> pull.
+
+
+
+
+
+
+
+
+
+
+
 
 
 
