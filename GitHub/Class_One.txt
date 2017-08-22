@@ -245,7 +245,18 @@ From 2nd Commit Onwards:
 
 
 
+Creating the Workplace for practicing the Angular Applications
+--------------------------------------------------------------
 
+==> File
+
+==> project
+
+==> empty (left panel)
+
+==> D:/PracticeApps
+
+==> create
 
 
 
