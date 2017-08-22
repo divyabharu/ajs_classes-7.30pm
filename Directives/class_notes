@@ -373,6 +373,63 @@ Syntax.
 
 
 
+14. ng-show
+
+    - ng-show directive will show / hide the elements based on condition.
+
+Syntax.
+
+    ng-show = "true" / "false"
+
+
+15. ng-hide
+
+    - it will show / hide the elements based on condition.
+
+Syntax.
+
+    ng-hide = "true" / "false"
+
+
+16.Mouse Events
+
+    ng-mousedown/
+    ng-mouseup
+
+    ng-mouseover/
+    ng-mouseout             =   "Expression" /
+                                "custom function"/
+    ng-mouseenter/              "custom function with parameters"
+    ng-mouseleave
+
+    ng-mousemove
+
+
+
+17. ng-cloak
+
+    - ng-cloak directive used to overcome the flickering effect in angular application
+      while refreshing with expression. ( {{}} )
+
+    Syntax.
+
+        <div ng-controller="ctrl_one" ng-cloak>
+            //Logic
+        </div>
+
+----------------
+ngCloakDemo
+    index.html
+    app.js
+    controllers
+        ctrl_one.js
+        ctrl_two.js
+-------------------
+
+
+
+
+
 
 
 
