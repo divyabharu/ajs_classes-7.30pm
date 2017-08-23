@@ -1,0 +1,247 @@
+Custom Directives:
+
+    - Creating our own directive called as Custom Directive.
+
+    - In angularjs, we can use the custom directives in 4 ways.
+
+        1. Element
+
+        2. CSS Class
+
+        3. Attribute
+
+        4. Comment
+
+    - the default usage of Custom Directive is Element.
+
+properties of custom directives:
+--------------------------------
+
+1. restrict
+    - this directive describes the usage of custom directive.
+
+Ex.
+    restrict : "E"  // we can use custom directive like Element.
+
+    restrict : "A" // we can use custom directive like Attribute.
+
+    restrict : "C"  // we can use custom directive like CSS Class
+
+    restrict : "M" // we can use the custom directive like Comment.
+
+
+
+    app.directive("myDir",myDir);
+    function myDir(){
+        return {
+            restrict:"E"
+        }
+    }
+
+    <my-dir></my-dir>
+    [Note : the default value of restrict property is "E" ]
+
+
+
+2. template
+    - this property used to assign the html to the custom directive.
+
+Ex.
+    app.directive("testDir",testDir);
+    function testDir(){
+        return {
+            restrict : "A",
+            template : "<h1>Welcome to Custom Directives</h1>"
+        }
+    }
+
+    <div test-dir></div> //Welcome to Custom Directives
+
+3. templateUrl
+    - this directive used to add the external template to the custom directive.
+
+Ex.
+    **********
+templates
+    sample.html
+    **********
+
+sample.html
+-----------
+<h1>Welcome to Custom Directives !</h1>
+
+app.directive("helloDir",helloDir);
+function helloDir(){
+    return {
+        restrict:"C",
+        templateUrl : "templates/sample.html"
+    };
+};
+
+<div class = "hello-dir"></div> //Welcome to Custom Directives !
+
+
+4. controller
+    - this property used to declare the controller to the external template
+      of a custom directive.
+
+ ***************
+ templates
+    sample.html
+ ***************
+
+ sample.html
+ -----------
+ <h1>{{var_one}}</h1>
+
+ *****************
+ controllers
+    my_ctrl.js
+ *****************
+
+ app.controller("my_ctrl",my_ctrl);
+ function my_ctrl($scope){
+    $scope.var_one = "Welcome to Custom Directives !";
+ }
+
+
+ app.directive("my_dir",my_dir);
+
+ function my_dir(){
+    return {
+        restrict : "A",
+        templateUrl : "templates/sample.html",
+        controller : "my_ctrl"
+    }
+ }
+
+
+Ex.
+    <div my_dir></div> //Welcome to Custom Directives !
+
+    ********************
+Example_1
+    index.html
+    app.js
+    directives
+        attrType.js
+        classType.js
+        elemType.js
+    ********************
+
+
+index.html
+----------
+<!DOCTYPE html>
+<html lang="en" ng-app="app">
+
+    //attribute calling
+    <div class="container" attr-type></div>
+
+    //class calling
+    <div class="container class-type"></div>
+
+    //element level calling
+    <div class="container">
+        <elem-type></elem-type>
+    </div>
+
+    //Files to be load (JS & CSS)
+</html>
+
+
+Example_2:
+
+-------------
+templates
+    header.html
+-------------
+
+<div class="dropdown">
+    <button class="btn btn-primary dropdown-caret" data-toggle="dropdown">ClickMe</button>
+    <ul class="dropdown-menu">
+        <li>Option_1</li>
+        <li>Option_2</li>
+        <li>Option_3</li>
+        <li>Option_4</li>
+        <li ng-click="logout()">Logout</li>
+    </ul>
+</div>
+
+------------
+controller
+    header.js
+------------
+
+header.js
+-
+app.controller("header",header);
+function header($scope){
+    $scope.logout = function(){
+        console.log("Logged Out Successfully !");
+    }
+}
+
+---------
+directives
+    header.js
+---------
+app.directive("header",header);
+function header(){
+    return{
+        restrict:"AE",
+        templateUrl:"templates/header.html",
+        controller:"header"
+    }
+}
+
+
+index.html
+----------
+<header></header>
+
+
+-------------------
+Example_2
+    index.html
+    app.js
+    controllers
+        header.js
+    directives
+        header.js
+    bower.json
+-------------------
+
+[Note : if we have jquery with bootstrap integration follow the below order while loading
+        the files]
+
+
+ <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
+ <script src="bower_components/jquery/dist/jquery.min.js"></script>
+ <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
