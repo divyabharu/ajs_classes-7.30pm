@@ -1,0 +1,217 @@
+Custom Directive:
+----------------
+    - Creating our own directive based on application requirement
+      called as Custom Directive.
+
+    - In AngularJS, we can use custom directives in 4 ways.
+
+        1. Element
+
+        2. Attribute
+
+        3. CSS Class
+
+        4. Comment
+
+    Ex.
+        my_dir
+
+        <my_dir ></my_dir >  //Element Level Custom Directive
+
+        <div my_dir ></div>  //Attribute Level Custom Directive
+
+        <div class="my_dir"></div> //CSS Class Level Custom Directive
+
+        <!-- my_dir -->  //Comment Level Custom Directive.
+
+
+properties of custom directive:
+-------------------------------
+
+1. restrict
+    - this property will describe the usage of custom directive.
+
+Ex.
+    restrict : "E"  // we can use custom directive like Element
+
+    restrict : "A"  // we can use custom directive like Attribute
+
+    restrict : "C"  // we can use custom directive like CSS Class
+
+    restrict : "M"  // we can use custom directive like Comment.
+
+
+[Note : the default value of restrict property is "E" ]
+
+
+Ex.
+    app.directive("my_dir",my_dir);
+    function my_dir(){
+        return {
+            restrict:"A"
+        };
+    };
+    <div my_dir></div>
+
+
+2. template
+
+    - this property used to add the html to the custom directive.
+     (inline html)
+
+Ex.
+    app.directive("my_dir",my_dir);
+    function my_dir(){
+        return{
+            restrict:"E",
+            template:"<b>Welcome to Custom Directives !</b>"
+        }
+    }
+
+    <my_dir></my_dir>  //Welcome to Custom Directives !
+
+
+3. templateUrl
+    - this property used to append the external template to the
+      custom directive.
+
+
+Ex.
+    --------------
+    templates
+        sample.html
+    ---------------
+sample.html
+-----------
+<h1>Welcome to Custom Directives !</h1>
+
+app.directive("my_dir",my_dir);
+function my_dir(){
+    return{
+        restrict:"C",
+        templateUrl:"templates/sample.html"
+    }
+}
+
+<div class="my_dir"></div> //Welcome to Custom Directives !
+
+
+4. controller
+    - this property used to declare the controller to external template
+      of a custom directive.
+
+Ex.
+
+----------
+templates
+    sample.html
+---------
+
+sample.html
+-----------
+<h1>{{var_one}}</h1>
+
+
+----------
+controllers
+    sample.js
+-----------
+app.controller("sample",sample);
+function sample($scope){
+   $scope.var_one = "Welcome to Custom Directives !";
+}
+
+-------------
+directives
+    my_dir.js
+-------------
+app.directive("my_dir",my_dir);
+function my_dir(){
+    return{
+        templateUrl:"templates/sample.html",
+        controller : "sample"
+    }
+}
+
+<my_dir></my_dir>  //Welcome to Custom Directives !
+
+
+    *******************
+
+Example_1
+    bower.json
+
+    index.html
+
+    app.js
+
+    directives
+
+        attrType.js
+        classType.js
+        elemType.js
+
+    *********************
+
+
+
+    **********************
+Example_2
+
+    bower.json
+    app.js
+    index.html
+
+    templates
+        header.html
+
+    controllers
+        headerController.js
+
+    directives
+        header.js
+
+    *************************
+header.html
+-----------
+<div class="dropdown">
+    <button class="btn btn-primary dropdown-caret"
+            data-toggle="dropdown">ClickMe</button>
+
+    <ul class="dropdown-menu">
+        <li>Option_1</li>
+        <li>Option_2</li>
+        <li>Option_3</li>
+        <li>Option_4</li>
+        <li ng-click="logout()">Logout</li>
+    </ul>
+
+</div>
+
+
+headerController.js
+-------------------
+app.controller("headerController",headerController);
+function headerController($scope){
+    $scope.logout = function(){
+        alert("Logged Out Successfully !");
+    }
+}
+
+
+header.js
+---------
+app.directive("header",header);
+function header(){
+    return{
+        restrict:"AE",
+        templateUrl:"templates/header.html",
+        controller:"headerController"
+    }
+}
+
+index.html
+----------
+<header></header>
+
+
