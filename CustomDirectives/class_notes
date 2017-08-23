@@ -119,6 +119,114 @@ function helloDir(){
 Ex.
     <div my_dir></div> //Welcome to Custom Directives !
 
+    ********************
+Example_1
+    index.html
+    app.js
+    directives
+        attrType.js
+        classType.js
+        elemType.js
+    ********************
+
+
+index.html
+----------
+<!DOCTYPE html>
+<html lang="en" ng-app="app">
+
+    //attribute calling
+    <div class="container" attr-type></div>
+
+    //class calling
+    <div class="container class-type"></div>
+
+    //element level calling
+    <div class="container">
+        <elem-type></elem-type>
+    </div>
+
+    //Files to be load (JS & CSS)
+</html>
+
+
+Example_2:
+
+-------------
+templates
+    header.html
+-------------
+
+<div class="dropdown">
+    <button class="btn btn-primary dropdown-caret" data-toggle="dropdown">ClickMe</button>
+    <ul class="dropdown-menu">
+        <li>Option_1</li>
+        <li>Option_2</li>
+        <li>Option_3</li>
+        <li>Option_4</li>
+        <li ng-click="logout()">Logout</li>
+    </ul>
+</div>
+
+------------
+controller
+    header.js
+------------
+
+header.js
+-
+app.controller("header",header);
+function header($scope){
+    $scope.logout = function(){
+        console.log("Logged Out Successfully !");
+    }
+}
+
+---------
+directives
+    header.js
+---------
+app.directive("header",header);
+function header(){
+    return{
+        restrict:"AE",
+        templateUrl:"templates/header.html",
+        controller:"header"
+    }
+}
+
+
+index.html
+----------
+<header></header>
+
+
+-------------------
+Example_2
+    index.html
+    app.js
+    controllers
+        header.js
+    directives
+        header.js
+    bower.json
+-------------------
+
+[Note : if we have jquery with bootstrap integration follow the below order while loading
+        the files]
+
+
+ <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
+ <script src="bower_components/jquery/dist/jquery.min.js"></script>
+ <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+
+
+
+
+
+
+
+
 
 
 
