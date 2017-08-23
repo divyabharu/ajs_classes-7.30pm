@@ -1,0 +1,140 @@
+1. JavaScript
+
+2. JSON (Java Script Object Notation)
+
+JavaScript:
+
+    - JavaScript is the Scripting Language.
+
+    - HTML mainly for Static Data.
+
+    - To Make HTML as "Dynamic Responsive" , we will dependent on
+      JavaScript.
+
+    - By using HTML, we can manipulate the DOM.
+        DOM Stands for Document Object Model
+
+Variables:
+----------
+    - variables are used to store the data.
+
+    - we can declare the variables by using "var" keyword.
+
+    - we can store all "categories of data" in variables.
+
+Ex.
+
+    var data = 100;     // integer data
+
+    var data = "data from mongodb soon..."; //string data
+
+    var data=100.01;   //float data
+
+    var data = {                //json objects
+                'emp_id':1,
+                'emp_name':'Hello_1'
+               };
+
+
+    var data =  new Date();   // predefined "Date class" object
+
+    var data = new emp();     // custom object (emp class object)
+
+
+Displaying the data on browser console
+--------------------------------------
+console.log("message");
+
+
+Displaying the data on webpage
+------------------------------
+document.write("message");
+
+
+Getting the References of HTML Elements to JavaScript:
+------------------------------------------------------
+<h1 id="first_h1"></h1>
+<h1 id="second_h1"></h1>
+
+var first_h1 = document.getElementById("first_h1");
+var second_h1 = document.getElementById("second_h1");
+
+
+
+functions:
+----------
+    - functions are set of statements.
+    - functions are meant for reuse the business logic.
+    - we have two types of functions.
+
+        1. Named JavaScript Functions.
+
+        2. Anonymous JavaScript Functions.
+
+
+1. Named JavaScript Functions.
+
+Syntax.
+------
+//create the function
+function fun_name(){
+    //Business Logic
+}
+
+
+//call the function
+fun_name();
+
+anonymous function:
+------------------
+    functions without name called as anonymous functions.
+
+Syntax.
+
+    //create the anonymous function
+
+    var my_fun = function(){
+        //Business Logic
+    }
+
+
+    //call the anonymous function
+    my_fun();
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
