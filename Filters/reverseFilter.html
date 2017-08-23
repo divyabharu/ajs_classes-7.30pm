@@ -1,0 +1,26 @@
+﻿<!DOCTYPE html>
+<html ng-app="app">
+<head>
+    <title></title>
+	<meta charset="utf-8" />
+</head>
+<body>
+    <h1>{{"hello" | reverse}}</h1>
+
+    <script src="Scripts/angular.min.js"></script>
+    <script>
+        var app = angular.module("app", []);
+
+        app.filter("reverse", reverse);
+        function reverse() {
+            return function (arg1) {
+                var data = "";
+                for (var i = 0; i < arg1.length; i++) {
+                    data = arg1[i] + data;
+                }
+                return data;
+            }
+        }
+    </script>
+</body>
+</html>

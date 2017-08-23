@@ -1,0 +1,104 @@
+Filter:
+    - Filters in angularjs, are used to format the application data
+      accroding to application requirement.
+
+    - we have two types of filters.
+
+        1. predefined filters.
+
+        2. custom filters.
+
+
+predefined filters:
+
+    - the filters given by the angular framework called as
+      predefined filters.
+
+1. uppercase
+
+    - this filter used to convert the lowercase characters to uppercase
+      characters.
+
+2. lowercase
+
+    - this filter used to convert the uppercase characters to lowercase
+      characters.
+
+
+3. date
+
+    - this filter used to format the date accroding to application requirement
+
+4. orderBy
+
+    - this filter used to arrange the data either in assending order
+      or decending order.
+
+
+
+5. limitTo
+
+     - this filter used to display the required number of records from an array.
+
+
+6. filter
+
+    - this filter used to search the array based on user given input.
+
+
+7. currency
+
+    - this filter used to append the "$" symbol to the numerical values.
+
+
+
+custom filters:
+---------------
+    - creating our own filter based on application requirement
+      called as custom filter.
+
+
+    <h1>{{"hello" |reverse }}
+
+
+    app.filter("reverse" , reverse);
+    function reverse(){
+
+        return function(arg1){
+
+            var data="";
+            for(var i=0;i<arg1.length;i++){
+                data = arg[i]+data;
+            }
+
+            return data;
+
+        };
+    };
+
+
+
+
+Ex.
+    <h1>{{100 | my_currency:"&#8377;":true}}
+    <h1>{{200 | my_currency:"&#8364;":false}}
+
+    app.filter("my_currency",my_currency);
+    function my_currency(){
+        return function(amount,symbol,position){
+            if(position){
+                return symbol+" "+amount;
+            }else{
+                return amount+" "+symbol;
+            }
+        }
+    }
+
+
+
+
+
+
+
+
+
