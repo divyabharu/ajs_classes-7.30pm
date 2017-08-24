@@ -1,0 +1,52 @@
+Karma with Jasmine:
+-------------------
+
+    - We have Two Types Of Testings.
+
+        1. Manual Testing
+            [Now a days no body using Manual Testing]
+
+        2. Automation Testing.
+            [Now a days all most all the projects using Automation Testing]
+
+    - Karma is the Testing Framework used to perform Automation Testing on UI Applications
+
+        Ex.
+            AngularJS
+            Angular4
+            reactJS
+            NodeJS
+                --
+                --
+                --
+
+     - Automation Testing categorized into 3 types.
+
+     1. unit testing
+
+     2. integration testing
+
+     3. end to end testing.
+
+
+
+1. unit testing
+---------------
+    - checking the perticular functionality with dummy scenarios called as unit testing.
+
+
+2. integration testing
+----------------------
+    - checking the perticular functionality with real scenarios called as integration testing.
+
+3. end to end testing:
+---------------------
+    - checking whole application with different end points (api points, physical connections) called as
+      end to end testing.
+
+
+
+
+
+
+

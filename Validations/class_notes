@@ -1,0 +1,101 @@
+Validations:
+    - AngularJS Supports form validations.
+
+    - "$error" is the predefined Object used to store the form related errors.
+
+    - when ever "error raised" in form automatically stores into $error object.
+
+
+Ex.
+    <form name="myForm">
+        <label>Uname.</label>&emsp;&emsp;&emsp;&emsp;
+        <input type="text"
+               name="uname"
+               ng-model="uname"
+               ng-minlength="3"
+               ng-maxlength="6"
+               required>
+
+        <h5 style="color:red" ng-if="myForm.uname.$error.minlength">***Minimum 3 characters are required***</h5>
+        <h5 style="color:red" ng-if="myForm.uname.$error.maxlength">***Maximum 6 Characters are Allowed***</h5>
+        <h5 style="color:red" ng-if="myForm.uname.$error.required && myForm.uname.$dirty">***Can't Left Blank***</h5>
+    </form>
+
+Email Validation:
+-----------------
+
+<input type="email"
+       name="uemail"
+       ng-model="uemail"
+       required>
+
+<h5 style="color:red" ng-if="myForm.uemail.$error.email">***Please enter the valid email***</h5>
+<h5 style="color:red" ng-if="myForm.uemail.$error.required && myForm.uemail.$dirty">***Can't Left Blank***</h5>
+
+
+
+Number Validation:
+-----------------
+<input type="text"
+       name="uphone"
+       ng-model="uphone"
+       ng-pattern="/^[0-9]{10,10}$/;"
+       required>
+
+<h5 style="color:red" ng-if="myForm.uphone.$error.required && myForm.uphone.$dirty">***Can't Left Blank***</h5>
+<h5 style="color:red" ng-if="myForm.uphone.$error.pattern">***Please Enter the Valid Phone Number***</h5>
+
+
+
+Validations by using ngMessages Module
+--------------------------------------
+    - ngMessages is the predefined module in angularjs, and used to overcome the data redundancy.
+
+    - we can download the "ngMessages Module" by using following bower key.
+
+        "angular-messages"
+
+
+1. download the ngMessages Module by using bower.
+
+2. add the ngMessages Dependency.
+
+3. create the validation messages by using ng-message directive.
+
+Ex.
+    messages.html
+
+<div ng-message="minlength">***Minimum 3 Characters are Required****</div>
+<div ng-message="maxlength">****Can't Enter Morethan 6 characters****</div>
+<div ng-message="required">***Can't Left Blank***</div>
+<div ng-message="email">***Please Enter the Valid Email***</div>
+<div ng-message="pattern">***Please Enter the Valid Phone Number***</div>
+
+
+4. import the validations by using mgMessages Directives.
+
+<div ng-messages="myForm.uname.$error">
+    <div ng-messages-include="messages.html"></div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
