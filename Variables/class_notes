@@ -1,54 +1,76 @@
-variables:
+Variables:
 
-    - Variables are meant for storing the data
-    - we can store all categories of data by using variables
-    ex: Primitive data , customised data
-    - Variables we can declare by using "var" keyword
+    - variables are used to store the data.
+
+    - in general we will declare the variables in javascript by using "var" keyword.
+
+    - By using variables we can store  all categories of data
 
     Ex.
+        integer data.
+        string data.
+        float data.
+        objects
 
-        //storing the string.
-        var var_one = "AngularJS";
+            --
+            --
+            --
 
-        //storing the integer.
-        var var_one = 10;
+     //Storing the string data
+     var data = "Welcome to JavaScript !";
 
-        //storing the objects
-        var var_one = new Date();
+    //Storing the integer data
+    var data = 100;
 
-        //storing the json objects.
-        var var_one = {'sub_one':'AngularJS'};
+    //Storing the float data
+     var data = 100.1;
 
-    - In general we can display the data (print) in following ways.
+    //Storing the objects
+     var data = new my_obj();
 
-    1. display the data on console(browser console).
-
-    console.log(var_one);
-
-    2. display the data on web page.
-
-    document.write(var_one);
-
-    - we can use <script></script> tag to embed the javascript to web pages.
-
-    Syntax.
-
-        <script type="text/javascript">
-
-            //Business Logic
-
-        </script>
+    //Storing the JSON objects
+     var data = {'name_one':'bharat','name_two':'vinay','name_three':'mono'};
 
 
+ display the data on browser console:
+ ------------------------------------
+ console.log("Welcome to JavaScript !");
 
-- in javascript local scope changes effecting the global change , these changes called as global polluting in javascript.
 
-- we can overcome these issues by using "let" keyword.
+ display the data on webpage(html page)
+ --------------------------------------
+ document.write("Welcome to JavaScript !");
 
-- the default value of variable is "undefined"
 
-- if we declare any variable without var keyword automatically we are getting "scope bug" error.
+ Getting the References of HTML Elements to JavaScript:
+ ------------------------------------------------------
+ <h1 id="first_h1"></h1>
+ <h1 id="second_h1"></h1>
+ <h1 id="third_h1"></h1>
 
-Ex.
-    i = 100;
+
+ document.getElementById("first_h1").innerHTML = "Data From MySQL DB Soon...!";
+
+ document.getElementById("second_h1").innerHTML="Data from Mango DB soon";
+
+ document .getElementById("third_h1").innerHTML = "Data from Cassandra DB soon..!";
+
+
+ - we can include the javascript ibto webpage by using "<script></script>" tag.
+
+ Ex.
+
+    <script type="text/javascript">
+
+        //Business Logic.
+
+    </script>
+
+
+
+
+
+
+
+
 
